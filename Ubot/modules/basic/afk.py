@@ -11,7 +11,7 @@
 from datetime import datetime
 from pyrogram import filters, Client
 from pyrogram.types import Message
-from Azazel.core.db import *
+from Ubot.core.db import *
 from ubotlibs.ubot.utils import get_text
 from . import *
 
