@@ -60,6 +60,6 @@ async def main():
               
 
 if __name__ == "__main__":
-    LOGGER("Naya Premium").info("Starting  Ubot")
+    LOGGER("Naya Premium").info("Starting Ubot")
     install()
     LOOP.run_until_complete(main())
