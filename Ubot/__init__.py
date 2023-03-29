@@ -50,15 +50,15 @@ app = Bot()
 
 
 bot1 = User1()
-bot2 = User1()
-bot3 = User1()
-bot4 = User1()
-bot5 = User1()
-bot6 = User1()
-bot7 = User1()
-bot8 = User1()
-bot9 = User1()
-bot10 = User1()
+bot2 = User2()
+bot3 = User3()
+bot4 = User4()
+bot5 = User5()
+bot6 = User6()
+bot7 = User7()
+bot8 = User8()
+bot9 = User9()
+bot10 = User10()
 
 
 
