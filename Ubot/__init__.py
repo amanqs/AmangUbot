@@ -20,17 +20,6 @@ CMD_HELP = {}
 clients = []
 ids = []
 
-SUDOERS = filters.user()
-SUDO_USER = SUDOERS
-
-AI = OPENAI_API
-PM_LOGGER = PM_LOGGER
-
-if BOTLOG_CHATID:
-   BOTLOG_CHATID = BOTLOG_CHATID
-else:
-   BOTLOG_CHATID = "me"
-
 
 SUDO_USER = SUDOERS
 trl = Translator()
