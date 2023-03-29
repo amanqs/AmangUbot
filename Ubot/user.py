@@ -74,8 +74,7 @@ class User4(Client):
         if SESSION4:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
 class User5(Client):
     def __init__(self):
@@ -91,8 +90,7 @@ class User5(Client):
         if SESSION5:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
 class User6(Client):
     def __init__(self):
@@ -108,8 +106,7 @@ class User6(Client):
         if SESSION6:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
 class User7(Client):
     def __init__(self):
@@ -125,8 +122,7 @@ class User7(Client):
         if SESSION7:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
 class User8(Client):
     def __init__(self):
@@ -142,8 +138,7 @@ class User8(Client):
         if SESSION8:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
 class User9(Client):
     def __init__(self):
@@ -159,8 +154,7 @@ class User9(Client):
         if SESSION9:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
 class User10(Client):
     def __init__(self):
@@ -176,8 +170,7 @@ class User10(Client):
         if SESSION10:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
     async def start(self):
         await super().start()
