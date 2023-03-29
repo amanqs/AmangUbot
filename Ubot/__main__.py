@@ -33,7 +33,7 @@ MSG_ON = """
 
 async def main():
     await app.start()
-    LOGGER("Naya Premium").info("Memulai Ubot Pyro..")
+    LOGGER("Naya Premium").info("Memulai..")
     for all_module in ALL_MODULES:
         importlib.import_module("Ubot.modules" + all_module)
     for bot in bots:
@@ -41,15 +41,13 @@ async def main():
             await bot.start()
             ex = await bot.get_me()
             user_id = ex.id
-            await join(bot)
             await buat_log(bot)
             botlog_chat_id = await get_botlog(user_id)
-            except BaseException as a:
-                LOGGER("✓").warning(f"{a}")
-            LOGGER("✓").info("Startup Completed")
-            LOGGER("✓").info(f"Started as {ex.first_name} | {ex.id} ")
+            LOGGER("Log").info("Startup Completed")
+            LOGGER("√").info(f"Started as {ex.first_name} | {ex.id} ")
+            await join(bot)
+            await bot.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
             ids.append(ex.id)
-            await bot.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py, pyro))
         except Exception as e:
             LOGGER("X").info(f"{e}")
     await idle()
