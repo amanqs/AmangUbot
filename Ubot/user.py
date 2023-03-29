@@ -20,9 +20,11 @@ class User1(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION1
-        else None
-        self.LOGGER = LOGGER
+        if SESSION1:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
 class User2(Client):
     def __init__(self):
@@ -35,9 +37,11 @@ class User2(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION2
-        else None
-        self.LOGGER = LOGGER
+        if SESSION2:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
 class User3(Client):
     def __init__(self):
@@ -50,9 +54,11 @@ class User3(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION3
-        else None
-        self.LOGGER = LOGGER
+        if SESSION3:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
 class User4(Client):
     def __init__(self):
@@ -65,9 +71,11 @@ class User4(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION4
-        else None
-        self.LOGGER = LOGGER
+        if SESSION4:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
 class User5(Client):
     def __init__(self):
@@ -80,9 +88,11 @@ class User5(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION5
-        else None
-        self.LOGGER = LOGGER
+        if SESSION5:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
 class User6(Client):
     def __init__(self):
@@ -95,9 +105,11 @@ class User6(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION6
-        else None
-        self.LOGGER = LOGGER
+        if SESSION6:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
 class User7(Client):
     def __init__(self):
@@ -110,9 +122,11 @@ class User7(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION7
-        else None
-        self.LOGGER = LOGGER
+        if SESSION7:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
 class User8(Client):
     def __init__(self):
@@ -125,9 +139,11 @@ class User8(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION8
-        else None
-        self.LOGGER = LOGGER
+        if SESSION8:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
 class User9(Client):
     def __init__(self):
@@ -140,9 +156,11 @@ class User9(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION9
-        else None
-        self.LOGGER = LOGGER
+        if SESSION9:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
 class User10(Client):
     def __init__(self):
@@ -155,9 +173,11 @@ class User10(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION10
-        else None
-        self.LOGGER = LOGGER
+        if SESSION10:
+            self.LOGGER = LOGGER
+        else:
+            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
+            sys.exit()
 
     async def start(self):
         await super().start()
