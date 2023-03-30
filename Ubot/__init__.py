@@ -64,11 +64,11 @@ class Bot(Client):
             },
             workers=BOT_WORKERS,
         )
-        if not BOT_TOKEN:
-            self.LOGGER = LOGGER
-        else:
-            LOGGER(__name__).error("WARNING: BOT TOKEN TIDAK DITEMUKAN, SHUTDOWN BOT")
-            sys.exit()
+#        if not BOT_TOKEN:
+        self.LOGGER = LOGGER
+ #       else:
+#            LOGGER(__name__).error("WARNING: BOT TOKEN TIDAK DITEMUKAN, SHUTDOWN BOT")
+#            sys.exit()
 
     async def start(self):
         await super().start()
