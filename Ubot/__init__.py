@@ -21,7 +21,7 @@ clients = []
 ids = []
 
 
-SUDO_USER = SUDOERS
+
 trl = Translator()
 aiosession = ClientSession()
 CMD_HELP = {}
