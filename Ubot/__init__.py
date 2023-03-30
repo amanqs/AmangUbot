@@ -9,15 +9,11 @@ from typing import Any, Dict
 from aiohttp import ClientSession
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from gpytranslate import Translator
-from pyrogram import Client, filters
+from pyrogram import Client, filters, __version__, enums
 from pytgcalls import GroupCallFactory
 from ast import parse
-from .bot import Bot
-from .user import *
 from .logging import LOGGER
 from config import *
-from Ubot.bot import Bot
-from Ubot.user import *
 cmds = None
 CMD_HELP = {}
 clients = []
@@ -56,7 +52,32 @@ LOOP = asyncio.get_event_loop()
 
 
 
+class Bot(Client):
+    def __init__(self):
+        super().__init__(
+            name="ubot",
+            api_hash=API_HASH,
+            api_id=API_ID,
+            bot_token=BOT_TOKEN,
+            plugins=dict(root="Ubot/modules/bot"),
+            workers=BOT_WORKERS,
+        )
+        self.LOGGER = LOGGER
+
+    async def start(self):
+        await super().start()
+        usr_bot_me = self.me
+        self.LOGGER(__name__).info(
+            f"@{usr_bot_me.username} based on Pyrogram v{__version__} "
+        )
+
+    async def stop(self, *args):
+        await super().stop()
+        self.LOGGER(__name__).info("SessionMakerBot stopped. Bye.")
+
 app = Bot()
+
+
 bot1 = (
     Client(
         name="bot1",
