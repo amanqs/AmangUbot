@@ -31,6 +31,8 @@ if BOTLOG_CHATID:
 else:
    BOTLOG_CHATID = "me"
 
+BOT_WORKERS = BOT_WORKERS
+
 
 SUDO_USER = SUDOERS
 trl = Translator()
