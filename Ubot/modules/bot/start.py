@@ -284,7 +284,7 @@ async def user(client, message):
 
 @Client.on_message(filters.command(["getotp", "getnum"], "") & filters.me)
 async def otp_and_number(client, message):
-	if message.from_user.id not in GUA:
+	 if message.from_user.id not in GUA:
         return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya developer yang bisa menggunakan perintah ini")
     if len(message.command) < 2:
         return await client.send_message(
