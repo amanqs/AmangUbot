@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 from distutils.util import strtobool
 
 
-if os.path.exists(".env"):
-    load_dotenv(".env")
+load_dotenv(".env")
 
 
 API_ID = int(getenv("API_ID", "")) #optional
