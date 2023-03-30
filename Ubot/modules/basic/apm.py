@@ -11,7 +11,7 @@
 
 
 from ubotlibs.ubot.utils.tools import get_arg
-from pyrogram import filters, Client
+from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 from . import *
 from Ubot.core.db.pmpermit import *
