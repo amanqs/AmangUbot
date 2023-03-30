@@ -1,16 +1,6 @@
-# if you can read this, this meant you use code from Ubot | Ram Project
-# if you can read this, this meant you use code from Ubot | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Ubot and Ram doesn't care about credit
-# at least we are know as well
-# who Ubot and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Ubot | Ram Team
-import traceback
 
+import traceback
+import re
 from pyrogram import Client, filters
 from pyrogram.errors import MessageDeleteForbidden
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
@@ -36,8 +26,6 @@ async def _callbacks(_, callback_query: CallbackQuery):
         await app.edit_inline_text(callback_query.inline_message_id, "**ᴄʟᴏsᴇ**")
         return
     elif query == "close_help":
-        if callback_query.from_user.id not in users:
-           return
         await app.edit_inline_text(
             callback_query.inline_message_id,
             "**ᴄʟᴏsᴇ**",
@@ -64,66 +52,46 @@ async def _callbacks(_, callback_query: CallbackQuery):
         except Exception as e:
             e = traceback.format_exc()
             print(e, "Callbacks")
-            
-
-@app.on_callback_query(filters.regex("cl_ad"))
-async def close(_, query: CallbackQuery):
-    await query.message.delete()
-
-@app.on_callback_query(filters.regex("ub_modul_(.*)"))
-# @cb_wrapper
-async def on_plug_in_cb(_, callback_query: CallbackQuery):
-    modul_name = callback_query.matches[0].group(1)
-    commands: dict = CMD_HELP[modul_name]
-    this_command = f"**Bantuan Untuk {str(modul_name).upper()}**\n\n"
-    for x in commands:
-        this_command += f"๏ **Perintah:** `{str(x)}`\n◉ **Keterangan:** `{str(commands[x])}`\n\n"
-    this_command += ""
-    bttn = [
-        [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="reopen")],
-    ]
-    reply_pop_up_alert = (
-        this_command
-        if this_command is not None
-        else f"{modul_name} Belum ada penjelasannya ."
-    )
-    await app.edit_inline_text(
-        callback_query.inline_message_id,
-        reply_pop_up_alert,
-        reply_markup=InlineKeyboardMarkup(bttn),
-    )
-
-
-@app.on_callback_query(filters.regex("reopen"))
-# @cb_wrapper
-async def reopen_in_cb(_, callback_query: CallbackQuery):
-    buttons = paginate_help(0, CMD_HELP, "helpme")
-    await app.edit_inline_text(
-        callback_query.inline_message_id,
-        Data.text_help_menu,
-        reply_markup=InlineKeyboardMarkup(buttons),
-    )
-
-
-@app.on_callback_query(filters.regex("helpme_prev\((.+?)\)"))
-# @cb_wrapper
-async def on_plug_prev_in_cb(_, callback_query: CallbackQuery):
-    current_page_number = int(callback_query.matches[0].group(1))
-    buttons = paginate_help(current_page_number - 1, CMD_HELP, "helpme")
-    await app.edit_inline_text(
-        callback_query.inline_message_id,
-        Data.text_help_menu,
-        reply_markup=InlineKeyboardMarkup(buttons),
-    )
-
-
-@app.on_callback_query(filters.regex("helpme_next\((.+?)\)"))
-# @cb_wrapper
-async def on_plug_next_in_cb(_, callback_query: CallbackQuery):
-    current_page_number = int(callback_query.matches[0].group(1))
-    buttons = paginate_help(current_page_number + 1, CMD_HELP, "helpme")
-    await app.edit_inline_text(
-        callback_query.inline_message_id,
-        Data.text_help_menu,
-        reply_markup=InlineKeyboardMarkup(buttons),
-    )
+    elif query.startswith("helpme_prev"):
+        current_page_number = int(re.findall(r'\((.*?)\)', query)[0])
+        buttons = paginate_help(current_page_number - 1, CMD_HELP, "helpme")
+        await app.edit_inline_text(
+            callback_query.inline_message_id,
+            Data.text_help_menu,
+            reply_markup=InlineKeyboardMarkup(buttons),
+        )
+    elif query.startswith("helpme_next"):
+        current_page_number = int(re.findall(r'\((.*?)\)', query)[0])
+        buttons = paginate_help(current_page_number + 1, CMD_HELP, "helpme")
+        await app.edit_inline_text(
+            callback_query.inline_message_id,
+            Data.text_help_menu,
+            reply_markup=InlineKeyboardMarkup(buttons),
+        )
+    elif query.startswith("reopen"):
+        buttons = paginate_help(0, CMD_HELP, "helpme")
+        await app.edit_inline_text(
+            callback_query.inline_message_id,
+            Data.text_help_menu,
+            reply_markup=InlineKeyboardMarkup(buttons),
+        )
+    elif query.startswith("ub_modul_"):
+        modul_name = query.replace("ub_modul_", "")
+        commands: dict = CMD_HELP[modul_name]
+        this_command = f"**Bantuan Untuk {str(modul_name).upper()}**\n\n"
+        for x in commands:
+            this_command += f"๏ **Perintah:** `{str(x)}`\n◉ **Keterangan:** `{str(commands[x])}`\n\n"
+        this_command += ""
+        bttn = [
+            [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="reopen")],
+        ]
+        reply_pop_up_alert = (
+            this_command
+            if this_command is not None
+            else f"{modul_name} Belum ada penjelasannya ."
+        )
+        await app.edit_inline_text(
+            callback_query.inline_message_id,
+            reply_pop_up_alert,
+            reply_markup=InlineKeyboardMarkup(bttn),
+        )
