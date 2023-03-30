@@ -11,18 +11,28 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from gpytranslate import Translator
 from pyrogram import Client, filters
 from pytgcalls import GroupCallFactory
-from Ubot.core import *
+from .bot import Bot
+from .user import *
 
-import config
-
-
+from config import *
 cmds = None
 CMD_HELP = {}
 clients = []
 ids = []
 
+SUDOERS = filters.user()
+SUDO_USER = SUDOERS
+
+AI = OPENAI_API
+PM_LOGGER = PM_LOGGER
+
+if BOTLOG_CHATID:
+   BOTLOG_CHATID = BOTLOG_CHATID
+else:
+   BOTLOG_CHATID = "me"
 
 
+SUDO_USER = SUDOERS
 trl = Translator()
 aiosession = ClientSession()
 CMD_HELP = {}
@@ -35,24 +45,20 @@ TEMP_SETTINGS["PM_LAST_MSG"] = {}
 
 LOOP = asyncio.get_event_loop()
 
-API_ID = API_ID
-API_HASH = API_HASH
-BOT_TOKEN = BOT_TOKEN
-BOT_WORKERS = BOT_WORKERS
 
 app = Bot()
 
 
 bot1 = User1()
-bot2 = User2()
-bot3 = User3()
-bot4 = User4()
-bot5 = User5()
-bot6 = User6()
-bot7 = User7()
-bot8 = User8()
-bot9 = User9()
-bot10 = User10()
+bot2 = User1()
+bot3 = User1()
+bot4 = User1()
+bot5 = User1()
+bot6 = User1()
+bot7 = User1()
+bot8 = User1()
+bot9 = User1()
+bot10 = User1()
 
 
 
