@@ -22,7 +22,7 @@ BOT_VER ="8.1.0"
 
 
 MSG_ON = """
-**New Ubot Actived ✅**
+**Naya-Premium Actived ✅**
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 ◉ **Versi** : `{}`
 ◉ **Phython** : `{}`
