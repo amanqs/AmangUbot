@@ -191,9 +191,7 @@ Dyno tersisa:
     return await dyno.edit(text)
     
 @Client.on_message(filters.command(["user"], "") & filters.me)
-
 async def user(client, message):
-
     if message.from_user.id not in GUA:
         return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya developer yang bisa menggunakan perintah ini")
     count = 0
@@ -220,13 +218,14 @@ async def user(client, message):
 
 @Client.on_message(filters.command(["getotp", "getnum"], "") & filters.me)
 async def otp_and_number(client, message):
-	  if len(message.command) < 2:
+    if len(message.command) < 2:
         return await client.send_message(
             message.chat.id,
             f"<code>{message.text} user_id userbot yang aktif</code>",
             reply_to_message_id=message.id,
         )
     elif message.from_user.id not in GUA:
+
 	      return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya developer yang bisa menggunakan perintah ini")
     try:
         for X in bots:
