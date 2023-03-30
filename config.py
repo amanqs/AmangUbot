@@ -2,10 +2,10 @@ import os
 from os import getenv
 from dotenv import load_dotenv
 from distutils.util import strtobool
-TIME_LIMIT = int(getenv("TIME_LIMIT", "2592000"))
-TIME_SLEEP = int(getenv("TIME_SLEEP", "86400"))
 
-load_dotenv()
+
+if os.path.exists("local.env"):
+    load_dotenv("local.env")
 
 
 API_ID = int(getenv("API_ID", "")) #optional
