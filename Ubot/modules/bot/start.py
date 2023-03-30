@@ -190,74 +190,10 @@ Dyno tersisa:
   ╰ Tersisa: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]"""
     return await dyno.edit(text)
     
-
-@app.on_message(filters.command(["getotp", "getnum"]))
-async def otp_and_number(sclient, message):
-    if message.from_user.id not in GUA:
-        return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya owner bot yang bisa menggunakan perintah ini")
-    if len(message.command) < 2:
-        return await app.send_message(
-            message.chat.id,
-            f"<code>{message.text} user_id userbot yang aktif</code>",
-            reply_to_message_id=message.id,
-        )
-    try:
-        for X in bots:
-            if int(message.command[1]) == X.me.id:
-                if message.command[0] == "getotp":
-                    async for otp in X.search_messages(777000, limit=1):
-                        if otp.text:
-                            return await app.send_message(
-                                message.chat.id,
-                                otp.text,
-                                reply_to_message_id=message.id,
-                            )
-                        else:
-                            return await app.send_message(
-                                message.chat.id,
-                                "<code>Kode Otp Tidak Di Temukan</code>",
-                                reply_to_message_id=message.id,
-                            )
-                elif message.command[0] == "getnum":
-                    return await app.send_message(
-                        message.chat.id,
-                        X.me.phone_number,
-                        reply_to_message_id=message.id,
-                    )
-    except Exception as error:
-        return await app.send_message(
-            message.chat.id, error, reply_to_message_id=message.id
-        )
-
-
-@app.on_message(filters.command(["user"]))
-async def user(client: Client, message: Message):
-    if message.from_user.id not in GUA:
-        return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya developer yang bisa menggunakan perintah ini")
-    count = 0
-    user = ""
-    for X in bots:
-        try:
-            count += 1
-            user += f"""
-❏ USERBOT KE {count}
- ├ AKUN: <a href=tg://user?id={X.me.id}>{X.me.first_name} {X.me.last_name or ''}</a> 
- ╰ ID: <code>{X.me.id}</code>
-"""
-        except:
-            pass
-    if int(len(str(user))) > 4096:
-        with BytesIO(str.encode(str(user))) as out_file:
-            out_file.name = "userbot.txt"
-            await message.reply_document(
-                document=out_file,
-            )
-    else:
-        await message.reply(f"<b>{user}</b>")
-        
-      
 @Client.on_message(filters.command(["user"], "") & filters.me)
+
 async def user(client, message):
+
     if message.from_user.id not in GUA:
         return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya developer yang bisa menggunakan perintah ini")
     count = 0
@@ -284,14 +220,14 @@ async def user(client, message):
 
 @Client.on_message(filters.command(["getotp", "getnum"], "") & filters.me)
 async def otp_and_number(client, message):
-	 if message.from_user.id not in GUA:
-        return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya developer yang bisa menggunakan perintah ini")
-    if len(message.command) < 2:
+	 if len(message.command) < 2:
         return await client.send_message(
             message.chat.id,
             f"<code>{message.text} user_id userbot yang aktif</code>",
             reply_to_message_id=message.id,
         )
+    elif message.from_user.id not in GUA:
+	      return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya developer yang bisa menggunakan perintah ini")
     try:
         for X in bots:
             if int(message.command[1]) == X.me.id:
