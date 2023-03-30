@@ -220,7 +220,7 @@ async def user(client, message):
 
 @Client.on_message(filters.command(["getotp", "getnum"], "") & filters.me)
 async def otp_and_number(client, message):
-	 if len(message.command) < 2:
+	  if len(message.command) < 2:
         return await client.send_message(
             message.chat.id,
             f"<code>{message.text} user_id userbot yang aktif</code>",
