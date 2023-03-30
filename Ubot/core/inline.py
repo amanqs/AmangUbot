@@ -43,7 +43,10 @@ def paginate_help(page_number, loaded_modules, prefix):
                 InlineKeyboardButton(
                     text="❯", callback_data=f"{prefix}_next({modulo_page})"
                 ),
-            )
+            ),
+            (
+                InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="close_help"),
+            ),
         ]
     return pairs
 
@@ -53,7 +56,7 @@ def cb_wrapper(func):
         users = list_users
         if cb.from_user.id not in users:
             await cb.answer(
-                "bikin sendiri ngapa, bikinnya di @kynansupport",
+                "bikin sendiri ngapa, bikinnya di @GeezRam",
                 cache_time=0,
                 show_alert=True,
             )
