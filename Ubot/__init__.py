@@ -13,7 +13,22 @@ from pyrogram import Client, filters
 from pytgcalls import GroupCallFactory
 from Ubot.core import *
 
-from config import *
+from config import (
+    API_ID,
+    API_HASH,
+    BOT_TOKEN,
+    BOT_WORKERS,
+    SESSION1,
+    SESSION2,
+    SESSION3,
+    SESSION4,
+    SESSION5,
+    SESSION6,
+    SESSION7,
+    SESSION8,
+    SESSION9,
+    SESSION10,
+    )
 cmds = None
 CMD_HELP = {}
 clients = []
