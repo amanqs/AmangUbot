@@ -1,3 +1,5 @@
+"""
+
 import sys
 from ast import parse
 from pyrogram import (
@@ -183,3 +185,4 @@ class User10(Client):
     async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped. Bye.")
+"""
