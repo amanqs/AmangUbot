@@ -6,7 +6,7 @@ from pyrogram import (
 )
 from .logging import LOGGER
 import sys
-from Ubot import API_ID, API_HASH, BOT_TOKEN, BOT_WORKERS
+import config
 
 
 class Bot(Client):
