@@ -4,7 +4,7 @@ from pyrogram import (
     __version__,
     enums
 )
-from .logging import LOGGER
+from Ubot.logging import LOGGER
 import sys
 from Ubot import API_ID, API_HASH, BOT_TOKEN, BOT_WORKERS
 
