@@ -5,7 +5,7 @@ from pyrogram import (
     __version__,
     enums
 )
-from .logging import LOGGER
+from Ubot.logging import LOGGER
 from Ubot import *
 
 
