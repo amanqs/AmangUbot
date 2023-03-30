@@ -4,8 +4,8 @@ from pyrogram import (
     __version__,
     enums
 )
-from Ubot.logging import LOGGER
-
+from .logging import LOGGER
+import sys
 from config import (
     API_HASH,
     API_ID,
