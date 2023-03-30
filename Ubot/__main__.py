@@ -42,18 +42,16 @@ async def main():
             await bot.start()
             ex = await bot.get_me()
             user_id = ex.id
+            await join(bot)
+            await asyncio.sleep(1)
             await buat_log(bot)
             botlog_chat_id = await get_botlog(user_id)
             LOGGER("Naya-Premium").info("Startup Completed")
             LOGGER("√").info(f"Started as {ex.first_name} | {ex.id} ")
-            await join(bot)
-            user = len(ids)
-#            await bot.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
+            await bot.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
             ids.append(ex.id)
         except Exception as e:
             LOGGER("X").info(f"{e}")
-    
-#  await app.send_message(SUPPORT, MSG_BOT.format(py(), pyro, user))
     await idle()
     await aiosession.close()
 
@@ -63,6 +61,6 @@ async def main():
               
 
 if __name__ == "__main__":
-    LOGGER("Ubot").info("Starting  Ubot")
+    LOGGER("Naya-Premium").info("Starting  Ubot")
     install()
     LOOP.run_until_complete(main())
