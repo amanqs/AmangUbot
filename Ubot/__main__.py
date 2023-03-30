@@ -6,7 +6,7 @@ from pyrogram import idle
 
 from uvloop import install
 from ubotlibs import *
-from Ubot import aiosession, bots, app, ids, LOOP
+from Ubot import aiosession, bots, app, LOOP
 from platform import python_version as py
 from Ubot.logging import LOGGER
 from pyrogram import __version__ as pyro
