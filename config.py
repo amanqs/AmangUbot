@@ -5,7 +5,7 @@ from distutils.util import strtobool
 TIME_LIMIT = int(getenv("TIME_LIMIT", "2592000"))
 TIME_SLEEP = int(getenv("TIME_SLEEP", "86400"))
 
-load_dotenv()
+load_dotenv(".env")
 
 
 API_ID = int(getenv("API_ID", "")) #optional
