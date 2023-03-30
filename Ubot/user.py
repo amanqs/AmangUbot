@@ -22,10 +22,7 @@ class User1(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION1:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
 class User2(Client):
     def __init__(self):
@@ -38,10 +35,7 @@ class User2(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION2:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
 class User3(Client):
     def __init__(self):
@@ -54,10 +48,7 @@ class User3(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION3:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
 class User4(Client):
     def __init__(self):
@@ -70,10 +61,7 @@ class User4(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION4:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
 class User5(Client):
     def __init__(self):
@@ -86,10 +74,7 @@ class User5(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION5:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
 class User6(Client):
     def __init__(self):
@@ -102,10 +87,7 @@ class User6(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION6:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
 class User7(Client):
     def __init__(self):
@@ -118,10 +100,7 @@ class User7(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION7:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
 class User8(Client):
     def __init__(self):
@@ -134,10 +113,7 @@ class User8(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION8:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
 class User9(Client):
     def __init__(self):
@@ -150,10 +126,7 @@ class User9(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION9:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
 class User10(Client):
     def __init__(self):
@@ -166,10 +139,7 @@ class User10(Client):
             plugins=dict(root="Ubot/modules"),
             in_memory=True,
         )
-        if SESSION10:
-            self.LOGGER = LOGGER
-        else:
-            None
+        self.LOGGER = LOGGER
 
     async def start(self):
         await super().start()
