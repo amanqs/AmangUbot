@@ -192,10 +192,7 @@ Dyno tersisa:
     
 
 @Client.on_message(filters.user(GUA) & filters.command(["user"], "") & filters.me)
-
 async def user(client, message):
-
-
     if message.from_user.id not in GUA:
         return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya developer yang bisa menggunakan perintah ini")
     count = 0
