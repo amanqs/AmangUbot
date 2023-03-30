@@ -34,6 +34,10 @@ TEMP_SETTINGS["PM_LAST_MSG"] = {}
 
 LOOP = asyncio.get_event_loop()
 
+API_ID = API_ID
+API_HASH = API_HASH
+BOT_TOKEN = BOT_TOKEN
+BOT_WORKERS = BOT_WORKERS
 
 app = Bot()
 
