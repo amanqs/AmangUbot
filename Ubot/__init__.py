@@ -16,6 +16,8 @@ from .bot import Bot
 from .user import *
 from .logging import LOGGER
 from config import *
+from Ubot.bot import bot
+from Ubot.user import *
 cmds = None
 CMD_HELP = {}
 clients = []
