@@ -6,7 +6,8 @@ from pyrogram import (
     enums
 )
 from .logging import LOGGER
-from . import *
+from Ubot import API_ID, API_HASH, BOT_TOKEN, BOT_WORKERS
+from config import SESSION1, SESSION2, SESSION3, SESSION4, SESSION5, SESSION6, SESSION7, SESSION8, SESSION9, SESSION10
 
 
 class User1(Client):
