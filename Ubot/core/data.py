@@ -1,5 +1,5 @@
 from pyrogram.types import InlineKeyboardButton, WebAppInfo
-from Ubot import CMD_HNDLR as cmds
+
 class Data:
 
     text_help_menu = (
