@@ -8,7 +8,7 @@ from pyrogram import (
     enums
 )
 from .logging import LOGGER
-import config
+from config import *
 
 
 class User1(Client):
