@@ -57,7 +57,6 @@ LOOP = asyncio.get_event_loop()
 
 
 app = Bot()
-
 bot1 = User1()
 bot2 = User2()
 bot3 = User3()
@@ -68,11 +67,29 @@ bot7 = User7()
 bot8 = User8()
 bot9 = User9()
 bot10 = User10()
+bot11 = User11()
+bot12 = User12()
+bot13 = User13()
+bot14 = User14()
+bot15 = User15()
+bot16 = User16()
+bot17 = User17()
+bot18 = User18()
+bot19 = User19()
+bot20 = User20()
+bot21 = User21()
+bot22 = User22()
+bot23 = User23()
+bot24 = User24()
+bot25 = User25()
+bot26 = User26()
+bot27 = User27()
+bot28 = User28()
+bot29 = User29()
+bot30 = User30()
 
 
-
-
-bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10] if bot]
+bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10, bot11, bot12, bot13, bot14, bot15, bot16, bot17, bot18, bot19, bot20, bot21, bot22, bot23, bot24, bot25, bot26, bot27, bot28, bot29, bot30] if bot]
 
 for bot in bots:
     if not hasattr(bot, "group_call"):
