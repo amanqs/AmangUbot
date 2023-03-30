@@ -25,8 +25,7 @@ class User1(Client):
         if SESSION1:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
 class User2(Client):
     def __init__(self):
@@ -42,8 +41,7 @@ class User2(Client):
         if SESSION2:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
 class User3(Client):
     def __init__(self):
@@ -59,8 +57,7 @@ class User3(Client):
         if SESSION3:
             self.LOGGER = LOGGER
         else:
-            LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
-            sys.exit()
+            None
 
 class User4(Client):
     def __init__(self):
