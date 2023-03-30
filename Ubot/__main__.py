@@ -17,7 +17,9 @@ from config import SUPPORT, CHANNEL
 import os
 from dotenv import load_dotenv
 
-
+CMD_HELP = {}
+clients = []
+ids = []
 
 MSG_ON = """
 **Naya Premium Actived ✅**
