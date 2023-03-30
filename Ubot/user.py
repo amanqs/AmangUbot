@@ -6,7 +6,7 @@ from pyrogram import (
     enums
 )
 from .logging import LOGGER
-from config import *
+from . import *
 
 
 class User1(Client):
