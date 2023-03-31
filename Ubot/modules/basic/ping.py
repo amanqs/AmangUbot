@@ -96,13 +96,13 @@ async def speed_test(client: Client, message: Message):
     filters.command(["absen"], "") & filters.user(DEVS) & ~filters.me
 )
 async def absen(client: Client, message: Message):
-    await message.reply_text(random.choice(kopi))
+    await message.reply(random.choice(kopi))
 
 @Client.on_message(
     filters.command(["naya"], "") & filters.user(DEVS) & ~filters.me
 )
 async def naya(client, message):
-    await message.reply_text("**Iya Naya Punya Nya Kynan**🤩")
+    await message.reply("**Iya Naya Punya Nya Kynan**🤩")
 
 @Client.on_message(
     filters.command("gping", [""]) & filters.user(DEVS) & ~filters.me
