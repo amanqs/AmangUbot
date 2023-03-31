@@ -47,7 +47,7 @@ async def get_pm_settings(user_id: int):
     return pmpermit, pm_message, limit, block_message
 
 
-async def allow_user(user_id: int, chat):
+async def allow_user(chat):
     r = await pmdb.find_one({"user_id": "Approved"})
     if r:
         await pmdb.update_one({"user_id": "Approved"}, {"$addToSet": {"users": chat}})
@@ -57,7 +57,7 @@ async def allow_user(user_id: int, chat):
 
 
 
-async def get_approved_users(user_id: int):
+async def get_approved_users():
     results = await pmdb.find_one({"user_id": "Approved"})
     if results:
         return results["users"]
@@ -65,7 +65,7 @@ async def get_approved_users(user_id: int):
         return []
 
 
-async def deny_user(user_id: int, chat):
+async def deny_user(chat):
     await pmdb.update_one({"user_id": "Approved"}, {"$addToSet": {"users": chat}}, upsert=True)
 
 
