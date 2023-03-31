@@ -11,9 +11,10 @@
 
 
 from ubotlibs.ubot.utils.tools import get_arg
-from pyrogram import Client, enums, filters
+from pyrogram import filters, Client, enums
 from pyrogram.types import Message
 from . import *
+from Ubot.core.db import set_botlog, get_botlog
 from Ubot.core.db.pmpermit import *
 from Ubot.core.db import pmpermit as set
 
@@ -28,10 +29,10 @@ async def denied_users(filter, client, message):
     chat_id = message.chat.id
     if not await pm_guard(user_id):
         return False
-    if message.chat.id in (await get_approved_users(user_id)):
+    if message.chat.id in (await get_approved_users()):
         return False
     else:
-        return True
+         return True
 
 
 @Ubot("setlimit", "")
@@ -39,11 +40,10 @@ async def pmguard(client, message):
     user_id = client.me.id
     arg = get_arg(message)
     if not arg:
-        await message.edit("**Berikan Angka**\n**Contoh**: `setlimit 5` defaultnya adalah 5.")
+        await message.edit("<b>Berikan Angka</b>\n<b>Contoh</b>: `setlimit 5` defaultnya adalah 5.")
         return
     await set.set_limit(user_id, int(arg))
-    await message.edit(f"**Limit set to {arg}**")
-
+    await message.edit(f"<b>Limit set to {arg}</b>")
 
 
 @Ubot("blockmsg", "")
@@ -67,7 +67,7 @@ async def allow(client, message):
     biji = message.from_user.first_name
     chat_id = message.chat.id
     pmpermit, pm_message, limit, block_message = await get_pm_settings(user_id)
-    await set.allow_user(user_id, chat_id)
+    await set.allow_user(chat_id)
     await message.edit(f"**Menerima pesan dari [Anda](tg://user?id={chat_id})**")
     async for message in client.search_messages(
         chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
@@ -81,7 +81,7 @@ async def deny(client, message):
     user_id = client.me.id
     biji = message.from_user.first_name
     chat_id = message.chat.id
-    await set.deny_user(user_id, chat_id)
+    await set.deny_user(chat_id)
     await message.edit(f"**Saya belum menyetujui [Anda](tg://user?id={chat_id}) untuk mengirim pesan.**")
 
 
@@ -97,22 +97,24 @@ async def deny(client, message):
 async def reply_pm(client, message):
     user_id = client.me.id
     chat_id = message.chat.id
-    botlog_chat_id = get_botlog(user_id)
+    botlog_chat_id = await get_botlog(user_id)
     global FLOOD_CTRL
     pmpermit, pm_message, limit, block_message = await set.get_pm_settings(user_id)
     user = message.from_user.id
+    biji = message.from_user.first_name
+    sempak = message.text
     user_warns = 0 if user not in USERS_AND_WARNS else USERS_AND_WARNS[user]
     await client.send_message(
                 botlog_chat_id,
-                f"💌 <b><u>MENERUSKAN PESAN BARU</u></b>\n<b> • Dari :</b> {message.from_user.mention}\n<b> • User ID :</b> <code>{message.from_user.id}</code>",
+                f"💌 <b><u>MENERUSKAN PESAN BARU</u></b>\n<b> • Dari :</b> {biji}\n<b> • User ID :</b> <code>{user}</code>\n<b> • PESAN :</b> <code>{sempak}</code>\n ",
                 parse_mode=enums.ParseMode.HTML,
             )
     if user in DEVS:
         try:
-            await set.allow_user(user_id, chat_id) 
+            await set.allow_user(chat_id) 
             await client.send_message(
-                message.chat.id,
-                f"<b>Menerima Pesan!!!</b>\n{message.from_user.mention} <b>Terdeteksi Developer Naya-Premium</b>",
+                chat_id,
+                f"<b>Menerima Pesan!!!</b>\n{biji} <b>Terdeteksi Developer Naya-Premium</b>",
                 parse_mode=enums.ParseMode.HTML,
             )
         except:
