@@ -8,8 +8,9 @@ from uvloop import install
 from ubotlibs import *
 from Ubot import aiosession, bots, app, ids, LOOP
 from platform import python_version as py
-from .logging import LOGGER
+from Ubot.logging import LOGGER
 from pyrogram import __version__ as pyro
+import sqlite3
 from Ubot.modules import ALL_MODULES
 from Ubot.core.db import *
 from config import SUPPORT, CHANNEL
@@ -20,9 +21,8 @@ from pyrogram.errors import RPCError
 BOT_VER ="8.1.0"
 
 
-
 MSG_ON = """
-**Naya-Premium Actived ✅**
+**Naya Premium Actived ✅**
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 ◉ **Versi** : `{}`
 ◉ **Phython** : `{}`
@@ -34,7 +34,7 @@ MSG_ON = """
 
 async def main():
     await app.start()
-    LOGGER("Naya-Premium").info("Memulai Ubot Pyro..")
+    LOGGER("Naya Premium").info("Memulai Ubot Pyro..")
     for all_module in ALL_MODULES:
         importlib.import_module("Ubot.modules" + all_module)
     for bot in bots:
@@ -47,14 +47,20 @@ async def main():
             LOGGER("Info").info("Startup Completed")
             LOGGER("√").info(f"Started as {ex.first_name} | {ex.id} ")
             await join(bot)
+            user = len(ids)
             await bot.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
             ids.append(ex.id)
         except Exception as e:
             LOGGER("X").info(f"{e}")
+
     await idle()
     await aiosession.close()
     await app.stop()
+
     
+
+
+              
 
 if __name__ == "__main__":
     LOGGER("Naya Premium").info("Starting  Ubot")
