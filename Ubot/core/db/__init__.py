@@ -123,129 +123,6 @@ async def get_log_groups(user_id: int):
     return botlog_chat_id
 
 
-async def grant_access(user_id: int) -> bool:
-    access = {"user_id": user_id}
-    try:
-        result = await accesdb.users.update_one(
-            {'user_id': user_id},
-            {'$set': {'user_id': user_id}},
-            upsert=True
-        )
-        if result.upserted_id or result.modified_count:
-            return True
-        else:
-            return False
-    except pymongo.errors.PyMongoError:
-        return False
-        
-
-async def get_users_access() -> List[str]:
-    try:
-        cursor = accesdb.users.find({}, {'access_list': 1})
-        users_access = set()
-        async for document in cursor:
-            if 'access_list' in document:
-                users_access.update(document['access_list'])
-        return list(users_access)
-    except pymongo.errors.PyMongoError:
-        return []
-
-
-async def revoke_access(user_id: int) -> bool:
-    try:
-        user = await accesdb.users.find_one({'user_id': user_id})
-        if user is not None and user.get('banned'):
-            return False
-        result = await accesdb.users.update_one(
-            {'user_id': user_id},
-            {'$set': {'banned': True}},
-            upsert=True
-        )
-        if result.upserted_id:
-            return False
-        elif result.matched_count > 0 or result.modified_count > 0:
-            return True
-        else:
-            return False
-    except pymongo.errors.PyMongoError:
-        return False
-
-
-async def check_user_access(user_id: int) -> bool:
-    access = {"user_id": user_id}
-    result = await accesdb.users.find_one(access)
-    if result:
-        return True
-    else:
-        return False
-        
-async def delete_user_access(user_id: int) -> bool:
-    try:
-        result = await accesdb.users.delete_one({'user_id': user_id})
-        if result.deleted_count > 0:
-            return True
-        else:
-            return False
-    except pymongo.errors.PyMongoError:
-        return False
-
-def check_access(func):
-    async def wrapper(client, message):
-        user_id = message.from_user.id
-        user_access = await check_user_access(user_id)
-        if user_id not in ADMINS and not user_access:
-            await message.reply_text("Maaf, Anda tidak memiliki akses untuk menggunakan bot ini.\n Silakan ke @kynansupport untuk mendapatkan akses dari Admin disana.")
-            return
-        await func(client, message)
-    return wrapper
-
-async def get_expired_date(user_id):
-    user = await accesdb.users.find_one({"_id": user_id})
-    if user:
-        expire_date = user.get("expire_date")
-        if expire_date:
-            remaining_days = (expire_date - datetime.now()).days
-            remaining_days = (datetime.now() + timedelta(days=remaining_days)).strftime('%d-%m-%Y')
-            return remaining_days
-        else:
-            return None
-    else:
-        return None
-
-
-async def rem_expired_date(user_id):
-    await accesdb.users.update_one(
-        {"_id": user_id}, {"$unset": {"expire_date": ""}}, upsert=True
-    )
-
-async def remove_expired():
-    async for user in accesdb.users.find({"expire_date": {"$lt": datetime.now()}}):
-        await delete_user_access(user["_id"])
-        await rem_expired_date(user["_id"])
-
-
-async def set_expired_date(user_id, duration):
-    days_in_month = 30
-    if duration <= 12:
-        days_in_month = 30 * duration
-    expire_date = datetime.now() + timedelta(days=days_in_month)
-    accesdb.users.update_one({"_id": user_id}, {"$set": {"expire_date": expire_date}}, upsert=True)
-    schedule.every().day.at("00:00").do(remove_expired)
-    asyncio.create_task(schedule_loop())
-
-
-
-async def schedule_loop():
-    while True:
-        await asyncio.sleep(1)
-        schedule.run_pending()
-
-async def check_and_grant_user_access(user_id: int, duration: int) -> None:
-    if await check_user_access(user_id):
-        await delete_user_access(user_id)
-    if await grant_access(user_id) and await set_expired_date(user_id, duration):
-        return
-
 
 async def _get_lovers(chat_id: int):
     lovers = await coupledb.find_one({"chat_id": chat_id})
@@ -273,89 +150,6 @@ async def save_couple(chat_id: int, date: str, couple: dict):
         upsert=True,
     )
 
-
-async def get_karmas_count() -> dict:
-    chats_count = 0
-    karmas_count = 0
-    async for chat in karmadb.find({"chat_id": {"$lt": 0}}):
-        for i in chat["karma"]:
-            karma_ = chat["karma"][i]["karma"]
-            if karma_ > 0:
-                karmas_count += karma_
-        chats_count += 1
-    return {"chats_count": chats_count, "karmas_count": karmas_count}
-
-
-async def user_global_karma(user_id) -> int:
-    total_karma = 0
-    async for chat in karmadb.find({"chat_id": {"$lt": 0}}):
-        karma = await get_karma(chat["chat_id"], await int_to_alpha(user_id))
-        if karma and (int(karma["karma"]) > 0):
-            total_karma += int(karma["karma"])
-    return total_karma
-
-
-async def get_karmas(chat_id: int) -> Dict[str, int]:
-    karma = await karmadb.find_one({"chat_id": chat_id})
-    if not karma:
-        return {}
-    return karma["karma"]
-
-
-async def get_karma(chat_id: int, name: str) -> Union[bool, dict]:
-    name = name.lower().strip()
-    karmas = await get_karmas(chat_id)
-    if name in karmas:
-        return karmas[name]
-
-
-async def update_karma(chat_id: int, name: str, karma: dict):
-    name = name.lower().strip()
-    karmas = await get_karmas(chat_id)
-    karmas[name] = karma
-    await karmadb.update_one(
-        {"chat_id": chat_id}, {"$set": {"karma": karmas}}, upsert=True
-    )
-
-
-async def is_karma_on(chat_id: int) -> bool:
-    chat = await karmadb.find_one({"chat_id_toggle": chat_id})
-    if not chat:
-        return True
-    return False
-
-
-async def karma_on(chat_id: int):
-    is_karma = await is_karma_on(chat_id)
-    if is_karma:
-        return
-    return await karmadb.delete_one({"chat_id_toggle": chat_id})
-
-
-async def karma_off(chat_id: int):
-    is_karma = await is_karma_on(chat_id)
-    if not is_karma:
-        return
-    return await karmadb.insert_one({"chat_id_toggle": chat_id})
-
-
-async def int_to_alpha(user_id: int) -> str:
-    alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
-    text = ""
-    user_id = str(user_id)
-    for i in user_id:
-        text += alphabet[int(i)]
-    return text
-
-
-async def alpha_to_int(user_id_alphabet: str) -> int:
-    alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
-    user_id = ""
-    for i in user_id_alphabet:
-        index = alphabet.index(i)
-        user_id += str(index)
-    user_id = int(user_id)
-    return user_id
 
 async def get_notes_count() -> dict:
     chats_count = 0
@@ -485,28 +279,6 @@ async def delete_filter(user_id: int, chat_id: int, name: str) -> bool:
         return True
     return False
 
-
-async def send_tagalert_notification(client, user_id: int, status: bool):
-    message = "Tag alert has been activated." if status else "Tag alert has been deactivated."
-    await client.send_message(user_id, message)
-
-async def update_tagalert_status(client, user_id: int, status: bool):
-    user_data = await tagdb.find_one({"user_id": user_id})
-    if user_data:
-        tagdb.update_one({"user_id": user_id}, {"$set": {"tagalert_enabled": status}})
-    else:
-        tagdb.insert_one({"user_id": user_id, "tagalert_enabled": status})
-    await send_tagalert_notification(client, user_id, status)
-
-
-async def get_tagalert_status(user_id: int):
-    user_data = await tagdb.find_one({"user_id": user_id})
-    if user_data:
-        return user_data.get("tagalert_enabled")
-    else:
-        return True
-        
-
         
 async def blacklisted_chats(user_id: int) -> list:
     chats_list = []
@@ -526,35 +298,6 @@ async def whitelist_chat(user_id: int, chat_id: int) -> bool:
         await blchatdb.users.delete_one({"user_id": user_id, "chat_id": chat_id})
         return True
     return False
-    
-    
-async def get_gbanned(user_id: int) -> list:
-    results = []
-    async for user in gbansdb.users.find({"user_id": user_id, "user_id": {"$gt": 0}}):
-        user_id = user["user_id"]
-        results.append(user_id)
-    return results
-
-
-async def is_gbanned_user(user_id: int) -> bool:
-    user = await gbansdb.users.find_one({"user_id": user_id})
-    if not user:
-        return False
-    return True
-
-
-async def add_gban_user(user_id: int):
-    is_gbanned = await is_gbanned_user(user_id)
-    if is_gbanned:
-        return
-    return await gbansdb.users.insert_one({"user_id": user_id})
-
-
-async def remove_gban_user(user_id: int):
-    is_gbanned = await is_gbanned_user(user_id)
-    if not is_gbanned:
-        return
-    return await gbansdb.users.delete_one({"user_id": user_id})
 
 
 async def go_afk(user_id: int, time, reason=""):
@@ -573,25 +316,3 @@ async def check_afk(user_id: int):
     user_data = await afkdb.users.find_one({"user_id": user_id, "afk": True})
     return user_data
 
-"""
-async def go_afk(user_id: int, time, reason=""):
-    midhun = await afkdb.users.find_one({"user_id": user_id, "user_id": "AFK"})
-    if midhun:
-        await afkdb.users.update_one({"user_id": user_id, "user_id": "AFK"}, {"$set": {"time": time, "reason": reason}})
-    else:
-        await afkdb.users.insert_one({"user_id": user_id, "user_id": "AFK", "time": time, "reason": reason})
-
-
-async def no_afk(user_id: int):
-    midhun = await afkdb.users.find_one({"user_id": user_id, "user_id": "AFK"})
-    if midhun:
-        await afkdb.users.delete_one({"user_id": user_id, "user_id": "AFK"})
-
-
-async def check_afk(user_id: int):
-    midhun = await afkdb.users.find_one({"user_id": user_id, "user_id": "AFK"})
-    if midhun:
-        return midhun
-    else:
-        return None
-"""
