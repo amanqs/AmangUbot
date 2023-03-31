@@ -57,11 +57,11 @@ async def setpmmsg(client, message):
 add_command_help(
     "antipm",
     [
-        [f"antipm [on or off]", " -> mengaktifkan dan menonaktifkan anti-pm."],
-        [f"setmsg [message or default]", " -> Sets a custom anti-pm message."],
-        [f"blockmsg [message or default]", "-> Sets custom block message."],
-        [f"setlimit [value]", " -> This one sets a max. message limit for unwanted PMs and when they go beyond it, bamm!."],
-        [f"ok", " -> Allows a user to PM you."],
-        [f"no", " -> Denies a user to PM you."],
+        [f"antipm [on or off]", "Hidupkan dan matikan anti-pm."],
+        [f"setmsg [text or default]", " -> Sets a custom anti-pm message."],
+        [f"blockmsg [message or default]", "Setel pesan blokir."],
+        [f"setlimit [angka]", "Peringatan pesan!."],
+        [f"ok", "Setujui."],
+        [f"no", "Tolak."],
     ],
 )
