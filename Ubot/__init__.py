@@ -175,7 +175,7 @@ if SESSION19:
 
 if SESSION20:
    print("client20: Found.. Starting.. 📳")
-   client110 = Client(name="client20", api_id=API_ID, api_hash=API_HASH, session_string=SESSION20, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules")) 
+   client20 = Client(name="client20", api_id=API_ID, api_hash=API_HASH, session_string=SESSION20, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules")) 
    client1s.append(client20)
    
 if SESSION21:
