@@ -168,7 +168,7 @@ if SESSION18 is not None:
    client18 = Client(name="client18", api_id=API_ID, api_hash=API_HASH, session_string=SESSION18, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client18)
 
-if SESSION19:
+if SESSION19 is not None:
    print("client19: Found.. Starting.. 📳")
    client19 = Client(name="client19", api_id=API_ID, api_hash=API_HASH, session_string=SESSION19, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client19)
