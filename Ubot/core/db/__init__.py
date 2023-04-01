@@ -74,8 +74,8 @@ MSG_ON = """
         
         
         
-async def buat_log(bot):
-    user = await bot.get_me()
+async def buat_log(cli):
+    user = await cli.get_me()
     user_id = user.id
     user_data = await usersdb.users.find_one({"user_id": user_id})
     botlog_chat_id = None
@@ -86,10 +86,10 @@ async def buat_log(bot):
     if not user_data or not botlog_chat_id:
         group_name = 'Naya Premium Log'
         group_description = 'Jangan Hapus Atau Keluar Dari Grup Ini\n\nCreated By @NayaProjectBot.\nJika menemukan kendala atau ingin menanyakan sesuatu\nHubungi : @kenapanan, @rizzvbss atau bisa ke @KynanSupport.'
-        group = await bot.create_supergroup(group_name, group_description)
+        group = await cli.create_supergroup(group_name, group_description)
         botlog_chat_id = group.id
         message_text = 'Grup Log Berhasil Dibuat,\nKetik `id` untuk mendapatkan id log grup\nKemudian ketik `setlog` ID_GROUP\n\nContoh : setlog -100749492984\n\n**Notes** : Ini adalah userbot tanpa prefix jadi tidak perlu memakai triger `.`'
-        await bot.send_message(botlog_chat_id, message_text)
+        await cli.send_message(botlog_chat_id, message_text)
         await asyncio.sleep(1)
         
         await usersdb.users.update_one(
