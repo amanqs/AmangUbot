@@ -32,7 +32,7 @@ MSG_ON = """
 """
 
 
-async def start_bot():
+async def main():
     await app.start()
     LOGGER("Naya Premium").info("Memulai Ubot Pyro..")
     for all_module in ALL_MODULES:
@@ -52,18 +52,13 @@ async def start_bot():
         except Exception as e:
             LOGGER("X").info(f"{e}")
     await idle()
-    install()
     await aiosession.close()
     await app.stop()
     
 
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(start_bot())
-
-"""
 if __name__ == "__main__":
     LOGGER("Naya Premium").info("Starting  Ubot")
-    
+    install()
     LOOP.run_until_complete(main())
-"""
+
