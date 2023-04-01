@@ -80,7 +80,7 @@ app = Bot()
 
 if SESSION1:
    print("Client1: Found.. Starting..📳")
-   client1 = Client(name="client1", api_id=API_ID, api_hash=API_HASH, session_string=SESSION1, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules")
+   client1 = Client(name="client1", api_id=API_ID, api_hash=API_HASH, session_string=SESSION1, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client1)
 
 if SESSION2:
