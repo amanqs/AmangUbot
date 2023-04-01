@@ -87,7 +87,7 @@ client1 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client1)
+    clients.append(client1),
     if SESSION1
     else None
 )
@@ -101,7 +101,7 @@ client2 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client2)
+    clients.append(client2),
     if SESSION2
     else None
 )
@@ -115,7 +115,7 @@ client3 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client3)
+    clients.append(client3),
     if SESSION3
     else None
 )
@@ -129,7 +129,7 @@ client4 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client4)
+    clients.append(client4),
     if SESSION4
     else None
 )
@@ -143,7 +143,7 @@ client5 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client5)
+    clients.append(client5),
     if SESSION5
     else None
 )
@@ -156,7 +156,7 @@ client6 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client6)
+    clients.append(client6),
     if SESSION6
     else None
 )
@@ -170,7 +170,7 @@ client7 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client7)
+    clients.append(client7),
     if SESSION7
     else None
 )
@@ -184,7 +184,7 @@ client8 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client8)
+    clients.append(client8),
     if SESSION8
     else None
 )
@@ -198,7 +198,7 @@ client9 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client9)
+    clients.append(client9),
     if SESSION9
     else None
 )
@@ -212,7 +212,7 @@ client10 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client10)
+    clients.append(client10),
     if SESSION10
     else None
 )
@@ -226,7 +226,7 @@ client11 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client11)
+    clients.append(client11),
     if SESSION11
     else None
 )
@@ -240,7 +240,7 @@ client12 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client12)
+    clients.append(client12),
     if SESSION12
     else None
 )
@@ -254,7 +254,7 @@ client13 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client13)
+    clients.append(client13),
     if SESSION13
     else None
 )
@@ -268,7 +268,7 @@ client14 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client14)
+    clients.append(client14),
     if SESSION14
     else None
 )
@@ -282,7 +282,7 @@ client15 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client15)
+    clients.append(client15),
     if SESSION15
     else None
 )
@@ -296,7 +296,7 @@ client16 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client16)
+    clients.append(client16),
     if SESSION16
     else None
 )
@@ -310,7 +310,7 @@ client17 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client17)
+    clients.append(client17),
     if SESSION17
     else None
 )
@@ -324,7 +324,7 @@ client18 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client18)
+    clients.append(client18),
     if SESSION18
     else None
 )
@@ -338,7 +338,7 @@ client19 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client19)
+    clients.append(client19),
     if SESSION19
     else None
 )
@@ -352,7 +352,7 @@ client20 = (
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
-    clients.append(client20)
+    clients.append(client20),
     if SESSION20
     else None
 )
