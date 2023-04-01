@@ -78,93 +78,92 @@ class Bot(Client):
 app = Bot()
 
 
-if SESSION1:
+if SESSION1 is not None:
    print("Client1: Found.. Starting..📳")
    client1 = Client(name="client1", api_id=API_ID, api_hash=API_HASH, session_string=SESSION1, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client1)
 
-if SESSION2:
+if SESSION2 is not None:
    print("Client2: Found.. Starting.. 📳")
-   client2 = Client(name="client2", api_id=API_ID, api_hash=API_HASH, session_string=SESSION2, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules") if SESSION2
-    else None)
+   client2 = Client(name="client2", api_id=API_ID, api_hash=API_HASH, session_string=SESSION2, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client2)
 
-if SESSION3:
+if SESSION3 is not None:
    print("Client3: Found.. Starting.. 📳")
    client3 = Client(name="client3", api_id=API_ID, api_hash=API_HASH, session_string=SESSION3, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client3)
 
-if SESSION4:
+if SESSION4 is not None:
    print("Client4: Found.. Starting.. 📳")
    client4 = Client(name="client4", api_id=API_ID, api_hash=API_HASH, session_string=SESSION4, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client4)
 
-if SESSION5:
+if SESSION5 is not None:
    print("Client5: Found.. Starting.. 📳")
    client5 = Client(name="client5", api_id=API_ID, api_hash=API_HASH, session_string=SESSION5, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client5)
 
-if SESSION6:
+if SESSION6 is not None:
    print("Client6: Found.. Starting.. 📳")
    client6 = Client(name="client6", api_id=API_ID, api_hash=API_HASH, session_string=SESSION6, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client6)
 
-if SESSION7:
+if SESSION7 is not None:
    print("Client7: Found.. Starting.. 📳")
    client7 = Client(name="client7", api_id=API_ID, api_hash=API_HASH, session_string=SESSION7, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client7)
 
-if SESSION8:
+if SESSION8 is not None:
    print("Client8: Found.. Starting.. 📳")
    client8 = Client(name="client8", api_id=API_ID, api_hash=API_HASH, session_string=SESSION8, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client8)
 
-if SESSION9:
+if SESSION9 is not None:
    print("Client9: Found.. Starting.. 📳")
    client9 = Client(name="client9", api_id=API_ID, api_hash=API_HASH, session_string=SESSION9, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client9)
 
-if SESSION10:
+if SESSION10 is not None:
    print("Client10: Found.. Starting.. 📳")
    client10 = Client(name="client10", api_id=API_ID, api_hash=API_HASH, session_string=SESSION10, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules")) 
    clients.append(client10)
    
-if SESSION11:
+if SESSION11 is not None:
    print("client11: Found.. Starting..📳")
    client11 = Client(name="client11", api_id=API_ID, api_hash=API_HASH, session_string=SESSION11, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client11)
 
-if SESSION12:
+if SESSION12 is not None:
    print("client12: Found.. Starting.. 📳")
    client12 = Client(name="client12", api_id=API_ID, api_hash=API_HASH, session_string=SESSION12, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client12)
 
-if SESSION13:
+if SESSION13 is not None:
    print("client13: Found.. Starting.. 📳")
    client13 = Client(name="client13", api_id=API_ID, api_hash=API_HASH, session_string=SESSION13, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client13)
 
-if SESSION14:
+if SESSION14 is not None:
    print("client14: Found.. Starting.. 📳")
    client14 = Client(name="client14", api_id=API_ID, api_hash=API_HASH, session_string=SESSION14, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client14)
 
-if SESSION15:
+if SESSION15 is not None:
    print("client15: Found.. Starting.. 📳")
    client15 = Client(name="client15", api_id=API_ID, api_hash=API_HASH, session_string=SESSION15, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client15)
 
-if SESSION16:
+if SESSION16 is not None:
    print("client16: Found.. Starting.. 📳")
    client16 = Client(name="client16", api_id=API_ID, api_hash=API_HASH, session_string=SESSION16, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client16)
 
-if SESSION17:
+if SESSION17 is not None:
    print("client17: Found.. Starting.. 📳")
    client17 = Client(name="client17", api_id=API_ID, api_hash=API_HASH, session_string=SESSION17, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client17)
 
-if SESSION18:
+if SESSION18 is not None:
    print("client18: Found.. Starting.. 📳")
    client18 = Client(name="client18", api_id=API_ID, api_hash=API_HASH, session_string=SESSION18, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client18)
@@ -174,57 +173,57 @@ if SESSION19:
    client19 = Client(name="client19", api_id=API_ID, api_hash=API_HASH, session_string=SESSION19, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client19)
 
-if SESSION20:
+if SESSION20 is not None:
    print("client110: Found.. Starting.. 📳")
    client20 = Client(name="client20", api_id=API_ID, api_hash=API_HASH, session_string=SESSION20, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules")) 
    clients.append(client20)
    
-if SESSION21:
+if SESSION21 is not None:
    print("client11: Found.. Starting..📳")
    client21 = Client(name="client21", api_id=API_ID, api_hash=API_HASH, session_string=SESSION21, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client21)
 
-if SESSION22:
+if SESSION22 is not None:
    print("client12: Found.. Starting.. 📳")
    client22 = Client(name="client22", api_id=API_ID, api_hash=API_HASH, session_string=SESSION22, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client22)
 
-if SESSION23:
+if SESSION23 is not None:
    print("client13: Found.. Starting.. 📳")
    client23 = Client(name="client23", api_id=API_ID, api_hash=API_HASH, session_string=SESSION23, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client23)
 
-if SESSION24:
+if SESSION24 is not None:
    print("client14: Found.. Starting.. 📳")
    client24 = Client(name="client24", api_id=API_ID, api_hash=API_HASH, session_string=SESSION24, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client24)
 
-if SESSION25:
+if SESSION25 is not None:
    print("client15: Found.. Starting.. 📳")
    client25 = Client(name="client25", api_id=API_ID, api_hash=API_HASH, session_string=SESSION25, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client25)
 
-if SESSION26:
+if SESSION26 is not None:
    print("client16: Found.. Starting.. 📳")
    client26 = Client(name="client26", api_id=API_ID, api_hash=API_HASH, session_string=SESSION26, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client26)
 
-if SESSION27:
+if SESSION27 is not None:
    print("client17: Found.. Starting.. 📳")
    client27 = Client(name="client27", api_id=API_ID, api_hash=API_HASH, session_string=SESSION27, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client27)
 
-if SESSION28:
+if SESSION28 is not None:
    print("client18: Found.. Starting.. 📳")
    client28 = Client(name="client28", api_id=API_ID, api_hash=API_HASH, session_string=SESSION28, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client28)
 
-if SESSION20:
+if SESSION20 is not None:
    print("client19: Found.. Starting.. 📳")
    client29 = Client(name="client29", api_id=API_ID, api_hash=API_HASH, session_string=SESSION29, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules"))
    clients.append(client29)
 
-if SESSION30:
+if SESSION30 is not None:
    print("client110: Found.. Starting.. 📳")
    client30 = Client(name="client30", api_id=API_ID, api_hash=API_HASH, session_string=SESSION30, bot_token=BOT_TOKEN, plugins=dict(root="Ubot/modules")) 
    clients.append(client30)
