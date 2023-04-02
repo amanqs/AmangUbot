@@ -6,7 +6,7 @@ from pyrogram import idle
 from pyrogram.errors import RPCError
 from uvloop import install
 from ubotlibs import *
-from Ubot import aiosession, clients, app, ids, LOOP
+from Ubot import aiosession, clients, app, ids, event_loop
 from platform import python_version as py
 from Ubot.logging import LOGGER
 from pyrogram import __version__ as pyro
@@ -60,5 +60,5 @@ async def main():
 if __name__ == "__main__":
     LOGGER("Naya Premium").info("Starting  Ubot")
     install()
-    LOOP.run_until_complete(main())
+    event_loop.run_until_complete(main())
 
