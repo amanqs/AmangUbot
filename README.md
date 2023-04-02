@@ -25,6 +25,8 @@
 
 - [Team Tiger](https://github.com/TeamTiger)
 
+- [Tomi Setiawan](https://github.com/XtomiX)
+
 ## Credit 💖
 
 - Zaid Userbot
@@ -40,5 +42,7 @@
 - Ayra X Userbot
 
 - Team Tiger X
+
+- Tomi Setiawan
 
 - Xtsea
