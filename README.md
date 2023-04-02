@@ -23,6 +23,8 @@
 
 - [OnlyMeriz](https://github.com/Onlymeriz)
 
+- [Team Tiger](https://github.com/TeamTiger)
+
 ## Credit 💖
 
 - Zaid Userbot
@@ -36,3 +38,7 @@
 - TOD Ubot
 
 - Ayra X Userbot
+
+- Team Tiger X
+
+- Xtsea
