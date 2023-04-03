@@ -8,9 +8,8 @@ from uvloop import install
 from ubotlibs import *
 from Ubot import aiosession, clients, app, ids, event_loop
 from platform import python_version as py
-from Ubot.logging import LOGGER
+from .logging import LOGGER
 from pyrogram import __version__ as pyro
-import sqlite3
 from Ubot.modules import ALL_MODULES
 from Ubot.core.db import *
 from config import SUPPORT, CHANNEL
