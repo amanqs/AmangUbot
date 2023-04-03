@@ -46,7 +46,7 @@ async def main():
             botlog_chat_id = await get_botlog(user_id)
             try:
                 await cli.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
-                except BaseException as a:
+            except BaseException as a:
                 LOGGER("✓").warning(f"{a}")
             LOGGER("✓").info("Startup Completed")
             LOGGER("✓").info(f"Started as {ex.first_name} | {ex.id} ")
