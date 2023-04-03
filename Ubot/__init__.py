@@ -29,10 +29,6 @@ if BOTLOG_CHATID:
 else:
    BOTLOG_CHATID = "me"
 
-API_HASH = API_HASH
-API_ID = API_ID
-BOT_WORKERS = BOT_WORKERS
-
 
 
 trl = Translator()
@@ -56,7 +52,6 @@ class Bot(Client):
             api_id=API_ID,
             bot_token=BOT_TOKEN,
             plugins=dict(root="Ubot/modules/bot"),
-            workers=BOT_WORKERS,
         )
         self.LOGGER = LOGGER
 
