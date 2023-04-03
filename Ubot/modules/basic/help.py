@@ -48,7 +48,7 @@ async def module_help(client: Client, message: Message):
                 reply_to_message_id=ReplyCheck(message),
             )
             await xx.reply(
-                f"**Usage:** `{cmds}help broadcast` **To View Module Information**"
+                f"**Usage:** `help broadcast` **To View Module Information**"
             )
             return
 
