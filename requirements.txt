@@ -31,7 +31,7 @@ psutil
 dnspython
 psycopg2-binary
 ptable
-pyrogram==2.0.53
+pyrogram
 pymongo
 pyromod==1.1.0
 pytube
