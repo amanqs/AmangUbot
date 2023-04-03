@@ -100,7 +100,7 @@ async def alive_function(message, answers):
         f"    <b> ping_dc :</b> <code>{ping} ms</code>\n"
         f"    <b> users_count :</b> <code>{users} users</code>\n"
         f"    <b> groups_count :</b> <code>{group} group</code>\n"
-        f"    <u>expired</u> : <code><i>{remaining_days}</i></code>\n"
+        f"    <b> expired :</b> <i>{remaining_days}</i>\n"
         f"    <b> uptime :</b> <code>{uptime}</code>\n")
     answers.append(
         InlineQueryResultArticle(
