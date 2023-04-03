@@ -1,13 +1,4 @@
-# if you can read this, this meant you use code from Ubot | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Ubot and Ram doesn't care about credit
-# at least we are know as well
-# who Ubot and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Ubot | Ram Team
+
 import asyncio
 
 from prettytable import PrettyTable
@@ -16,7 +7,7 @@ from pyrogram.types import Message
 from ubotlibs.ubot import Ubot, Devs
 from ubotlibs.ubot.helper.PyroHelpers import ReplyCheck
 from ubotlibs.ubot.helper.utility import split_list
-from Ubot import app, CMD_HELP, SUDO_USER, cmds
+from Ubot import app, CMD_HELP
 
 async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     xyz = (
@@ -67,7 +58,7 @@ async def module_help(client: Client, message: Message):
             this_command = f"**Bantuan {str(help_arg).upper()}**\n\n"
             for x in commands:
                 this_command += f"๏ **Keterangan:** `{str(commands[x])}`\n\n"
-            this_command += ""
+            this_command += "@KynanSupport"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
