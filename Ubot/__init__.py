@@ -30,7 +30,6 @@ if BOTLOG_CHATID:
 else:
    BOTLOG_CHATID = "me"
 
-BOT_WORKERS = BOT_WORKERS
 API_HASH = API_HASH
 API_ID = API_ID
 BOT_WORKERS = BOT_WORKERS
@@ -73,7 +72,7 @@ class Bot(Client):
 
     async def stop(self, *args):
         await super().stop()
-        self.LOGGER(__name__).info("SessionMakerBot stopped. Bye.")
+        self.LOGGER(__name__).info("Naya-Pyro stopped. Bye.")
 
 app = Bot()
 
