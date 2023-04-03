@@ -126,9 +126,9 @@ async def member_ban(client: Client, message: Message):
         )
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
-    msg = f"**Banned User:** {mention}\n**Banned By:** {message.from_user.mention}\n"
+    msg = f"<b>Banned User:</b> {mention}\n<b>Banned By:</b> {message.from_user.mention}\n"
     if reason:
-        msg += f"**Reason:** {reason}"
+        msg += f"<b>Reason:</b> {reason}"
     try:
         await message.chat.ban_member(user_id)
         await message.edit(msg)
