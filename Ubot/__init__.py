@@ -19,8 +19,7 @@ CMD_HELP = {}
 clients = []
 ids = []
 
-SUDOERS = filters.user()
-SUDO_USER = SUDOERS
+
 
 AI = OPENAI_API
 PM_LOGGER = PM_LOGGER
@@ -35,16 +34,14 @@ API_ID = API_ID
 BOT_WORKERS = BOT_WORKERS
 
 
-SUDO_USER = SUDOERS
+
 trl = Translator()
 aiosession = ClientSession()
 CMD_HELP = {}
 scheduler = AsyncIOScheduler()
 StartTime = time.time()
 START_TIME = datetime.now()
-TEMP_SETTINGS: Dict[Any, Any] = {}
-TEMP_SETTINGS["PM_COUNT"] = {}
-TEMP_SETTINGS["PM_LAST_MSG"] = {}
+
 
 LOOP = asyncio.get_event_loop_policy()
 event_loop = LOOP.get_event_loop()
