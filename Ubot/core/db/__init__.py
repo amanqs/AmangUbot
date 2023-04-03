@@ -11,45 +11,18 @@ from Ubot.modules.basic import ADMINS
 from dateutil.relativedelta import relativedelta
 from ubotlibs.ubot.database import cli
 import asyncio
-import codecs
-import pickle
-import math
-import os
-import dotenv
-import heroku3
 import requests
-import urllib3
-import schedule
 import asyncio
 from Ubot import *
 
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
 from config import *
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-
-XCB = [
-    "/",
-    "@",
-    ".",
-    "com",
-    ":",
-    "git",
-    "heroku",
-    "push",
-    str(HEROKU_API_KEY),
-    "https",
-    str(HEROKU_APP_NAME),
-    "HEAD",
-    "main",
-]
 
 mongo = MongoCli(MONGO_URL)
 db = mongo.ubot
 
 coupledb = db.couple
-karmadb = db.karma
 notesdb = db.notes
 filtersdb = db.filters
 accesdb = db.acces
@@ -57,22 +30,9 @@ usersdb = db.users
 logdb = db.gruplog
 blchatdb = db.blchat
 pmdb = db.pmpermit
-gbansdb = db.gban
 afkdb = db.afk
-
-BOT_VER ="8.1.0"
-
-MSG_ON = """
-**New Ubot Actived ✅**
-╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
-◉ **Versi** : `{}`
-◉ **Phython** : `{}`
-◉ **Pyrogram** : `{}`
-**Ketik** `alive` **untuk Mengecheck Bot**
-╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
-"""
         
-        
+
         
 async def buat_log(cli):
     user = await cli.get_me()
