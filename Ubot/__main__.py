@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 import asyncio
 from pyrogram import idle
-from pyrogram.errors import RPCError
+
 from uvloop import install
 from ubotlibs import *
 from Ubot import aiosession, clients, app, ids, event_loop
@@ -40,16 +40,20 @@ async def main():
         try:
             await cli.start()
             ex = await cli.get_me()
+            await join(cli)
             user_id = ex.id
             await buat_log(cli)
             botlog_chat_id = await get_botlog(user_id)
-            LOGGER("Info").info("Startup Completed")
-            LOGGER("√").info(f"Started as {ex.first_name}")
+            try:
+                await cli.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
+                except BaseException as a:
+                LOGGER("✓").warning(f"{a}")
+            LOGGER("✓").info("Startup Completed")
+            LOGGER("✓").info(f"Started as {ex.first_name} | {ex.id} ")
             ids.append(ex.id)
-            await join(cli)
-            await cli.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
         except Exception as e:
             LOGGER("X").info(f"{e}")
+            
     await idle()
     await aiosession.close()
     await app.stop()
