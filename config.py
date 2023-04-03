@@ -7,8 +7,8 @@ from distutils.util import strtobool
 load_dotenv(".env")
 
 
-API_ID = int(getenv("API_ID", "")) #optional
-API_HASH = getenv("API_HASH", "") #optional
+API_ID = int(getenv("API_ID")) #optional
+API_HASH = getenv("API_HASH") #optional
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
 DEEP_AI = getenv("DEEP_AI", "d7394561-0528-4714-a1ee-edd7020b48e1")
 OWNER_ID = int(getenv("OWNER_ID") or 0)
@@ -21,7 +21,7 @@ ADMIN2_ID.append(1755047203)
 
 
 MONGO_URL = getenv("MONGO_URL", "")
-BOT_TOKEN = getenv("BOT_TOKEN", "")
+BOT_TOKEN = getenv("BOT_TOKEN")
 BOT_WORKERS = int(getenv("BOT_WORKERS", "4"))
 PM_AUTO_BAN = strtobool(getenv("PM_AUTO_BAN", "True"))
 ALIVE_PIC = getenv("ALIVE_PIC")
