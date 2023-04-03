@@ -132,6 +132,7 @@ async def inline_query_handler(client: Client, query):
         text = query.query.strip().lower()
         string_given = query.query.lower()
         answers = []
+        answerss = []
         if text.strip() == "":
             return
         elif text.split()[0] == "alive":
