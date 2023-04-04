@@ -6,7 +6,7 @@ from io import BytesIO
 import math
 import shlex
 from typing import Tuple
-
+from pyrogram import Client, filters
 from pyrogram.enums import MessageMediaType, MessagesFilter
 from pyrogram.raw.functions.messages import DeleteHistory
 from pyrogram.types import InputMediaPhoto
@@ -35,7 +35,7 @@ async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
     )
 
 
-@Ubot("toaudio", "")
+@Client.on_message(filters.command("toaudio", ".") & filters.me)
 async def audio(client, message):
     replied = message.reply_to_message
     Tm = await message.reply("<b>Tunggu sebentar</b>")
