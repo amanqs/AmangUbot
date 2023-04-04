@@ -97,6 +97,7 @@ add_command_help(
     "chatbot",
     [
         [f"ai [pertanyaan]", "Chat Open AI."],
+        [f"img or photo [query]", "Untuk mengunduh gambar yang dicari."],
     ],
 )
 
@@ -104,13 +105,7 @@ add_command_help(
 add_command_help(
     "image",
     [
-        [f"img or photo [query]", "Untuk mengunduh gambar yang dicari."],
         [f"rmbg [reply photo]", "Untuk menghapus background pada gambar."],
-        [f"toanime <reply to foto>", "Convert foto ke anime menggunakan ai bot"],
-        [f"toimg <reply stiker>", "Convert stiker ke foto."],
-        [f"cartoon [reply to image]", "Ubah gambar menggunakan deepai api."],
-        [f"toonify [reply to image]", "Untuk mempercantik gambar menggunakan deepai api."],
-        [f"pcil [reply to image]", "Untuk membuat gambar hitam putih."],
         [f"face [reply to image]", "Untuk memeriksa deteksi wajah."],
     ],
 )
