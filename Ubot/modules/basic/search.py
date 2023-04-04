@@ -63,3 +63,11 @@ async def gif_cmd(client, message):
     )
     await TM.delete()
     await saved.delete()
+
+
+add_command_help(
+    "search",[
+        [f"gif <query>", "Membuat mencari gif."],
+        [f"pic <query>", "Mencari gambar."],
+    ],
+)
