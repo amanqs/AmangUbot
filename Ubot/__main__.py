@@ -15,7 +15,7 @@ from Ubot.core.db import *
 from config import SUPPORT, CHANNEL
 import os
 from dotenv import load_dotenv
-from pyrogram.errors import RPCError
+
 
 BOT_VER ="8.1.0"
 
@@ -47,8 +47,8 @@ async def main():
             try:
                 await cli.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
             except BaseException as a:
-                LOGGER("✓").warning(f"{a}")
-            LOGGER("✓").info("Startup Completed")
+                LOGGER("Info").warning(f"{a}")
+            LOGGER("Info").info("Startup Completed")
             LOGGER("✓").info(f"Started as {ex.first_name} | {ex.id} ")
             ids.append(ex.id)
         except Exception as e:
