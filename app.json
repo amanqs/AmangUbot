@@ -18,10 +18,6 @@
             "description": "Isi Woy",
             "required": true
         },
-        "OWNER_ID": {
-            "description": "Isi ID Akun",
-            "required": true
-        },
         "MONGO_URL": {
             "description": "Fill there an mongo database from mongodb.com",
             "required": true,
