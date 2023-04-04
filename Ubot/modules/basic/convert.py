@@ -3,11 +3,13 @@ import asyncio
 import os
 import random
 from io import BytesIO
+import math
+import shlex
+from typing import Tuple
 
 from pyrogram.enums import MessageMediaType, MessagesFilter
 from pyrogram.raw.functions.messages import DeleteHistory
 from pyrogram.types import InputMediaPhoto
-from ubotlibs.ubot.utils.tools import run_cmd
 from ubotlibs.ubot.helper import get_arg
 from . import *
 
@@ -18,6 +20,20 @@ async def dl_pic(client, download):
     os.remove(path)
     get_photo = BytesIO(content)
     return get_photo
+
+async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
+    args = shlex.split(cmd)
+    process = await asyncio.create_subprocess_exec(
+        *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+    )
+    stdout, stderr = await process.communicate()
+    return (
+        stdout.decode("utf-8", "replace").strip(),
+        stderr.decode("utf-8", "replace").strip(),
+        process.returncode,
+        process.pid,
+    )
+
 
 @Ubot("toaudio", "")
 async def audio(client, message):
@@ -90,7 +106,7 @@ add_command_help(
         [f"cartoon [reply to image]", "Ubah gambar menggunakan deepai api."],
         [f"toonify [reply to image]", "Untuk mempercantik gambar menggunakan deepai api."],
         [f"pcil [reply to image]", "Untuk membuat gambar hitam putih."],
-        [f"efek [reply to audio]", "Untuk memberi efek pada audio."],
+        [f"efek [reply to audio][bengek/robot/jedug/echo/fast]", "Untuk memberi efek pada audio."],
     ],
 )
 
