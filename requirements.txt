@@ -30,7 +30,6 @@ opencv-python-headless
 psutil
 dnspython
 psycopg2-binary
-ptable
 pyrogram
 pymongo
 pyromod==1.1.0
