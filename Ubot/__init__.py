@@ -62,8 +62,12 @@ class Bot(Client):
         await super().stop()
         self.LOGGER(__name__).info("Naya-Pyro stopped. Bye.")
 
+
 app = Bot()
 
+if not BOT_TOKEN:
+   LOGGER(__name__).error("WARNING: BOT TOKEN TIDAK DITEMUKAN, SHUTDOWN BOT")
+   sys.exit()
 
 if SESSION1 is not None:
    client1 = Client(name="client1", api_id=API_ID, api_hash=API_HASH, session_string=SESSION1, plugins=dict(root="Ubot/modules"))
