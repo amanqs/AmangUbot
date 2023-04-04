@@ -1,49 +1,95 @@
-
+# Credits Tomi Setiawan
+import asyncio
 import os
-import shutil
+import random
+from io import BytesIO
 
-from pyrogram import Client, filters
-from pyrogram.enums import MessageMediaType
-from pyrogram.types import Message
-from py_extract import Video_tools
+from pyrogram.enums import MessageMediaType, MessagesFilter
+from pyrogram.raw.functions.messages import DeleteHistory
+from pyrogram.types import InputMediaPhoto
+from ubotlibs.ubot.utils.tools import run_cmd
 from . import *
 
+async def dl_pic(client, download):
+    path = await client.download_media(download)
+    with open(path, "rb") as f:
+        content = f.read()
+    os.remove(path)
+    get_photo = BytesIO(content)
+    return get_photo
 
-# Help
-mod_name = os.path.basename(__file__)[:-3]
+@Ubot("toaudio", "")
+async def _(client, message):
+    replied = message.reply_to_message
+    Tm = await message.reply("<b>Tunggu sebentar</b>")
+    if not replied:
+        return await Tm.edit("<b>Mohon Balas Ke Video</b>")
+    if replied.media == MessageMediaType.VIDEO:
+        await Tm.edit("<b>Downloading Video . . .</b>")
+        file = await client.download_media(
+            message=replied,
+            file_name=f"audio{random.choice(range(9999999))}/",
+        )
+        out_file = f"{file}.mp3"
+        try:
+            await Tm.edit("<b>Mencoba Ekstrak Audio. . .</b>")
+            cmd = f"ffmpeg -i {file} -q:a 0 -map a {out_file}"
+            await run_cmd(cmd)
+            await Tm.edit("<b>Uploading Audio . . .</b>")
+            await client.send_voice(
+                message.chat.id,
+                voice=out_file,
+                reply_to_message_id=message.id,
+            )
+            os.remove(out_file)
+            await Tm.delete()
+        except Exception as error:
+            await Tm.edit(error)
+    else:
+        return await Tm.edit("<b>Mohon Balas Ke Video</b>")
 
 
-@Ubot(["toaudio"], "")
-async def extract_all_aud(client: Client, message: Message):
-    replied_msg = message.reply_to_message
-    geez = await message.reply("`Downloading Video . . .`")
-    ext_out_path = os.getcwd() + "/" + "downloads/py_extract/audios"
-    if not replied_msg:
-        await geez.edit("**Mohon Balas Ke Video**")
-        return
-    if not replied_msg.video:
-        await geez.edit("**Mohon Balas Ke Video**")
-        return
-    if os.path.exists(ext_out_path):
-        await geez.edit("Processing.....")
-        return
-    replied_video = replied_msg.video
-    try:
-        await geez.edit("`Downloading...`")
-        ext_video = await client.download_media(message=replied_video)
-        await geez.edit("`Extracting Audio(s)...`")
-        exted_aud = Video_tools.extract_all_audio(input_file=ext_video, output_path=ext_out_path)
-        await geez.edit("`Uploading...`")
-        for nexa_aud in exted_aud:
-            await message.reply_audio(audio=nexa_aud, caption=f"`Extracted by` {(await client.get_me()).mention}")
-        await geez.edit("`Extracting Finished!`")
-        shutil.rmtree(ext_out_path)
-    except Exception as e:
-        await geez.edit(f"**Error:** `{e}`")
+@Ubot("efek", "")
+async def _(client, message):
+    helo = get_arg(message)
+    rep = message.reply_to_message
+    if rep and helo:
+        tau = ["bengek", "robot", "jedug", "fast", "echo"]
+        if helo in tau:
+            Tm = await message.reply(f"Merubah suara menjadi {helo}")
+            indir = await client.download_media(rep)
+            KOMUT = {
+                "bengek": '-filter_complex "rubberband=pitch=1.5"',
+                "robot": "-filter_complex \"afftfilt=real='hypot(re,im)*sin(0)':imag='hypot(re,im)*cos(0)':win_size=512:overlap=0.75\"",
+                "jedug": '-filter_complex "acrusher=level_in=8:level_out=18:bits=8:mode=log:aa=1"',
+                "fast": "-filter_complex \"afftfilt=real='hypot(re,im)*cos((random(0)*2-1)*2*3.14)':imag='hypot(re,im)*sin((random(1)*2-1)*2*3.14)':win_size=128:overlap=0.8\"",
+                "echo": '-filter_complex "aecho=0.8:0.9:500|1000:0.2|0.1"',
+            }
+            ses = await asyncio.create_subprocess_shell(
+                f"ffmpeg -i '{indir}' {KOMUT[helo]} audio.mp3"
+            )
+            await ses.communicate()
+            await Tm.delete()
+            await rep.reply_voice("audio.mp3", caption=f"Efek {helo}")
+            os.remove("audio.mp3")
+        else:
+            await message.reply(f"Silahkan isi sesuai {tau}")
+    else:
+        await Tm.edit(
+            f"Silahkan balas ke audio atau mp3, contoh : <code>!efek bengek</code> sambil balas ke audio atau mp3"
+        )
         
 add_command_help(
     "convert",
     [
-        [f"toaudio <reply to file>", "Convert video to audio"],
+        [f"toaudio <reply to file>", "Convert video to audio."],
+        [f"toanime <reply to foto>", "Convert foto ke anime menggunakan ai bot."],
+        [f"togif <reply to video>", "Convert video ke gif."],
+        [f"toimg <reply stiker>", "Convert stiker ke foto."],
+        [f"cartoon [reply to image]", "Ubah gambar menggunakan deepai api."],
+        [f"toonify [reply to image]", "Untuk mempercantik gambar menggunakan deepai api."],
+        [f"pcil [reply to image]", "Untuk membuat gambar hitam putih."],
+        [f"efek [reply to audio]", "Untuk memberi efek pada audio."],
     ],
 )
+
