@@ -20,10 +20,6 @@ clients = []
 ids = []
 
 
-
-AI = OPENAI_API
-PM_LOGGER = PM_LOGGER
-
 if BOTLOG_CHATID:
    BOTLOG_CHATID = BOTLOG_CHATID
 else:
