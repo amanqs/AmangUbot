@@ -8,6 +8,7 @@ from pyrogram.enums import MessageMediaType, MessagesFilter
 from pyrogram.raw.functions.messages import DeleteHistory
 from pyrogram.types import InputMediaPhoto
 from ubotlibs.ubot.utils.tools import run_cmd
+from ubotlibs.ubot.helper import get_arg
 from . import *
 
 async def dl_pic(client, download):
@@ -19,7 +20,7 @@ async def dl_pic(client, download):
     return get_photo
 
 @Ubot("toaudio", "")
-async def _(client, message):
+async def audio(client, message):
     replied = message.reply_to_message
     Tm = await message.reply("<b>Tunggu sebentar</b>")
     if not replied:
@@ -50,7 +51,7 @@ async def _(client, message):
 
 
 @Ubot("efek", "")
-async def _(client, message):
+async def epek(client, message):
     helo = get_arg(message)
     rep = message.reply_to_message
     if rep and helo:
