@@ -69,49 +69,138 @@ if not BOT_TOKEN:
    LOGGER(__name__).error("WARNING: BOT TOKEN TIDAK DITEMUKAN, SHUTDOWN BOT")
    sys.exit()
 
-if SESSION1 is not None:
-   client1 = Client(name="client1", api_id=API_ID, api_hash=API_HASH, session_string=SESSION1, plugins=dict(root="Ubot/modules"))
-   clients.append(client1)
+bot1 = (
+    Client(
+        name="bot1",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION1,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION1
+    else None
+)
 
-if SESSION2 is not None:
-   client2 = Client(name="client2", api_id=API_ID, api_hash=API_HASH, session_string=SESSION2, plugins=dict(root="Ubot/modules"))
-   clients.append(client2)
+bot2 = (
+    Client(
+        name="bot2",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION2,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION2
+    else None
+)
 
-if SESSION3 is not None:
-   client3 = Client(name="client3", api_id=API_ID, api_hash=API_HASH, session_string=SESSION3, plugins=dict(root="Ubot/modules"))
-   clients.append(client3)
+bot3 = (
+    Client(
+        name="bot3",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION3,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION3
+    else None
+)
 
-if SESSION4 is not None:
-   client4 = Client(name="client4", api_id=API_ID, api_hash=API_HASH, session_string=SESSION4, plugins=dict(root="Ubot/modules"))
-   clients.append(client4)
+bot4 = (
+    Client(
+        name="bot4",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION4,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION4
+    else None
+)
 
-if SESSION5 is not None:
-   client5 = Client(name="client5", api_id=API_ID, api_hash=API_HASH, session_string=SESSION5, plugins=dict(root="Ubot/modules"))
-   clients.append(client5)
+bot5 = (
+    Client(
+        name="bot5",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION5,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION5
+    else None
+)
+bot6 = (
+    Client(
+        name="bot6",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION6,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION6
+    else None
+)
 
-if SESSION6 is not None:
-   client6 = Client(name="client6", api_id=API_ID, api_hash=API_HASH, session_string=SESSION6, plugins=dict(root="Ubot/modules"))
-   clients.append(client6)
+bot7 = (
+    Client(
+        name="bot7",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION7,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION7
+    else None
+)
 
-if SESSION7 is not None:
-   client7 = Client(name="client7", api_id=API_ID, api_hash=API_HASH, session_string=SESSION7, plugins=dict(root="Ubot/modules"))
-   clients.append(client7)
+bot8 = (
+    Client(
+        name="bot8",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION8,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION8
+    else None
+)
 
-if SESSION8 is not None:
-   client8 = Client(name="client8", api_id=API_ID, api_hash=API_HASH, session_string=SESSION8, plugins=dict(root="Ubot/modules"))
-   clients.append(client8)
+bot9 = (
+    Client(
+        name="bot9",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION9,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION9
+    else None
+)
 
-if SESSION9 is not None:
-   client9 = Client(name="client9", api_id=API_ID, api_hash=API_HASH, session_string=SESSION9, plugins=dict(root="Ubot/modules"))
-   clients.append(client9)
-
-if SESSION10 is not None:
-   client10 = Client(name="client10", api_id=API_ID, api_hash=API_HASH, session_string=SESSION10, plugins=dict(root="Ubot/modules")) 
-   clients.append(client10)
+bot10 = (
+    Client(
+        name="bot10",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION10,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION10
+    else None
+)
    
   
-clients = [client for client in [client1, client2, client3, client4, client5, client6, client7, client8, client9, client10] if client]
+bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10] if bot]
 
-for client in clients:
-    if not hasattr(client, "group_call"):
-        setattr(client, "group_call", GroupCallFactory(client).get_group_call())
+for bot in bots:
+    if not hasattr(bot, "group_call"):
+        setattr(bot, "group_call", GroupCallFactory(bot).get_group_call())
