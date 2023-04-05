@@ -100,8 +100,6 @@ async def bl_chat(client, message):
 """
 @Ubot(["addbl"], "")
 async def bl_chat(client, message):
-    if len(message.command) != 2:
-        return await message.reply("**Gunakan Format:**\n `addbl di grup atau [CHAT_ID]`")
     chat_id = int(message.text.strip().split()[1])
     chat = await client.get_chat(chat_id)
     
