@@ -152,4 +152,8 @@ async def pongme(client, message):
         f"**Pong!**\n`{duration}ms`\n"
     )
     await ping_.delete()
-    
+
+
+@Ubot("pek")
+async def j(client, message):
+    await message.reply("anjing lu")
