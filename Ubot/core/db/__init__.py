@@ -277,8 +277,8 @@ async def check_afk(user_id: int):
     user_data = await afkdb.users.find_one({"user_id": user_id, "afk": True})
     return user_data
 
-def get_prefix():
-    prefix_config = prefdb.find_one({"key": "prefix"})
+async def get_prefix():
+    prefix_config = await prefdb.find_one({"key": "prefix"})
     if prefix_config:
         return prefix_config["value"]
     else:
