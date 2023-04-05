@@ -146,7 +146,7 @@ def nyet(command: str, prefixes=""):
     def wrapper(func):
         @Client.on_message(filters.command(command, prefixes) & filters.me)
         async def wrapped_func(client, message):
-            prefix = prefixes "" else await get_prefix()
+            prefix = prefixes[0] if len(prefixes) > 0 else get_prefix()
             text = message.text.lower()
             if not text.startswith(prefix):
                 return
