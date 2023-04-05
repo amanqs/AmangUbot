@@ -16,7 +16,7 @@ import asyncio
 from Ubot import *
 
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
-from config import MONGO_URL
+from config import *
 
 
 mongo = MongoCli(MONGO_URL)
