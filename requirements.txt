@@ -6,12 +6,12 @@ pytgcalls==3.0.0.dev24
 openai
 uvloop
 ffmpeg-python
-yt-dlp
+git+https://github.com/yt-dlp/yt-dlp.git
 youtube-search
 youtube-search-python
 APScheduler==3.6.3
 aiohttp
-aiofiles
+aiofiles==22.1.0
 bs4
 emoji==1.6.0
 gitpython
@@ -30,7 +30,7 @@ opencv-python-headless
 psutil
 dnspython
 psycopg2-binary
-pyrogram
+pyrogram==2.0.53
 pymongo
 pyromod==1.1.0
 pytube
