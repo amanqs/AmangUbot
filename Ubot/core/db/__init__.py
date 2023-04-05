@@ -31,6 +31,7 @@ logdb = db.gruplog
 blchatdb = db.blchat
 pmdb = db.pmpermit
 afkdb = db.afk
+prefdb = db.prefix
         
 
         
@@ -276,3 +277,18 @@ async def check_afk(user_id: int):
     user_data = await afkdb.users.find_one({"user_id": user_id, "afk": True})
     return user_data
 
+
+async def get_prefix():
+    prefix_config = await prefdb.find_one({"key": "prefix"})
+    if prefix_config:
+        return prefix_config["value"]
+    else:
+        return "."
+
+
+async def set_prefix(new_prefix):
+    await prefdb.update_one(
+        {"key": "prefix"},
+        {"$set": {"value": new_prefix}},
+        upsert=True
+    )
