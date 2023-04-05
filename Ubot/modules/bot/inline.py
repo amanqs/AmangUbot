@@ -72,7 +72,7 @@ async def alive_function(message, answers):
             group += 1
     if message._client.me.id in BLACK:
         status = "OWNER"
-    elif message._client.me.id in OWNER_ID:
+    elif message._client.me.id is OWNER_ID:
         status = "ADMINS"
     else:
         status = "MEMBER"
