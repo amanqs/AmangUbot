@@ -140,7 +140,7 @@ async def setprefix_(c: Client, m: Message):
         
 
 def nyet(command: str, prefixes=""):
-    if prefixes is None:
+    if prefixes is "":
         prefix = get_prefix()
         prefixes = [prefix]
     def wrapper(func):
@@ -161,15 +161,15 @@ async def y(client, message):
 @Ubot("pek", "")
 async def jing(client, message):
     ajg = await message.reply("Modal copas Jing")
-    asyncio.sleep(1)
+    asyncio.sleep(5)
     await ajg.edit("Lah iya lu juga modal copas nyet")
-    asyncio.sleep(1)
+    asyncio.sleep(5)
     await ajg.edit("kok sok pro si bangsat")
-    asyncio.sleep(1)
+    asyncio.sleep(5)
     await ajg.edit("lah iya nyet sesama copas gausah hina bangsat")
-    asyncio.sleep(1)
+    asyncio.sleep(5)
     await ajg.edit("bahaha kok ngakak ajg")
-    asyncio.sleep(1)
+    asyncio.sleep(5)
     await ajg.edit("bangsat kok teriak bangsat")
-    asyncio.sleep(1)
+    asyncio.sleep(5)
     await ajg.edit("gay teriak gay **GOBLOK**")
