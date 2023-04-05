@@ -16,7 +16,7 @@ import asyncio
 from Ubot import *
 
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
-from config import *
+from config import MONGO_URL
 
 
 mongo = MongoCli(MONGO_URL)
@@ -34,8 +34,8 @@ afkdb = db.afk
         
 
         
-async def buat_log(cli):
-    user = await cli.get_me()
+async def buat_log(bot):
+    user = await bot.get_me()
     user_id = user.id
     user_data = await usersdb.users.find_one({"user_id": user_id})
     botlog_chat_id = None
@@ -49,7 +49,7 @@ async def buat_log(cli):
         group = await cli.create_supergroup(group_name, group_description)
         botlog_chat_id = group.id
         message_text = 'Grup Log Berhasil Dibuat,\nKetik `id` untuk mendapatkan id log grup\nKemudian ketik `setlog` ID_GROUP\n\nContoh : setlog -100749492984\n\n**Notes** : Ini adalah userbot tanpa prefix jadi tidak perlu memakai triger `.`'
-        await cli.send_message(botlog_chat_id, message_text)
+        await bot.send_message(botlog_chat_id, message_text)
         await asyncio.sleep(1)
         
         await usersdb.users.update_one(
