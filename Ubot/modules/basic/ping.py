@@ -139,13 +139,6 @@ async def setprefix_(c: Client, m: Message):
         await m.edit(f"☑️ Prefix changed to [{biji}]")
         
 
-async def get_prefix_filter():
-    prefix = await get_prefix()
-    async def prefix_filter(_, __, message):
-        text = message.text or message.caption
-        return text and text.startswith(prefix)
-    return prefix_filter
-
 
 @Client.on_message(filters.command("pong") & filters.me)
 async def pongme(client, message):
@@ -160,9 +153,3 @@ async def pongme(client, message):
     )
     await ping_.delete()
     
-    
-pong_command = filters.command("pong")
-pong_prefix = get_prefix_filter()
-
-pong_filter = pong_command & pong_prefix
-Client.dispatcher.add_handler(pongme, pong_filter)
