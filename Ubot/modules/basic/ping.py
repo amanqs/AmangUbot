@@ -141,7 +141,8 @@ async def setprefix_(c: Client, m: Message):
 
 def nyet(command: str, prefixes=""):
     if prefixes is None:
-        prefixes = [await get_prefix()]
+        prefix = await get_prefix()
+        prefixes = [prefix]
     def wrapper(func):
         @Client.on_message(filters.command(command, prefixes) & filters.me)
         async def wrapped_func(client, message):
