@@ -11,7 +11,7 @@ from datetime import datetime
 from . import *
 from ubotlibs.ubot.helper.PyroHelpers import *
 from Ubot import *
-from Ubot.core.db import set_prefix, get_prefix
+from Ubot.core.db import set_prefix, get_prefix, prefix
 from .systemstats import get_readable_time
 from ubotlibs.ubot.utils.tools import get_arg
 
@@ -139,16 +139,14 @@ async def setprefix_(c: Client, m: Message):
         await m.edit(f"☑️ Prefix changed to [{biji}]")
         
         
-@Client.on_message(filters.command(["pong"]) & filters.me)
+@Client.on_message(filters.command(["pong"], cmds) & filters.me)
 async def pongme(client, message):
-    sempak = await get_prefix()
-    if message.text.startswith(sempak+"pong"):
-        uptime = await get_readable_time((time.time() - StartTime))
-        start = datetime.now()
-        ping_ = await client.send_message(client.me.id, "😈")
-        end = datetime.now()
-        duration = (end - start).microseconds / 1000
-        await message.reply_text(
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    ping_ = await client.send_message(client.me.id, "😈")
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await message.reply_text(
             f"**Pong!**\n`%sms`\n" % (duration)
         )
-        await ping_.delete()
+    await ping_.delete()
