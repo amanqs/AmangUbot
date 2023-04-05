@@ -74,8 +74,6 @@ async def alive_function(message, answers):
         status = "OWNER"
     elif message._client.me.id is OWNER_ID:
         status = "ADMINS"
-    else:
-        status = "MEMBER"
     start = datetime.now()
     buttons = support()
     ex = await message._client.get_me()
