@@ -14,7 +14,7 @@ async def simpan_note(client, message):
     msg = message.reply_to_message
     if not msg:
         return await message.reply("`Silakan balas ke pesan.`")
-    botlog_chat_id = await get_log_groups(user_id)
+    botlog_chat_id = await get_botlog(user_id)
     if not botlog_chat_id:
         return await message.reply("`Maaf, tidak dapat menemukan ID chat log bot.`\nPastikan Anda Telah Mengtur Log Group Anda")
     anu = await msg.forward(botlog_chat_id)
