@@ -163,5 +163,5 @@ async def pongme(client, message):
 pong_command = filters.command("pong")
 pong_prefix = get_prefix_filter()
 
-pong_filter = pongme & pong_command & pong_prefix
+pong_filter = pong_command & pong_prefix
 Client.add_handler(pong_filter)
