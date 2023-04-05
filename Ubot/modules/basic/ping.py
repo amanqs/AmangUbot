@@ -146,11 +146,6 @@ async def get_prefix_filter():
         return text and text.startswith(prefix)
     return prefix_filter
 
-pong_command = filters.command("pong")
-pong_prefix = await get_prefix_filter()
-
-pong_filter = pongme & pong_command & pong_prefix
-Client.add_handler(pong_filter)
 
 @Client.on_message(filters.command("pong") & filters.me)
 async def pongme(client, message):
@@ -164,3 +159,9 @@ async def pongme(client, message):
         f"**Pong!**\n`{duration}ms`\n"
     )
     await ping_.delete()
+    
+pong_command = filters.command("pong")
+pong_prefix = get_prefix_filter()
+
+pong_filter = pongme & pong_command & pong_prefix
+Client.add_handler(pong_filter)
