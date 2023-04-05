@@ -6,12 +6,12 @@ from pyrogram import idle
 
 from uvloop import install
 from ubotlibs import *
-from Ubot import aiosession, clients, app, ids, event_loop
+from Ubot import aiosession, bots, app, ids, event_loop
 from platform import python_version as py
 from .logging import LOGGER
 from pyrogram import __version__ as pyro
 from Ubot.modules import ALL_MODULES
-from Ubot.core.db import *
+from Ubot.core.db import buat_log, get_botlog
 from config import SUPPORT, CHANNEL
 import os
 from dotenv import load_dotenv
@@ -36,16 +36,16 @@ async def main():
     LOGGER("Naya Premium").info("Memulai Ubot Pyro..")
     for all_module in ALL_MODULES:
         importlib.import_module("Ubot.modules" + all_module)
-    for cli in clients:
+    for bot in bots:
         try:
-            await cli.start()
-            ex = await cli.get_me()
-            await join(cli)
+            await bot.start()
+            ex = await bot.get_me()
+            await join(bot)
             user_id = ex.id
-            await buat_log(cli)
+            await buat_log(bot)
             botlog_chat_id = await get_botlog(user_id)
             try:
-                await cli.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
+                await bot.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
             except BaseException as a:
                 LOGGER("Info").warning(f"{a}")
             LOGGER("Info").info("Startup Completed")
