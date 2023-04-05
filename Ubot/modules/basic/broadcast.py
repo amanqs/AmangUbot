@@ -122,6 +122,8 @@ async def all_chats(client, message):
         try:
             chat = await client.get_chat(chat_id)
             title = chat.title
+        except Exception:
+            title = "Private\n"
         j = 1
         text += f"**{count}.{title}**`{chat_id}`\n"
     if j == 0:
