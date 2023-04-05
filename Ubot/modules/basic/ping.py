@@ -138,7 +138,15 @@ async def setprefix_(c: Client, m: Message):
         await set_prefix(biji)
         await m.edit(f"☑️ Prefix changed to [{biji}]")
         
+def nyet(command: str, prefixes=get_prefix):
+    def wrapper(func):
+        @Client.on_message(filters.command(command, prefixes) & filters.me)
+        async def wrapped_func(client, message):
+            await func(client, message)
 
+        return wrapped_func
+
+    return wrapper
 
 @Client.on_message(filters.command("pong") & filters.me)
 async def pongme(client, message):
@@ -154,6 +162,6 @@ async def pongme(client, message):
     await ping_.delete()
 
 
-@Ubot("pek")
+@nyet("pek")
 async def j(client, message):
     await message.reply("anjing lu")
