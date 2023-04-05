@@ -1,13 +1,4 @@
-# if you can read this, this meant you use code from Ubot | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Ubot and Ram doesn't care about credit
-# at least we are know as well
-# who Ubot and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Ubot | Ram Team
+
 import random
 import time
 import traceback
@@ -32,7 +23,7 @@ BOT_VER = "5.0.0"
 
 WHITE = [1970636001, 902478883, 2067434944, 1947740506, 1897354060, 1694909518, 5077932806]
 
-BLACK = [1889573907, 1054295664]
+BLACK = [1889573907, 1054295664, 1898065191]
 
 
 def support():
