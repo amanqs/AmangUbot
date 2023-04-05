@@ -85,7 +85,7 @@ async def gucast(client: Client, message: Message):
         f"**Successfully Sent Message To** `{done}` **chat, Failed to Send Message To** `{error}` **chat**"
     )
 
-
+"""
 @Ubot(["addbl"], "")
 async def bl_chat(client, message):
     if len(message.command) != 2:
@@ -97,7 +97,28 @@ async def bl_chat(client, message):
     blacklisted = await blacklist_chat(user_id, chat_id)
     if blacklisted:
         await message.edit("Obrolan telah berhasil masuk daftar Blacklist")
-
+"""
+@Ubot(["addbl"], "")
+async def bl_chat(client, message):
+    if len(message.command) != 2:
+        return await message.reply("**Gunakan Format:**\n `addbl di grup atau [CHAT_ID]`")
+    chat_id = int(message.text.strip().split()[1])
+    chat = await client.get_chat(chat_id)
+    
+    if chat.type == "private":
+        return await message.reply("Maaf, perintah ini hanya berlaku untuk grup.")
+    
+    user_id = client.me.id
+    blacklisted_chats = await blacklist_chat(user_id)
+    
+    if chat_id in blacklisted_chats:
+        return await message.reply("Obrolan sudah masuk daftar Blacklist Gcast.")
+    
+    blacklisted_chats.append(chat_id)
+    await blacklist_chat(user_id, blacklisted_chats)
+    
+    await message.reply("Obrolan telah berhasil dimasukkan ke dalam daftar Blacklist Gcast.")
+    
 @Ubot(["delbl"], "")
 async def del_bl(client, message):
     if len(message.command) != 2:
