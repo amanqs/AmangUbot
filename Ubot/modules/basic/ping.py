@@ -11,7 +11,7 @@ from datetime import datetime
 from . import *
 from ubotlibs.ubot.helper.PyroHelpers import *
 from Ubot import *
-
+from Ubot.core.db import set_prefix, get_prefix
 from .systemstats import get_readable_time
 from ubotlibs.ubot.utils.tools import get_arg
 
