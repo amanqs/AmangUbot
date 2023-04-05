@@ -100,7 +100,7 @@ async def bl_chat(client, message):
 """
 @Ubot(["addbl"], "")
 async def bl_chat(client, message):
-    chat_id = int(message.text.strip().split()[1])
+    chat_id = message.chat.id
     chat = await client.get_chat(chat_id)
     
     if chat.type == "private":
