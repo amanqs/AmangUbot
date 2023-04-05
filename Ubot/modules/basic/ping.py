@@ -142,7 +142,7 @@ async def setprefix_(c: Client, m: Message):
 @Client.on_message(filters.command(["pong"], cmds) & filters.me)
 async def pongme(client, message):
     sempak = await get_prefix()
-    if message.text.startswith(sempak + "pong"):
+    if message.text.startswith(sempak+"pong"):
         uptime = await get_readable_time((time.time() - StartTime))
         start = datetime.now()
         ping_ = await client.send_message(client.me.id, "😈")
