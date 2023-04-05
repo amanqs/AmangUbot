@@ -152,5 +152,8 @@ async def pongme(client, message):
     )
     await ping_.delete()
 
-pong_command = filters.command("pong", prefixes=prefix)
-Client.add_handler(pongme & pong_command)
+pong_command = filters.command("pong")
+pong_prefix = filters.prefix(get_prefix)
+
+pong_filter = pongme & pong_command & pong_prefix
+Client.add_handler(pong_filter)
