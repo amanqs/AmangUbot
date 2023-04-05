@@ -14,7 +14,7 @@ from pytgcalls import GroupCallFactory
 from ast import parse
 from .logging import LOGGER
 from config import *
-cmds = None
+cmds = "."
 CMD_HELP = {}
 clients = []
 ids = []
