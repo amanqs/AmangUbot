@@ -165,4 +165,4 @@ pong_command = filters.command("pong")
 pong_prefix = get_prefix_filter()
 
 pong_filter = pong_command & pong_prefix
-Client.add_handler(pongme, pong_filter)
+Client.dispatcher.add_handler(pongme, pong_filter)
