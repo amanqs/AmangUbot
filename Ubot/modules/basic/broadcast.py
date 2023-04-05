@@ -102,19 +102,13 @@ async def bl_chat(client, message):
 async def bl_chat(client, message):
     chat_id = message.chat.id
     chat = await client.get_chat(chat_id)
-    
     if chat.type == "private":
         return await message.reply("Maaf, perintah ini hanya berlaku untuk grup.")
-    
     user_id = client.me.id
-    blacklisted_chats = await blacklist_chat(user_id)
-    
-    if chat_id in blacklisted_chats:
+    bajingan = await blacklisted_chats(user_id)
+    if chat in bajingan:
         return await message.reply("Obrolan sudah masuk daftar Blacklist Gcast.")
-    
-    blacklisted_chats.append(chat_id)
-    await blacklist_chat(user_id, blacklisted_chats)
-    
+    await blacklist_chat(user_id, chat_id)
     await message.reply("Obrolan telah berhasil dimasukkan ke dalam daftar Blacklist Gcast.")
     
 @Ubot(["delbl"], "")
