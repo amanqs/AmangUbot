@@ -11,7 +11,7 @@ API_ID = int(getenv("API_ID")) #optional
 API_HASH = getenv("API_HASH") #optional
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
 DEEP_AI = getenv("DEEP_AI", "d7394561-0528-4714-a1ee-edd7020b48e1")
-OWNER_ID = int(getenv("OWNER_ID") or 0)
+OWNER_ID = int(getenv("OWNER_ID"))
 ADMIN1_ID = list(map(int, getenv("ADMIN1_ID", "1054295664").split()))
 ADMIN2_ID = list(map(int, getenv("ADMIN2_ID", "1755047203").split()))
 
