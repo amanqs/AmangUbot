@@ -85,19 +85,7 @@ async def gucast(client: Client, message: Message):
         f"**Successfully Sent Message To** `{done}` **chat, Failed to Send Message To** `{error}` **chat**"
     )
 
-"""
-@Ubot(["addbl"], "")
-async def bl_chat(client, message):
-    if len(message.command) != 2:
-        return await message.reply("**Gunakan Format:**\n `addbl [CHAT_ID]`")
-    user_id = client.me.id
-    chat_id = int(message.text.strip().split()[1])
-    if chat_id in await blacklisted_chats(user_id):
-        return await message.reply("Obrolan sudah masuk daftar Blacklist.")
-    blacklisted = await blacklist_chat(user_id, chat_id)
-    if blacklisted:
-        await message.edit("Obrolan telah berhasil masuk daftar Blacklist")
-"""
+
 @Ubot(["addbl"], "")
 async def bl_chat(client, message):
     chat_id = message.chat.id
@@ -118,10 +106,10 @@ async def del_bl(client, message):
     user_id = client.me.id
     chat_id = int(message.text.strip().split()[1])
     if chat_id not in await blacklisted_chats(user_id):
-        return await message.reply("Obrolan berhasil dihapus dari daftar Blacklist.")
+        return await message.reply("Obrolan berhasil dihapus dari daftar Blacklist Gcast.")
     whitelisted = await whitelist_chat(user_id, chat_id)
     if whitelisted:
-        return await message.edit("Obrolan berhasil dihapus dari daftar Blacklist.")
+        return await message.edit("Obrolan berhasil dihapus dari daftar Blacklist Gcast.")
     await message.edit("Sesuatu yang salah terjadi.")
     
 
@@ -137,7 +125,7 @@ async def all_chats(client, message):
         except Exception:
             title = "Private\n"
         j = 1
-        text += f"**{count}.{title}**`[{chat_id}]`\n"
+        text += f"**{count}.{title}**`{chat_id}`\n"
     if j == 0:
         await message.reply("Tidak Ada Obrolan Daftar Hitam")
     else:
