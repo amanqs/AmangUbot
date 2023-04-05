@@ -155,7 +155,7 @@ def nyet(command: str, prefixes=""):
     return wrapper
 
 
-@nyet("pek")
+@nyet("pek", "")
 async def jing(client, message):
     ajg = await message.reply("Modal copas Jing")
     asyncio.sleep(1)
