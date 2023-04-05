@@ -154,8 +154,11 @@ def nyet(command: str, prefixes=""):
         return wrapped_func
     return wrapper
 
+@nyet("nyet")
+async def y(client, message):
+    await message.reply("sesama gay itu monyet")
 
-@nyet("pek", "")
+@Ubot("pek", "")
 async def jing(client, message):
     ajg = await message.reply("Modal copas Jing")
     asyncio.sleep(1)
