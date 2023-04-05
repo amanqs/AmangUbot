@@ -139,7 +139,7 @@ async def setprefix_(c: Client, m: Message):
         await m.edit(f"☑️ Prefix changed to [{biji}]")
         
         
-@Client.on_message(filters.command(["pong"], cmds) & filters.me)
+@Client.on_message(filters.command(["pong"]) & filters.me)
 async def pongme(client, message):
     sempak = await get_prefix()
     if message.text.startswith(sempak+"pong"):
