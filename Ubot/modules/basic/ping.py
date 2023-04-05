@@ -145,13 +145,27 @@ def nyet(command: str, prefixes=""):
     def wrapper(func):
         @Client.on_message(filters.command(command, prefixes) & filters.me)
         async def wrapped_func(client, message):
+            prefix = prefixes[0] if len(prefixes) > 0 else get_prefix()
+            text = message.text.lower()
+            if not text.startswith(prefix):
+                return
             await func(client, message)
-
         return wrapped_func
-
     return wrapper
 
 
 @nyet("pek")
 async def jing(client, message):
-    await message.reply("so pro lu nyet")
+    ajg = await message.reply("Modal copas Jing")
+    asyncio.sleep(1)
+    await ajg.edit("Lah iya lu juga modal copas nyet")
+    asyncio.sleep(1)
+    await ajg.edit("kok sok pro si bangsat")
+    asyncio.sleep(1)
+    await ajg.edit("lah iya nyet sesama copas gausah hina bangsat")
+    asyncio.sleep(1)
+    await ajg.edit("bahaha kok ngakak ajg")
+    asyncio.sleep(1)
+    await ajg.edit("bangsat kok teriak bangsat")
+    asyncio.sleep(1)
+    await ajg.edit("gay teriak gay **GOBLOK**")
