@@ -12,6 +12,12 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 """
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
 
 TRUTH = [
     "Siapa pirst lope mu?"
