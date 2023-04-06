@@ -35,7 +35,7 @@ sat= [
     "Woy, Ijin maling banh..",
     "Minta dong banh ...",
 ]
-
+"""
 @Client.on_message(filters.command(["pack"], "") & filters.me)
 def create_pack(client, message):
     biji = message.text.split(' ')
@@ -66,7 +66,7 @@ def create_pack(client, message):
             raise e
         
     message.edit_text(f"Sticker pack {pack_name} telah berhasil dibuat.")
-
+"""
 
 
 
