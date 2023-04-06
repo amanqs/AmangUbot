@@ -1,3 +1,10 @@
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
+
 import random
 from datetime import datetime
 
@@ -31,7 +38,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@Ubot(["couple", "couples"], "")
+@Ubot(["couple", "cp"], "")
 async def couple(client, message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply_text("Perintah ini hanya dapat digunakan dalam grup.")
@@ -52,10 +59,10 @@ async def couple(client, message):
             c1_mention = (await client.get_users(c1_id)).mention
             c2_mention = (await client.get_users(c2_id)).mention
 
-            couple_selection_message = f"""**Pasangan hari ini :**
+            couple_selection_message = f"""**Pasangan :**
 
 {c1_mention} + {c2_mention} = 😘
-__Pasangan baru hari ini dapat dipilih pada jam 12 pagi {tomorrow}__"""
+__Pasangan baru dipilih {tomorrow}__"""
             await client.send_message(message.chat.id, text=couple_selection_message)
             couple = {"c1_id": c1_id, "c2_id": c2_id}
             await save_couple(chat_id, today, couple)
@@ -65,10 +72,10 @@ __Pasangan baru hari ini dapat dipilih pada jam 12 pagi {tomorrow}__"""
             c2_id = int(is_selected["c2_id"])
             c1_name = (await client.get_users(c1_id)).first_name
             c2_name = (await client.get_users(c2_id)).first_name
-            couple_selection_message = f"""Pasangan hari ini :
+            couple_selection_message = f"""Pasangan :**
 
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = 😘
-__Pasangan baru hari ini dapat dipilih pada jam 12 pagi {tomorrow}__"""
+__Pasangan baru dipilih {tomorrow}__"""
             await client.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
         print(e)
@@ -77,7 +84,7 @@ __Pasangan baru hari ini dapat dipilih pada jam 12 pagi {tomorrow}__"""
 add_command_help(
     "couple",
     [
-        [f"couple",
-            "Melihat Pasangan Hari ini.[Gunakan Dalam Grup]"],
+        [f"couple atau cp",
+            "Melihat Pasangan.[Gunakan Dalam Grup]"],
     ],
 )
