@@ -47,6 +47,7 @@ class Bot(Client):
             api_hash=API_HASH,
             api_id=API_ID,
             bot_token=BOT_TOKEN,
+            workers=BOT_WORKERS,
             plugins=dict(root="Ubot/modules/bot"),
         )
         self.LOGGER = LOGGER
@@ -75,6 +76,7 @@ bot1 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION1,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
@@ -88,6 +90,7 @@ bot2 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION2,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
@@ -101,6 +104,7 @@ bot3 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION3,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
@@ -114,6 +118,7 @@ bot4 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION4,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
@@ -127,6 +132,7 @@ bot5 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION5,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
@@ -139,6 +145,7 @@ bot6 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION6,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
@@ -152,6 +159,7 @@ bot7 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION7,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
@@ -165,6 +173,7 @@ bot8 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION8,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
@@ -178,6 +187,7 @@ bot9 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION9,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
@@ -191,6 +201,7 @@ bot10 = (
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION10,
+        workers=USER_WORKERS,
         plugins=dict(root="Ubot/modules"),
         in_memory=True,
     )
