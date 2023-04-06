@@ -292,7 +292,7 @@ async def set_prefix(new_prefix):
         {"$set": {"value": new_prefix}},
         upsert=True
     )
-  
+
 def nyet(command: str):
     async def wrapper(func):
         prefix = await get_prefix()
@@ -300,6 +300,6 @@ def nyet(command: str):
         async def wrapped_func(client, message):
             await func(client, message)
         return wrapped_func
-    return wrapper(func)
+    return wrapper
 
 
