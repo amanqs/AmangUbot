@@ -1,13 +1,10 @@
-# if you can read this, this meant you use code from Ubot | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Ubot and Ram doesn't care about credit
-# at least we are know as well
-# who Ubot and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Ubot | Ram Team
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
+
 import os
 from asyncio import sleep
 import os
@@ -20,7 +17,7 @@ from pyrogram.types import Message
 
 
 flood = {}
-profile_photo = "cache/pfp.jpg"
+profile_photo = "https://telegra.ph//file/94cc3c815a9e063dad4f0.jpg"
 
 async def list_admins(client: Client, chat_id: int):
     global admins_in_chat
