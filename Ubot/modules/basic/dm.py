@@ -1,13 +1,9 @@
-# if you can read this, this meant you use code from Ubot | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Ubot and Ram doesn't care about credit
-# at least we are know as well
-# who Ubot and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Ubot | Ram Team
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
 
 import asyncio
 from pyrogram import Client, filters
@@ -16,26 +12,26 @@ from . import *
 
 
 @Ubot(["dm"], "")
-async def dm(coli: Client, memek: Message):
-    Ubot = await memek.reply("` Proccessing.....`")
+async def dm(c: Client, m: Message):
+    await m.reply("` Proccessing.....`")
     quantity = 1
-    inp = memek.text.split(None, 2)[1]
-    user = await coli.get_chat(inp)
-    spam_text = ' '.join(memek.command[2:])
+    inp = m.text.split(None, 2)[1]
+    user = await c.get_chat(inp)
+    spam_text = ' '.join(m.command[2:])
     quantity = int(quantity)
 
-    if memek.reply_to_message:
-        reply_to_id = memek.reply_to_message.message_id
+    if m.reply_to_message:
+        reply_to_id = m.reply_to_message.message_id
         for _ in range(quantity):
-            await Ubot.edit("Message Sended Successfully !")
-            await coli.send_message(user.id, spam_text,
+            await m.edit("Message Sended Successfully !")
+            await c.send_message(user.id, spam_text,
                                       reply_to_messsge_id=reply_to_id)
             await asyncio.sleep(0.15)
         return
 
     for _ in range(quantity):
-        await coli.send_message(user.id, spam_text)
-        await Ubot.edit("Message Sended Successfully !")
+        await c.send_message(user.id, spam_text)
+        await m.edit("Message Sended Successfully !")
         await asyncio.sleep(0.15)
 
 
