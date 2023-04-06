@@ -1,3 +1,10 @@
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
+
 # Credits Tomi Setiawan
 import asyncio
 import os
@@ -34,36 +41,36 @@ async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
         process.pid,
     )
 
+mod_name = os.path.basename(__file__)[:-3]
 
-@Client.on_message(filters.command("toaudio", ".") & filters.me)
-async def audio(client, message):
-    replied = message.reply_to_message
-    Tm = await message.reply("<b>Tunggu sebentar</b>")
-    if not replied:
-        return await Tm.edit("<b>Mohon Balas Ke Video</b>")
-    if replied.media == MessageMediaType.VIDEO:
-        await Tm.edit("<b>Downloading Video . . .</b>")
-        file = await client.download_media(
-            message=replied,
-            file_name=f"audio{random.choice(range(9999999))}/",
-        )
-        out_file = f"{file}.mp3"
-        try:
-            await Tm.edit("<b>Mencoba Ekstrak Audio. . .</b>")
-            cmd = f"ffmpeg -i {file} -q:a 0 -map a {out_file}"
-            await run_cmd(cmd)
-            await Tm.edit("<b>Uploading Audio . . .</b>")
-            await client.send_voice(
-                message.chat.id,
-                voice=out_file,
-                reply_to_message_id=message.id,
-            )
-            os.remove(out_file)
-            await Tm.delete()
-        except Exception as error:
-            await Tm.edit(error)
-    else:
-        return await Tm.edit("<b>Mohon Balas Ke Video</b>")
+
+@Ubot(["toaudio"], "")
+async def extract_all_aud(client: Client, message: Message):
+    replied_msg = message.reply_to_message
+    babi = await message.reply("`Downloading Video . . .`")
+    ext_out_path = os.getcwd() + "/" + "downloads/py_extract/audios"
+    if not replied_msg:
+        await babi.edit("**Mohon Balas Ke Video**")
+        return
+    if not replied_msg.video:
+        await babi.edit("**Mohon Balas Ke Video**")
+        return
+    if os.path.exists(ext_out_path):
+        await babi.edit("Processing.....")
+        return
+    replied_video = replied_msg.video
+    try:
+        await babi.edit("`Downloading...`")
+        ext_video = await client.download_media(message=replied_video)
+        await babi.edit("`Extracting Audio(s)...`")
+        exted_aud = Video_tools.extract_all_audio(input_file=ext_video, output_path=ext_out_path)
+        await babi.edit("`Uploading...`")
+        for nexa_aud in exted_aud:
+            await message.reply_audio(audio=nexa_aud, caption=f"`Extracted by` {(await client.get_me()).mention}")
+        await babi.edit("`Extracting Finished!`")
+        shutil.rmtree(ext_out_path)
+    except Exception as e:
+        await babi.edit(f"**Error:** `{e}`")
 
 
 @Ubot("efek", "")
