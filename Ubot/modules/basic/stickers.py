@@ -354,7 +354,7 @@ async def tinying(client: Client, message: Message):
         return await message.edit_text("**Please Reply To Sticker Message!**")
     tex = await message.edit_text("`Processing . . .`")
     ik = await client.download_media(reply)
-    im1 = Image.open("cache/blank.png")
+    im1 = Image.open("Ubot/resources/blank.png")
     if ik.endswith(".tgs"):
         await client.download_media(reply, "man.tgs")
         await bash("lottie_convert.py man.tgs json.json")
