@@ -1,13 +1,9 @@
-# if you can read this, this meant you use code from Ubot | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Ubot and Ram doesn't care about credit
-# at least we are know as well
-# who Ubot and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Ubot | Ram Team
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
 
 import os
 from pyrogram import filters, Client
@@ -58,7 +54,7 @@ async def pytrans_tr(_, message: Message):
   # Parse the translation message
   if translation["status"] == "success":
     tred_txt = f"""
-**Translation Engine**: `{translation["engine"]}`
+**Translation**: `{translation["engine"]}`
 **Translated to:** `{translation["dest_lang"]}`
 **Translation:**
 `{translation["translation"]}`
