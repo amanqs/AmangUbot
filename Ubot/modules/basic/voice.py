@@ -1,13 +1,9 @@
-# if you can read this, this meant you use code from Ubot | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Ubot and Ram doesn't care about credit
-# at least we are know as well
-# who Ubot and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Ubot | Ram Team
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
 
 import asyncio
 import os
@@ -23,8 +19,7 @@ from ubotlibs.ubot.utils.misc import *
 from ubotlibs.ubot.utils.tools import *
 
 
-lang = "id"  # Default Language for voice
-
+lang = "id"
 
 @Ubot(["tts"], "")
 async def voice(client: Client, message):
@@ -41,7 +36,7 @@ async def voice(client: Client, message):
         )
         return
     await client.send_chat_action(message.chat.id, enums.ChatAction.RECORD_AUDIO)
-    # noinspection PyUnboundLocalVariable
+
     tts = gTTS(v_text, lang=lang)
     tts.save("voice.mp3")
     if message.reply_to_message:
@@ -75,12 +70,12 @@ async def voicelang(client: Client, message: Message):
     )
 
 @Ubot(["stt"], "")
-async def speech_to_text(client: Client, message: Message):
+async def speech_to_text(client, message):
     reply = message.reply_to_message
     if not (reply and reply.voice):
-        return await message.edit("Please reply to a voice message")
-    await message.edit("`Processing...`")
-    voice_file = await client.download_media(message=reply, file_name='downloads/voice.ogg')
+        return await message.edit("Mohon Balas Ke Pesan Suara")
+    ajg = await message.reply("`Processing...`")
+    monyet = await client.download_media(message=reply, file_name='downloads/voice.ogg')
 
     @run_in_exc
     def convert_to_raw(audio_original, raw_file_name):
@@ -88,25 +83,25 @@ async def speech_to_text(client: Client, message: Message):
         stream = ffmpeg.output(stream, raw_file_name, format="wav", acodec="pcm_s16le", ac=2, ar="48k", loglevel="error").overwrite_output().run()
         return raw_file_name
 
-    # kata piki LU BABI !!!
+
     recognizer = sr.Recognizer()
-    wav_file = await convert_to_raw(voice_file, 'downloads/voice.wav')
-    with sr.AudioFile(wav_file) as source:
+    babi = await convert_to_raw(monyet, 'downloads/voice.wav')
+    with sr.AudioFile(babi) as source:
         audio = recognizer.record(source)
 
     try:
         text = recognizer.recognize_google(audio, language="id-ID")
     except sr.UnknownValueError:
-        return await message.edit("Suara tidak jelas...")
+        return await message.edit("Mohon Periksa Apakah Itu Voice Note..")
     except sr.RequestError as e:
-        return await message.edit("Error, service tidak tersedia sementara waktu; {0}".format(e))
-    await message.reply_text(
+        return await message.edit("Error {0}".format(e))
+    await ajg.delete()
+    await asyncio.sleep(1)
+    await message.reply(
         text=text
     )
-    
-    # kata rama LU KONTOL !!!
-    os.remove(wav_file)
-    os.remove(voice_file)
+    os.remove(babi)
+    os.remove(monyet)
 
 
 add_command_help(
