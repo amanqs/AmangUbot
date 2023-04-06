@@ -1,5 +1,10 @@
 # Credits Thx Tomi Setiawan
-
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
 
 import asyncio
 from pyrogram import Client, filters
