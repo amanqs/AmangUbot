@@ -1,13 +1,10 @@
-# if you can read this, this meant you use code from Ubot | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Ubot and Ram doesn't care about credit
-# at least we are know as well
-# who Ubot and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Ubot | Ram Team
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
+
 import asyncio
 import os
 import random
@@ -31,7 +28,7 @@ from ubotlibs.ubot.helper.PyroHelpers import ReplyCheck
 from ubotlibs.ubot.utils import *
 
 
-babi= [
+sat= [
     "Ijin nyolong banh..",
     "Buset maling ah...",
     "Sststststs Dor...",
@@ -77,7 +74,7 @@ def create_pack(client, message):
 async def kang(client: Client, message: Message):
     user = client.me
     replied = message.reply_to_message
-    um = await message.edit_text(random.choice(babi))
+    um = await message.edit_text(random.choice(sat))
     media_ = None
     emoji_ = None
     is_anim = False
