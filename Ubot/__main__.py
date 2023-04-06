@@ -12,6 +12,7 @@ from .logging import LOGGER
 from pyrogram import __version__ as pyro
 from Ubot.modules import ALL_MODULES
 from Ubot.core.db import buat_log, get_botlog
+from Ubot.core import *
 from config import SUPPORT, CHANNEL
 import os
 from dotenv import load_dotenv
@@ -42,7 +43,7 @@ async def main():
             ex = await bot.get_me()
             await join(bot)
             user_id = ex.id
-            await buat_log(bot)
+            await ajg(bot)
             botlog_chat_id = await get_botlog(user_id)
             try:
                 await bot.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
