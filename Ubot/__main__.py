@@ -41,7 +41,6 @@ async def main():
         try:
             await bot.start()
             ex = await bot.get_me()
-            await join(bot)
             user_id = ex.id
             await ajg(bot)
             botlog_chat_id = await get_botlog(user_id)
