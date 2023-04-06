@@ -1,4 +1,10 @@
 """credits Tomi Setiawan > @T0M1_X"""
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
 
 
 import random 
