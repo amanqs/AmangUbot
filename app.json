@@ -7,19 +7,39 @@
     "stack": "container",
     "env": {
         "SESSION1": {
-            "description": "fill with the pyrogram V2 session string from @kazusession",
+            "description": "Isi String Pyrogram V2 Ambil Di @NayaStringBot",
             "required": true
         },
+        "SESSION2": {
+            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
+            "required": false
+            "value": "Isi Jika Ingin Di Isi, Atau Hapus Jika Tidak Digunakan"
+        },
+        "SESSION3": {
+            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
+            "required": false
+            "value": "Isi Jika Ingin Di Isi, Atau Hapus Jika Tidak Digunakan"
+        },
+        "SESSION4": {
+            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
+            "required": false
+            "value": "Isi Jika Ingin Di Isi, Atau Hapus Jika Tidak Digunakan"
+        },
+        "SESSION5": {
+            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
+            "required": false
+            "value": "Isi Jika Ingin Di Isi, Atau Hapus Jika Tidak Digunakan"
+        },
         "API_ID": {
-            "description": "Isi Woy",
+            "description": "API_ID Lu Tau kan ?",
             "required": true
         },
         "API_HASH": {
-            "description": "Isi Woy",
+            "description": "API_HASH Tau kan ?",
             "required": true
         },
         "MONGO_URL": {
-            "description": "Fill there an mongo database from mongodb.com",
+            "description": "Isi MONGODB, Kalo Ga tau bisa ke @KynanSupport Ketik #tutor_mongodb",
             "required": true,
             "value": ""
         },
@@ -27,11 +47,6 @@
             "description": "Jika ingin menggunakan openai, isi openai-api-key",
             "required": false,
             "value": ""
-        },
-        "PM_AUTO_BAN": {
-            "description": "Isi Tue",
-            "required": true,
-            "value": "True"
         },
         "BOT_TOKEN": {
             "description": "fill with your bot token get from @BotFather on telegram",
@@ -41,19 +56,14 @@
         "HEROKU_API_KEY": {
             "description": "Heroku Api Key",
             "required": true,
-            "value": "."
+            "value": "Isi Mas"
         },
         "HEROKU_APP_NAME": {
             "description": "Heroku APP name",
             "required": true,
-            "value": "."
+            "value": "Isi Mas"
         }
     },
-    "addons": [
-    {
-      "plan": "heroku-postgresql"
-    }
-    ],
     "buildpacks": [
         {
           "url": "heroku/python"
