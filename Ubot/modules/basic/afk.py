@@ -1,13 +1,10 @@
-# if you can read this, this meant you use code from Geez | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Geez and Ram doesn't care about credit
-# at least we are know as well
-# who Geez and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Geez | Ram Team
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
+
 from datetime import datetime
 from pyrogram import filters, Client
 from pyrogram.types import Message
@@ -18,10 +15,10 @@ from . import *
 
 afk_sanity_check: dict = {}
 afkstr = """
-#AFK Activated\n reason {}
+#AFK Aktif\n Alasan {}
 """
 onlinestr ="""
-#AFK De-activated\nAfk for {}
+#AFK Tidak Aktif\nAlasan {}
 """
 async def is_afk_(f, client, message):
     user_id = client.me.id
