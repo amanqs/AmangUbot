@@ -54,9 +54,9 @@
             "value": ""
         },
         "HEROKU_API_KEY": {
-            "description": "Heroku Api Key",
+            "description": "Ambil Heroku Api Key Dipengaturan Heroku",
             "required": true,
-            "value": "Isi Mas"
+            "value": "Isi"
         },
         "HEROKU_APP_NAME": {
             "description": "Heroku APP name",
