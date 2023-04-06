@@ -1,3 +1,9 @@
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
 
 import json
 import requests
