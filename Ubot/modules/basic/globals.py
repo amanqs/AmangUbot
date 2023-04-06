@@ -1,3 +1,11 @@
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
+
+
 
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
