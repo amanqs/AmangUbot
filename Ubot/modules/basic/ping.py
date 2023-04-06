@@ -128,7 +128,7 @@ async def pingme(client, message):
 async def setprefix_(c: Client, m: Message):
     biji = get_arg(m)
     if not biji:
-        sempak = await get_prefix()
+        sempak = get_prefix()
         return await eor(
             m,
             f"Set your prefix using {cmds}setprefix [new_prefix]\n • Current prefix is {sempak}",
