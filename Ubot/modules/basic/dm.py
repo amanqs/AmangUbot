@@ -13,7 +13,7 @@ from . import *
 
 @Ubot(["dm"], "")
 async def dm(c: Client, m: Message):
-    await m.reply("` Proccessing.....`")
+    await m.edit("` Proccessing.....`")
     quantity = 1
     inp = m.text.split(None, 2)[1]
     user = await c.get_chat(inp)
