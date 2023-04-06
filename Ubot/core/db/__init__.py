@@ -291,4 +291,3 @@ async def set_prefix(new_prefix):
         upsert=True
     )
   
-prefix = get_prefix()
