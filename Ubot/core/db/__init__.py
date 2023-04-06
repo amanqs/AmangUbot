@@ -278,6 +278,8 @@ async def check_afk(user_id: int):
     user_data = await afkdb.users.find_one({"user_id": user_id, "afk": True})
     return user_data
 
+sys:1: RuntimeWarning: coroutine 'nyet.<locals>.wrapper' was never awaited
+
 async def get_prefix():
     prefix_config = await prefdb.find_one({"key": "prefix"})
     if prefix_config:
@@ -299,4 +301,6 @@ def nyet(command: str):
         async def wrapped_func(client, message):
             await func(client, message)
         return wrapped_func
-    return wrapper
+    return wrapper()
+
+
