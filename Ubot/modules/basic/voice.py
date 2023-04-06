@@ -92,12 +92,10 @@ async def speech_to_text(client, message):
     try:
         text = recognizer.recognize_google(audio, language="id-ID")
     except sr.UnknownValueError:
-        return await message.edit("Mohon Periksa Apakah Itu Voice Note..")
+        return await ajg.edit("Mohon Periksa Apakah Itu Voice Note..")
     except sr.RequestError as e:
-        return await message.edit("Error {0}".format(e))
-    await ajg.delete()
-    await asyncio.sleep(1)
-    await message.reply(
+        return await ajg.edit("Error {0}".format(e))
+    await ajg.edit(
         text=text
     )
     os.remove(babi)
