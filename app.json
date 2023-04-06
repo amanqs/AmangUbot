@@ -13,22 +13,18 @@
         "SESSION2": {
             "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
             "required": false
-            "value": "Isi Jika Ingin Di Isi, Atau Hapus Jika Tidak Digunakan"
         },
         "SESSION3": {
             "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
             "required": false
-            "value": "Isi Jika Ingin Di Isi, Atau Hapus Jika Tidak Digunakan"
         },
         "SESSION4": {
             "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
             "required": false
-            "value": "Isi Jika Ingin Di Isi, Atau Hapus Jika Tidak Digunakan"
         },
         "SESSION5": {
             "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
             "required": false
-            "value": "Isi Jika Ingin Di Isi, Atau Hapus Jika Tidak Digunakan"
         },
         "API_ID": {
             "description": "API_ID Lu Tau kan ?",
