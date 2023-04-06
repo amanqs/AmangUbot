@@ -1,3 +1,11 @@
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
+
+
 import asyncio
 from threading import Event
 
@@ -23,10 +31,7 @@ def spam_allowed():
 
 @Ubot(["dspam"], "")
 async def delayspam(client: Client, message: Message):
-    #if message.chat.id in BL_GCAST:
-    #    return await edit_or_reply(
-    #        message, "**Gabisa Digunain Disini Tod!!**"
-    #    )
+
     delayspam = await extract_args(message)
     arr = delayspam.split()
     if len(arr) < 3 or not arr[0].isdigit() or not arr[1].isdigit():
