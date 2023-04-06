@@ -16,7 +16,7 @@ from typing import Tuple
 from pyrogram import Client, filters
 from pyrogram.enums import MessageMediaType, MessagesFilter
 from pyrogram.raw.functions.messages import DeleteHistory
-from pyrogram.types import InputMediaPhoto
+from pyrogram.types import InputMediaPhoto, Message
 from ubotlibs.ubot.helper import get_arg
 from . import *
 
@@ -45,7 +45,7 @@ mod_name = os.path.basename(__file__)[:-3]
 
 
 @Ubot(["toaudio"], "")
-async def extract_all_aud(client: Client, message: Message):
+async def extract_all_aud(client, message):
     replied_msg = message.reply_to_message
     babi = await message.reply("`Downloading Video . . .`")
     ext_out_path = os.getcwd() + "/" + "downloads/py_extract/audios"
