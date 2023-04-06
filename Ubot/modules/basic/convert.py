@@ -14,6 +14,7 @@ import math
 import shlex
 from typing import Tuple
 from pyrogram import Client, filters
+from py_extract import Video_tools
 from pyrogram.enums import MessageMediaType, MessagesFilter
 from pyrogram.raw.functions.messages import DeleteHistory
 from pyrogram.types import InputMediaPhoto, Message
