@@ -18,7 +18,7 @@ from datetime import datetime
 from . import *
 from ubotlibs.ubot.helper.PyroHelpers import *
 from Ubot import *
-from Ubot.core.db import set_prefix, get_prefix
+from Ubot.core.db import set_prefix, get_prefix, nyet
 from .systemstats import get_readable_time
 from ubotlibs.ubot.utils.tools import get_arg
 
@@ -146,21 +146,7 @@ async def setprefix_(c: Client, m: Message):
         await m.edit(f"☑️ Prefix changed to [{biji}]")
         
 
-async def nyet(command: str, prefixes=""):
-    if prefixes is None:
-        prefix = await get_prefix()
-        prefixes = [prefix]
-    async def wrapper(func):
-        async def wrapped_func(client, message):
-            prefix = prefixes[0] if len(prefixes) > 0 else await get_prefix()
-            text = message.text.lower()
-            if not text.startswith(prefix):
-                return
-            await func(client, message)
-        return wrapped_func
-    return wrapper
-
-@nyet("nyet")
+@nyet("pak")
 async def y(client, message):
     await message.reply("sesama gay itu monyet")
 
