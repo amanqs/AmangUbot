@@ -34,9 +34,7 @@ async def webshot(client, message):
                 full_link,
                 caption=f"**Tangkapan layar halaman** `{user_link}`",
             )
-        await ren.delete()
     except Exception as error:
-        await ren.delete()
         await client.send_message(
             message.chat.id, f"**Ada yang salah\nLog:`{error}`...**"
         )
