@@ -1,6 +1,7 @@
 
 from pyrogram.filters import chat
-from pyrogram import Client
+from pyrogram import Client, filters
+from pyrogram.types import Message
 from typing import Dict, List, Union
 from datetime import datetime, timedelta
 import pymongo.errors
@@ -291,3 +292,11 @@ async def set_prefix(new_prefix):
         upsert=True
     )
   
+def nyet(command: str):
+    async def wrapper(func):
+        prefix = await get_prefix()
+        @Client.on_message(filters.command(command, prefix) & filters.me)
+        async def wrapped_func(client, message):
+            await func(client, message)
+        return wrapped_func
+    return wrapper
