@@ -14,7 +14,7 @@ from ubotlibs.ubot.utils import extract_user_and_reason
 
 from ubotlibs.ubot.helper.utility import get_arg
 ok = []
-ain = [
+nyet = [
     "50",
     "350",
     "97",
@@ -28,7 +28,7 @@ ain = [
     "877",
     "890",
 ]
-ngentot = [
+babi = [
     "2",
     "3",
     "6",
@@ -59,7 +59,7 @@ async def giben(client: Client, message: Message):
         except Exception:
             return await ex.edit("`Balas pesan pengguna atau berikan nama pengguna/id_pengguna`")        
     ok.append(user.id)
-    done = random.choice(ain)
+    done = random.choice(nyet)
     msg = (
         r"**#GBanned**"
         f"\n\n**Nama:** [{user.first_name}](tg://user?id={user.id})"
@@ -93,7 +93,7 @@ async def gimut(client: Client, message: Message):
         except Exception:
             return await ex.edit("`Balas pesan pengguna atau berikan nama pengguna/id_pengguna`")
     ok.append(user.id)
-    done = random.choice(ain)
+    done = random.choice(nyet)
     msg = (
         r"**#GMuted**"
         f"\n\n**Nama:** [{user.first_name}](tg://user?id={user.id})"
@@ -127,7 +127,7 @@ async def gikik(client: Client, message: Message):
         except Exception:
             return await ex.edit("`Balas pesan pengguna atau berikan nama pengguna/id_pengguna`")
     ok.append(user.id)
-    done = random.choice(ain)
+    done = random.choice(nyet)
     msg = (
         r"**#GKicked**"
         f"\n\n**Nama:** [{user.first_name}](tg://user?id={user.id})"
@@ -149,8 +149,8 @@ async def gcast_cmd(client: Client, message: Message):
         tex = await message.reply_text("`Started global broadcast...`")
     else:
         return await message.edit_text("**Give A Message or Reply**")
-    done = random.choice(ain)
-    fail = random.choice(ngentot)
+    done = random.choice(nyet)
+    fail = random.choice(babi)
     await asyncio.sleep(5)
     await tex.edit_text(
         f"**Successfully Sent Message To** `{done}` **Groups chat, Failed to Send Message To** `{fail}` **Groups**"
