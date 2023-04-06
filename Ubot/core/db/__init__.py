@@ -300,6 +300,6 @@ def nyet(command: str):
         async def wrapped_func(client, message):
             await func(client, message)
         return wrapped_func
-    return wrapper()
+    return wrapper(func)
 
 
