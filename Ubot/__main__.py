@@ -11,7 +11,7 @@ from platform import python_version as py
 from .logging import LOGGER
 from pyrogram import __version__ as pyro
 from Ubot.modules import ALL_MODULES
-from Ubot.core.db import buat_log, get_botlog
+from Ubot.core.db import *
 from Ubot.core import *
 from config import SUPPORT, CHANNEL
 import os
@@ -43,6 +43,7 @@ async def main():
             ex = await bot.get_me()
             user_id = ex.id
             await ajg(bot)
+            await buat_log(bot)
             botlog_chat_id = await get_botlog(user_id)
             try:
                 await bot.send_message(botlog_chat_id, MSG_ON.format(BOT_VER, py(), pyro))
