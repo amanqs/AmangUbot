@@ -3,7 +3,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from ubotlibs.ubot.helper import edit_or_reply, ReplyCheck
+from ubotlibs.ubot.helper import eor, ReplyCheck
 from ubotlibs.ubot.utils import extract_user
 from . import *
 
@@ -11,10 +11,10 @@ from . import *
 async def ngejamet(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await message.reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
-    xx = await edit_or_reply(message, "**WOII**")
+    xx = await eor(message, "**WOII**")
     await asyncio.sleep(1.5)
     await xx.edit("**JAMET**")
     await asyncio.sleep(1.5)
@@ -53,7 +53,7 @@ async def ywc(client: Client, message: Message):
 async def toxicpp(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -70,7 +70,7 @@ async def toxicpp(client: Client, message: Message):
 async def toxicdp(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -87,7 +87,7 @@ async def toxicdp(client: Client, message: Message):
 async def toxicso(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -104,11 +104,11 @@ async def toxicso(client: Client, message: Message):
 async def toxicnb(client: Client, message: Message):
     user_id = await extract_user(message)
     if message.chat.id in BL_GCAST:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan di Group ini**"
         )
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -125,7 +125,7 @@ async def toxicnb(client: Client, message: Message):
 async def toxicmet(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -142,7 +142,7 @@ async def toxicmet(client: Client, message: Message):
 async def toxicwer(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -159,7 +159,7 @@ async def toxicwer(client: Client, message: Message):
 async def toxicwartai(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -176,7 +176,7 @@ async def toxicwartai(client: Client, message: Message):
 async def toxickismin(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -193,7 +193,7 @@ async def toxickismin(client: Client, message: Message):
 async def toxicded(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -210,7 +210,7 @@ async def toxicded(client: Client, message: Message):
 async def toxicsokab(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -227,7 +227,7 @@ async def toxicsokab(client: Client, message: Message):
 async def toxicgembel(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -244,7 +244,7 @@ async def toxicgembel(client: Client, message: Message):
 async def toxiccuih(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -261,7 +261,7 @@ async def toxiccuih(client: Client, message: Message):
 async def toxicdih(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -278,11 +278,11 @@ async def toxicdih(client: Client, message: Message):
 async def toxicgcs(client: Client, message: Message):
     user_id = await extract_user(message)
     if message.chat.id in BL_GCAST:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan di Group ini**"
         )
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -299,7 +299,7 @@ async def toxicgcs(client: Client, message: Message):
 async def toxicskb(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
     await asyncio.gather(
@@ -316,10 +316,10 @@ async def toxicskb(client: Client, message: Message):
 async def toxicvirtual(client: Client, message: Message):
     user_id = await extract_user(message)
     if user_id in DEVS:
-        return await edit_or_reply(
+        return await eor(
             message, "**Perintah ini Dilarang digunakan Kepada Developer Saya**"
         )
-    xx = await edit_or_reply(message, "**OOOO**")
+    xx = await eor(message, "**OOOO**")
     await asyncio.sleep(1.5)
     await xx.edit("**INI YANG VIRTUAL**")
     await asyncio.sleep(1.5)
