@@ -1,3 +1,10 @@
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
+
 from asyncio import sleep
 from pyrogram import Client, filters
 from Ubot.core.db import *
