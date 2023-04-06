@@ -3,7 +3,7 @@
     "description": "Nothing Speciall !!!.",
     "logo": "https://telegra.ph//file/75acabea0a9cc6679c2d4.jpg",
     "keywords": ["telegram", "userbot", "pyrogram"],
-    "repository": "https://github.com/ayrizz/Naya-Pyro",
+    "repository": "https://github.com/naya1503/Naya-Pyro",
     "stack": "container",
     "env": {
         "SESSION1": {
