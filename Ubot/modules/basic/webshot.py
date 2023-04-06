@@ -1,5 +1,11 @@
 # COPYRIGHT https://github.com/TeamKillerX/DarkWeb
 # CREATE CODING BY https://t.me/xtsea
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
 
 import asyncio
 from pyrogram.types import *
