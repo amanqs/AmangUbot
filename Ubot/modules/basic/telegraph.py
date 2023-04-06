@@ -1,13 +1,11 @@
-# if you can read this, this meant you use code from Ubot | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Ubot and Ram doesn't care about credit
-# at least we are know as well
-# who Ubot and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Ubot | Ram Team
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
+
+
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from telegraph import Telegraph, exceptions, upload_file
