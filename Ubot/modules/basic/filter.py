@@ -1,13 +1,9 @@
-# if you can read this, this meant you use code from Geez | Ram Project
-# this code is from somewhere else
-# please dont hestitate to steal it
-# because Geez and Ram doesn't care about credit
-# at least we are know as well
-# who Geez and Ram is
-#
-#
-# kopas repo dan hapus credit, ga akan jadikan lu seorang developer
-# ©2023 Geez | Ram Team
+# Copas Teriak Copas MONYET
+# Gay Teriak Gay Anjeng
+# @Rizzvbss | @Kenapanan
+# Kok Bacot
+# © @KynanSupport
+# FULL MONGO NIH JING FIX MULTI CLIENT
 
 import re
 from pyrogram import filters, Client
@@ -16,7 +12,7 @@ from . import *
 from Ubot.core.db  import *
 from Ubot.core.filter import *
 
-@Ubot("adfil", "") #lu gay
+@Ubot("adfil", "")
 async def save_filters(client, message):
     if len(message.command) < 2 or not message.reply_to_message:
         return await message.reply_text(
@@ -49,7 +45,7 @@ async def save_filters(client, message):
     await save_filter(user_id, chat_id, name, _filter)
     await message.reply_text(f"**Filter {name} disimpan!.**")
 
-@Ubot("filters", "") #lu gay
+@Ubot("filters", "")
 async def get_filterss(client, message):
     user_id = client.me.id
     chat_id = message.chat.id
@@ -62,7 +58,7 @@ async def get_filterss(client, message):
         msg += f"**-** `{_filter}`\n"
     await message.reply_text(msg)
 
-@Ubot("stfil", "") #lu gay
+@Ubot("stfil", "")
 async def del_filter(client, message):
     if len(message.command) < 2:
         return await message.reply_text(f"**Gunakan Format:**\n`stopfilter` [nama filter]")
