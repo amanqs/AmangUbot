@@ -129,10 +129,18 @@ async def pingme(client, message):
         f"**Pong!**\n`%sms`\n" % (duration)
         )
     await ping_.delete()
-  
+
+@nay(command=["hello"])
+async def hello(client, message, cmd_handler):
+    await message.reply("hsloo  sempak world")
+
+
+
+"""
 @nay(["pak"], CMD_HNDLR)
 async def y(client, message):
     await message.reply("sesama gay itu monyet")
+
 
 @Ubot("pek", "")
 async def jing(client, message):
@@ -149,3 +157,4 @@ async def jing(client, message):
     await ajg.edit("bangsat kok teriak bangsat")
     await asyncio.sleep(2)
     await ajg.edit("gay teriak gay **GOBLOK**")
+"""
