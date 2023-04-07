@@ -131,7 +131,7 @@ async def pingme(client, message):
     await ping_.delete()
   
 @naya.on_cmd(["pak"])
-async def y(client, message):
+async def y(_, message):
     await message.reply("sesama gay itu monyet")
 
 @Ubot("pek", "")
