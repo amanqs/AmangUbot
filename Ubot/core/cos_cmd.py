@@ -18,6 +18,8 @@ from pyrogram.errors.exceptions.bad_request_400 import MessageIdInvalid
 from .func import rm_markdown
 from Ubot import cmds, app
 from config import CMD_HNDLR
+
+
 class naya:
     def on_cmd(self, command: list):
         naya_filter = (filters.command(command, CMD_HNDLR) & filters.me)
@@ -41,6 +43,15 @@ class naya:
     def add_handler(self, x_wrapper, naya_filter):
         app.add_handler(MessageHandler(x_wrapper, filters=naya_filter))
 
+def nay(command: list, CMD_HNDLR):
+    def wrapper(func):
+        @Client.on_message(filters.command(command, CMD_HNDLR) & filters.me)
+        async def wrapped_func(client, message):
+            await func(client, message)
+
+        return wrapped_func
+
+    return wrapper
 
 n = naya()
 
