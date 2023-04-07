@@ -130,7 +130,7 @@ async def pingme(client, message):
         )
     await ping_.delete()
 
-@nay(command=["hello"])
+@nay(["hello"])
 async def hello(client, message, cmd_handler):
     await message.reply("hsloo  sempak world")
 
