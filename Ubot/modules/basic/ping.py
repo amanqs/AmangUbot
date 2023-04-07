@@ -18,7 +18,7 @@ from datetime import datetime
 from . import *
 from ubotlibs.ubot.helper.PyroHelpers import *
 from Ubot import *
-from Ubot.core.db import set_prefix, get_prefix, nyet
+from Ubot.core.cos_cmd import *
 from .systemstats import get_readable_time
 from ubotlibs.ubot.utils.tools import get_arg
 
@@ -130,23 +130,9 @@ async def pingme(client, message):
         )
     await ping_.delete()
   
-  
-@Client.on_message(filters.command(["setprefix", "sp"], cmds) & filters.me)
-async def setprefix_(c: Client, m: Message):
-    biji = get_arg(m)
-    if not biji:
-        sempak = get_prefix()
-        return await eor(
-            m,
-            f"Set your prefix using {cmds}setprefix [new_prefix]\n • Current prefix is {sempak}",
-            time=10,
-        )
-    else:
-        await set_prefix(biji)
-        await m.edit(f"☑️ Prefix changed to [{biji}]")
         
 
-@nyet("pak")
+@naya.on_cmd(command=["pak"])
 async def y(client, message):
     await message.reply("sesama gay itu monyet")
 
