@@ -28,21 +28,21 @@ class naya:
         command: list,
     ):
         naya_filter = (filters.me & filters.command(command, cmds) & ~filters.via_bot)
-            self.add_handler(x_wrapper, naya_filter)
-            return x_wrapper
-        return decorate_naya
-    
-    
+        self.add_handler(x_wrapper, naya_filter)
+        return x_wrapper
+    return decorate_naya
+
     @classmethod
     def on_cf(self, custom_filters):
         def decorate_naya_cf(func):
             async def x_wrapper_cf(client, message):
-            self.add_handler(x_wrapper_cf, custom_filters)
+                self.add_handler(x_wrapper_cf, custom_filters)
+                return x_wrapper_cf
             return x_wrapper_cf
-        return decorate_naya_cf
     
     @classmethod
     def add_handler(self, x_wrapper, nexaub_filter, cmd_grp):
         app.add_handler(MessageHandler(x_wrapper, filters=naya_filter))
+
     
     
