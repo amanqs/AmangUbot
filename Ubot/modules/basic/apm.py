@@ -93,7 +93,7 @@ async def deny(client, message):
 async def reply_pm(client, message):
     user_id = client.me.id
     chat_id = message.chat.id
-    botlog_chat_id = await get_log_groups(user_id)
+    #botlog_chat_id = await get_log_groups(user_id)
     global FLOOD_CTRL
     pmpermit, pm_message, limit, block_message = await set.get_pm_settings(user_id)
     user = message.from_user.id
