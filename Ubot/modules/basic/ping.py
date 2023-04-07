@@ -145,7 +145,7 @@ async def setvar(client, message):
     else:
         biji = cok.split(" ", 1)
         await set_custom_var(user_id, var=biji[0], value=biji[1])
-        await setvr_msg.edit(f"**Successfully Added Custom Var** \n\n**Var:** `{biji[0]}` \n**Val:** `{biji[1]}`")
+        await crot.edit(f"**Successfully Added Custom Var** \n\n**Var:** `{biji[0]}` \n**Val:** `{biji[1]}`")
 
 """
 @nay(["pak"], CMD_HNDLR)
