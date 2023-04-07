@@ -21,7 +21,7 @@ from config import CMD_HNDLR
 
 
 class naya:
-    def on_cmd(self, command: list):
+    def on_cmd(self, command: str):
         naya_filter = (filters.command(command, CMD_HNDLR) & filters.me)
         return self.decorate_naya(naya_filter)
 
