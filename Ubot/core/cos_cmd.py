@@ -20,10 +20,7 @@ from Ubot import cmds, app
 
 class naya:
     @classmethod
-    def on_cmd(
-        cls,
-        command: list,
-    ):
+    def on_cmd(cls, command: list):
         naya_filter = (filters.me & filters.command(command, cmds) & ~filters.via_bot)
         return cls.decorate_naya(naya_filter)
 
@@ -45,8 +42,12 @@ class naya:
             return decorate_naya_cf
 
     @classmethod
-    def add_handler(cls, x_wrapper, nexaub_filter, cmd_grp):
-        app.add_handler(MessageHandler(x_wrapper, filters=nexaub_filter))
+    def add_handler(cls, x_wrapper, naya_filter):
+        app.add_handler(MessageHandler(x_wrapper, filters=naya_filter))
+
+
+
+
 
 
 
