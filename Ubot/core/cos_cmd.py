@@ -46,8 +46,9 @@ class naya:
 def nay(command: list):
     def wrapper(func):
         async def wrapped_func(client, message):
+            user_id = client.me.id
             CMD_HNDLR = os.getenv("CMD_HNDLR", ".")  # Mengambil nilai CMD_HNDLR dari environment variable atau menggunakan nilai default "."
-            custom_var = await get_custom_var(message.from_user.id, "CMD_HNDLR")  # Mengambil nilai CMD_HNDLR dari database jika ada
+            custom_var = await get_custom_var(user_id, "CMD_HNDLR")  # Mengambil nilai CMD_HNDLR dari database jika ada
             if custom_var:
                 CMD_HNDLR = custom_var
             
