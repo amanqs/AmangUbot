@@ -28,9 +28,11 @@ class naya:
         command: list,
     ):
         naya_filter = (filters.me & filters.command(command, cmds) & ~filters.via_bot)
-        self.add_handler(x_wrapper, naya_filter)
-        return x_wrapper
-    return decorate_naya
+        def decorate_naya(func):
+            async def x_wrapper(client, message):
+                self.add_handler(x_wrapper, naya_filter)
+                return x_wrapper
+            return decorate_naya
 
     @classmethod
     def on_cf(self, custom_filters):
