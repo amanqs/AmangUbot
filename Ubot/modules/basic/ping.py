@@ -132,7 +132,7 @@ async def pingme(client, message):
   
         
 
-@naya(command=["pak"])
+@naya(["pak"])
 async def y(client, message):
     await message.reply("sesama gay itu monyet")
 
