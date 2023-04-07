@@ -130,7 +130,7 @@ async def pingme(client, message):
         )
     await ping_.delete()
   
-@nay(["pak"])
+@nay(["pak"], CMD_HNDLR)
 async def y(client, message):
     await message.reply("sesama gay itu monyet")
 
