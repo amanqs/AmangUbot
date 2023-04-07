@@ -134,7 +134,17 @@ async def pingme(client, message):
 async def hello(client, message):
     await message.reply("hsloo  sempak world")
 
-
+@Client.on_message(filters.command("sv") & filters.me)
+async def setvar(client, message):
+    user_id = client.me.id
+    crot = await message.reply("`Processing...`")
+    cok = get_arg(message)
+    if not cok:
+      return await crot.edit("`Give Variable and Value to set!`")
+    else:
+        biji = cok.split(" ", 1)
+        await set_custom_var(user_id, var=biji[0], value=biji[1])
+        await setvr_msg.edit(f"**Successfully Added Custom Var** \n\n**Var:** `{s_var[0]}` \n**Val:** `{s_var[1]}`")
 
 """
 @nay(["pak"], CMD_HNDLR)
