@@ -14,7 +14,7 @@ from pyrogram import filters, enums, Client
 from pyrogram.handlers import MessageHandler
 from pyrogram.errors.exceptions.bad_request_400 import MessageIdInvalid
 
-from Ubot.core.db import *
+
 from .func import rm_markdown
 from Ubot import cmds, app
 from config import CMD_HNDLR
@@ -43,18 +43,15 @@ class naya:
     def add_handler(self, x_wrapper, naya_filter):
         app.add_handler(MessageHandler(x_wrapper, filters=naya_filter))
 
-
-def nay(command: list):
-    async def wrapper(func):
-        user_id = client.me.id
-        cmd_handler = await get_cmd_handler(user_id)
-        @Client.on_message(filters.command(command, cmd_handler) & filters.me)
+def nay(command: list, CMD_HNDLR):
+    def wrapper(func):
+        @Client.on_message(filters.command(command, CMD_HNDLR) & filters.me)
         async def wrapped_func(client, message):
             await func(client, message)
+
         return wrapped_func
 
     return wrapper
-
 
 n = naya()
 
