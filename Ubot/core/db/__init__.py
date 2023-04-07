@@ -279,7 +279,7 @@ async def check_afk(user_id: int):
     user_data = await afkdb.users.find_one({"user_id": user_id, "afk": True})
     return user_data
 
-async def set_custom_var(user_id, var, value):
+async def set_custom_var(user_id: int, var, value):
     p_variable = await confdb.users.find_one({"user_id": user_id, "var": var})
     if p_variable:
         await confdb.users.update_one(
@@ -290,7 +290,7 @@ async def set_custom_var(user_id, var, value):
         await confdb.users.insert_one({"user_id": user_id, "var": var, "value": value})
 
 
-async def get_custom_var(user_id, var):
+async def get_custom_var(user_id: int, var):
     custom_var = await confdb.users.find_one({"user_id": user_id, "var": var})
     if not custom_var:
         return None
@@ -299,7 +299,7 @@ async def get_custom_var(user_id, var):
         return g_custom_var
 
 
-async def del_custom_var(user_id, var):
+async def del_custom_var(user_id: int, var):
     custom_var = await confdb.users.find_one({"user_id": user_id, "var": var})
     if custom_var:
         await confdb.users.delete_one({"user_id": user_id, "var": var})
@@ -309,7 +309,7 @@ async def del_custom_var(user_id, var):
 
 
 async def get_cmd_handler(user_id: int):
-    custom_var = await get_custom_var("user_id", "CMD_HNDLR")
+    custom_var = await get_custom_var(user_id, "CMD_HNDLR")
     if custom_var:
         return custom_var
     else:
