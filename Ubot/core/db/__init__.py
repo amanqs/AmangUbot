@@ -50,7 +50,7 @@ async def buat_log(bot):
         group_description = 'Jangan Hapus Atau Keluar Dari Grup Ini\n\nCreated By @NayaProjectBot.\nJika menemukan kendala atau ingin menanyakan sesuatu\nHubungi : @kenapanan, @rizzvbss atau bisa ke @KynanSupport.'
         group = await bot.create_supergroup(group_name, group_description)
         botlog_chat_id = group.id
-        message_text = 'Grup Log Berhasil Dibuat,\nKetik `id` untuk mendapatkan id log grup\nKemudian ketik `setlog` ID_GROUP\n\nContoh : setlog -100749492984\n\n**Notes** : Ini adalah userbot tanpa prefix jadi tidak perlu memakai triger `.`'
+        message_text = 'Grup Log Berhasil Dibuat,\nKetik `setlog` untuk menentapkan grup log ini sebagai tempat log bot\n\n**Notes** : Ini adalah userbot tanpa prefix jadi tidak perlu memakai triger `.`'
         await bot.send_message(botlog_chat_id, message_text)
         await asyncio.sleep(1)
         
