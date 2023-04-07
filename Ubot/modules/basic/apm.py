@@ -93,18 +93,20 @@ async def deny(client, message):
 async def reply_pm(client, message):
     user_id = client.me.id
     chat_id = message.chat.id
-    botlog_chat_id = await get_botlog(user_id)
+    botlog_chat_id = await get_log_groups(user_id)
     global FLOOD_CTRL
     pmpermit, pm_message, limit, block_message = await set.get_pm_settings(user_id)
     user = message.from_user.id
     biji = message.from_user.first_name
     sempak = message.text
     user_warns = 0 if user not in USERS_AND_WARNS else USERS_AND_WARNS[user]
+"""
     await client.send_message(
                 botlog_chat_id,
                 f"💌 <b><u>MENERUSKAN PESAN BARU</u></b>\n<b> • Dari :</b> {biji}\n<b> • User ID :</b> <code>{user}</code>\n<b> • PESAN :</b> <code>{sempak}</code>\n ",
                 parse_mode=enums.ParseMode.HTML,
             )
+"""
     if user in DEVS:
         try:
             await set.allow_user(chat_id) 
