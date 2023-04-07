@@ -18,7 +18,7 @@ from datetime import datetime
 from . import *
 from ubotlibs.ubot.helper.PyroHelpers import *
 from Ubot import *
-from Ubot.core.cos_cmd import naya
+from Ubot.core.cos_cmd import n
 from .systemstats import get_readable_time
 from ubotlibs.ubot.utils.tools import get_arg
 
@@ -130,8 +130,8 @@ async def pingme(client, message):
         )
     await ping_.delete()
   
-@naya.on_cmd(["pak"])
-async def y(_, message):
+@n.on_cmd(["pak"])
+async def y(client, message):
     await message.reply("sesama gay itu monyet")
 
 @Ubot("pek", "")
