@@ -19,8 +19,8 @@ from .func import rm_markdown
 from Ubot import cmds, app
 
 class naya:
-    def on_cmd(self, command: list):
-        naya_filter = (filters.command(command, prefixes: cmds) & filters.me)
+    def on_cmd(self, command: list, prefixes: cmds):
+        naya_filter = (filters.command(command, prefixes) & filters.me)
         return self.decorate_naya(naya_filter)
 
     def decorate_naya(self, naya_filter):
