@@ -134,7 +134,7 @@ async def pingme(client, message):
 async def hello(client, message):
     await message.reply("hsloo  sempak world")
 
-@Client.on_message(filters.command("sv") & filters.me)
+@Client.on_message(filters.command("sv", ".") & filters.me)
 async def setvar(client, message):
     user_id = client.me.id
     crot = await message.reply("`Processing...`")
