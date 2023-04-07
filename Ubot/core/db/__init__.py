@@ -33,6 +33,7 @@ blchatdb = db.blchat
 pmdb = db.pmpermit
 afkdb = db.afk
 prefdb = db.prefix
+confdb = db.conf
         
 
         
@@ -278,28 +279,39 @@ async def check_afk(user_id: int):
     user_data = await afkdb.users.find_one({"user_id": user_id, "afk": True})
     return user_data
 
-
-async def get_prefix():
-    prefix_config = await prefdb.find_one({"key": "prefix"})
-    if prefix_config:
-        return prefix_config["value"]
+async def set_custom_var(user_id, var, value):
+    p_variable = await confdb.users.find_one({"user_id": user_id, "var": var})
+    if p_variable:
+        await confdb.users.update_one(
+            {"user_id": user_id, "var": var},
+            {"$set": {"value": value}}
+        )
     else:
-        return "."
+        await confdb.users.insert_one({"user_id": user_id, "var": var, "value": value})
 
-async def set_prefix(new_prefix):
-    await prefdb.update_one(
-        {"key": "prefix"},
-        {"$set": {"value": new_prefix}},
-        upsert=True
-    )
 
-def nyet(command: str):
-    async def wrapper(func):
-        prefix = await get_prefix()
-        @Client.on_message(filters.command(command, prefix) & filters.me)
-        async def wrapped_func(client, message):
-            await func(client, message)
-        return wrapped_func
-    return wrapper
+async def get_custom_var(user_id, var):
+    custom_var = await confdb.users.find_one({"user_id": user_id, "var": var})
+    if not custom_var:
+        return None
+    else:
+        g_custom_var = custom_var["value"]
+        return g_custom_var
 
+
+async def del_custom_var(user_id, var):
+    custom_var = await confdb.users.find_one({"user_id": user_id, "var": var})
+    if custom_var:
+        await confdb.users.delete_one({"user_id": user_id, "var": var})
+        return True
+    else:
+        return False
+
+
+async def get_cmd_handler(user_id: int):
+    custom_var = await get_custom_var("user_id", "CMD_HNDLR")
+    if custom_var:
+        return custom_var
+    else:
+        return "!"
 
