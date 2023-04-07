@@ -43,20 +43,19 @@ class naya:
     def add_handler(self, x_wrapper, naya_filter):
         app.add_handler(MessageHandler(x_wrapper, filters=naya_filter))
 
-def nay(command: list):
+CMD_HNDLR = os.getenv("CMD_HNDLR", ".")
+
+def nay(command: list, CMD_HNDLR):
     def wrapper(func):
+        @Client.on_message(filters.command(command, CMD_HNDLR) & filters.me)
         async def wrapped_func(client, message):
             user_id = client.me.id
-            CMD_HNDLR = os.getenv("CMD_HNDLR", ".")  # Mengambil nilai CMD_HNDLR dari environment variable atau menggunakan nilai default "."
-            custom_var = await get_custom_var(user_id, "CMD_HNDLR")  # Mengambil nilai CMD_HNDLR dari database jika ada
+            custom_var = await get_custom_var(user_id, "CMD_HNDLR")
             if custom_var:
                 CMD_HNDLR = custom_var
-            
-            if message.text.startswith(CMD_HNDLR + command[0]):  # Mengubah prefix pesan menjadi nilai CMD_HNDLR yang diambil
+            if message.text.startswith(CMD_HNDLR + command[0]):
                 await func(client, message)
-
         return wrapped_func
-
     return wrapper
 
 n = naya()
