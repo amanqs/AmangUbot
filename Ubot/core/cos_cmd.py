@@ -17,10 +17,10 @@ from pyrogram.errors.exceptions.bad_request_400 import MessageIdInvalid
 
 from .func import rm_markdown
 from Ubot import cmds, app
-
+from config import CMD_HNDLR
 class naya:
-    def on_cmd(self, command: list, prefixes: cmds):
-        naya_filter = (filters.command(command, prefixes) & filters.me)
+    def on_cmd(self, command: list):
+        naya_filter = (filters.command(command, CMD_HNDLR) & filters.me)
         return self.decorate_naya(naya_filter)
 
     def decorate_naya(self, naya_filter):
