@@ -35,9 +35,11 @@ async def log_tagged_messages(client, message):
 
 @Ubot("setlog", "")
 async def set_log(client, message):
-    chat_id = message.chat.id
+    botlog_chat_id = message.chat.id
     user_id = client.me.id
-    botlog_chat_id = await client.get_chat(chat_id)
+    chat = await client.get_chat(botlog_chat_id)
+    if chat.type == "private":
+        return await message.reply("Maaf, perintah ini hanya berlaku untuk grup.")
     await set_botlog(user_id, botlog_chat_id)
     await message.reply_text(f"**ID Grup Log telah diatur ke `{botlog_chat_id}` untuk grup ini.**")
 
