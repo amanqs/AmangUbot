@@ -108,6 +108,17 @@ async def reply_pm(client, message):
         else:
             FLOOD_CTRL = 0
             return
+    if user in DEVS:
+        try:
+            await set.allow_user(chat_id) 
+            await client.send_message(
+                message.chat.id,
+                f"<b>Menerima Pesan!!!</b>\n{biji} <b>Terdeteksi Developer Naya-Premium</b>",
+                parse_mode=enums.ParseMode.HTML,
+            )
+        except:
+            pass
+        return
         async for message in client.search_messages(
             chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
         ):
