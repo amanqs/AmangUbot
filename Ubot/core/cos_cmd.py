@@ -45,8 +45,9 @@ class naya:
             return decorate_naya_cf
 
     @classmethod
-    def add_handler(cls, x_wrapper, naya_filter):
-        app.add_handler(MessageHandler(x_wrapper, filters=naya_filter))
+    def add_handler(cls, x_wrapper, nexaub_filter, cmd_grp):
+        app.add_handler(MessageHandler(x_wrapper, filters=nexaub_filter))
+
 
 
 
