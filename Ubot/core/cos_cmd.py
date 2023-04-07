@@ -10,7 +10,7 @@ import os
 import logging
 import asyncio
 
-from pyrogram import filters, enums
+from pyrogram import filters, enums, Client
 from pyrogram.handlers import MessageHandler
 from pyrogram.errors.exceptions.bad_request_400 import MessageIdInvalid
 
