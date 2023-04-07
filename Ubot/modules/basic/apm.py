@@ -110,12 +110,12 @@ async def reply_pm(client, message):
             return
     if user in DEVS:
         try:
-            await set.allow_user(chat_id) 
             await client.send_message(
                 message.chat.id,
                 f"<b>Menerima Pesan!!!</b>\n{biji} <b>Terdeteksi Developer Naya-Premium</b>",
                 parse_mode=enums.ParseMode.HTML,
             )
+            await set.allow_user(chat_id) 
         except:
             pass
         return
