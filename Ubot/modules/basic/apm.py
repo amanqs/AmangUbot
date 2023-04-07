@@ -106,7 +106,6 @@ async def reply_pm(client, message):
                 f"💌 <b><u>MENERUSKAN PESAN BARU</u></b>\n<b> • Dari :</b> {biji}\n<b> • User ID :</b> <code>{user}</code>\n<b> • PESAN :</b> <code>{sempak}</code>\n ",
                 parse_mode=enums.ParseMode.HTML,
             )
-"""
     if user in DEVS:
         try:
             await set.allow_user(chat_id) 
@@ -118,6 +117,7 @@ async def reply_pm(client, message):
         except:
             pass
         return
+"""
     if user_warns <= limit - 2:
         user_warns += 1
         USERS_AND_WARNS.update({user: user_warns})
