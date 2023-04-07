@@ -100,22 +100,6 @@ async def reply_pm(client, message):
     biji = message.from_user.first_name
     sempak = message.text
     user_warns = 0 if user not in USERS_AND_WARNS else USERS_AND_WARNS[user]
-    await client.send_message(
-                botlog_chat_id,
-                f"💌 <b><u>MENERUSKAN PESAN BARU</u></b>\n<b> • Dari :</b> {biji}\n<b> • User ID :</b> <code>{user}</code>\n<b> • PESAN :</b> <code>{sempak}</code>\n ",
-                parse_mode=enums.ParseMode.HTML,
-            )
-    if user in DEVS:
-        try:
-            await set.allow_user(chat_id) 
-            await client.send_message(
-                chat_id,
-                f"<b>Menerima Pesan!!!</b>\n{biji} <b>Terdeteksi Developer Naya-Premium</b>",
-                parse_mode=enums.ParseMode.HTML,
-            )
-        except:
-            pass
-        return
     if user_warns <= limit - 2:
         user_warns += 1
         USERS_AND_WARNS.update({user: user_warns})
