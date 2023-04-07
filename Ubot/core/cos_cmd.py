@@ -45,7 +45,7 @@ class naya:
 
 CMD_HNDLR = os.getenv("CMD_HNDLR", ".")
 
-def nay(command: list, CMD_HNDLR):
+def nay(command: list):
     def wrapper(func):
         @Client.on_message(filters.command(command, CMD_HNDLR) & filters.me)
         async def wrapped_func(client, message):
