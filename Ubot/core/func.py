@@ -139,3 +139,8 @@ def parse_meta_comments(code: str) -> Dict[str, str]:
         return {}
 
     return {groups[i]: groups[i + 1] for i in range(0, len(groups), 2)}
+
+async def rm_markdown(text: str):
+    "Remove basic markdown syntax from a string"
+    rmed = re.sub("[*`_]", "", text)
+    return rmed
