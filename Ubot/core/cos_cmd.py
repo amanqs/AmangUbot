@@ -38,7 +38,7 @@ class naya:
             async def x_wrapper_cf(client, message):
                 self.add_handler(x_wrapper_cf, custom_filters)
                 return x_wrapper_cf
-            return x_wrapper_cf
+            return decorate_naya_cf
     
     @classmethod
     def add_handler(self, x_wrapper, nexaub_filter, cmd_grp):
