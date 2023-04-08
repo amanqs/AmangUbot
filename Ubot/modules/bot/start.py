@@ -75,14 +75,17 @@ async def start_(client: Client, message: Message):
     ADMIN2 = ADMIN2_ID[0]
     await message.reply_text(
         f"""<b>👋 Halo {message.from_user.first_name} \n
-💭 Apa ada yang bisa saya bantu
-💡 Jika ingin membuat bot premium . Kamu bisa hubungin admin dibawah ini membuat bot.</b>""",
+💭 Ini adalah userbot gratis dari @amwang
+❓ Beneran gratis kah bang?, iyadong, RP 0, @amwang lagi sedekah ramadhan wkwk
+💡 Jika ingin membuat Userbot premium . Kamu bisa hubungin admin dibawah ini membuat bot.</b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(text="👮‍♂ Admin 1", url=f"https://t.me/amwang"),
                     InlineKeyboardButton(text="👮‍♂ Admin 2", url=f"https://t.me/Oktaaaaasaa"),
                 ],
+		[
+                    InlineKeyboardButton(text="Support", url=f"https://t.me/amangsupportgrup"),
                   [
                      InlineKeyboardButton(text="Tutup", callback_data="cl_ad"),
                   ],
