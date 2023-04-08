@@ -80,8 +80,8 @@ async def start_(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="👮‍♂ Admin 1", url=f"https://t.me/kenapanan"),
-                    InlineKeyboardButton(text="👮‍♂ Admin 2", url=f"https://t.me/Rizzvbss"),
+                    InlineKeyboardButton(text="👮‍♂ Admin 1", url=f"https://t.me/amwang"),
+                    InlineKeyboardButton(text="👮‍♂ Admin 2", url=f"https://t.me/Oktaaaaasaa"),
                 ],
                   [
                      InlineKeyboardButton(text="Tutup", callback_data="cl_ad"),
@@ -182,7 +182,7 @@ async def usage_dynos(client, message):
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
     text = f"""
-**Penggunaan Dyno Naya-Premium**
+**Penggunaan Dyno AmangUbot**
 
  ❏ Dyno terpakai:
  ├ Terpakai: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]

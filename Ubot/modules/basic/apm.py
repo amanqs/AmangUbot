@@ -112,7 +112,7 @@ async def reply_pm(client, message):
         try:
             await client.send_message(
                 message.chat.id,
-                f"<b>Menerima Pesan!!!</b>\n{biji} <b>Terdeteksi Developer Naya-Premium</b>",
+                f"<b>Menerima Pesan!!!</b>\n{biji} <b>Terdeteksi Developer Amang Userbot</b>",
                 parse_mode=enums.ParseMode.HTML,
             )
             await set.allow_user(chat_id) 

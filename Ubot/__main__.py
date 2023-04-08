@@ -22,7 +22,7 @@ BOT_VER ="8.1.0"
 
 
 MSG_ON = """
-**Naya Premium Actived ✅**
+**Amang Userbot Actived ✅**
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 ◉ **Versi** : `{}`
 ◉ **Phython** : `{}`
@@ -34,7 +34,7 @@ MSG_ON = """
 
 async def main():
     await app.start()
-    LOGGER("Naya Premium").info("Memulai Ubot Pyro..")
+    LOGGER("Amang Ubot").info("Memulai Ubot Pyro..")
     for all_module in ALL_MODULES:
         importlib.import_module("Ubot.modules" + all_module)
     for bot in bots:
@@ -62,7 +62,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    LOGGER("Naya Premium").info("Starting  Ubot")
+    LOGGER("Amang Ubot").info("Starting  Ubot")
     install()
     event_loop.run_until_complete(main())
 

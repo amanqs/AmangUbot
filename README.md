@@ -31,6 +31,8 @@
 
 - Zaid Userbot
 
+- Naya Ubot
+
 - PyroMAN
 
 - RamPyro-Bot

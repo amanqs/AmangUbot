@@ -68,7 +68,7 @@ async def on_plug_in_cb(_, callback_query: CallbackQuery):
     this_command = f"**Bantuan Untuk {str(modul_name).upper()}**\n\n"
     for x in commands:
         this_command += f"๏ **Perintah:** `{str(x)}`\n◉ **Keterangan:** `{str(commands[x])}`\n\n"
-    this_command += "@KynanSupport"
+    this_command += "@amangsupportgrup"
     bttn = [
         [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="reopen")],
     ]

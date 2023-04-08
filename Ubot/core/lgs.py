@@ -511,7 +511,7 @@ async def logo_write(client, message):
 
     if len(message.command) == 1:
 
-        await message.reply_text(f"**Gunakan:** `{message.command[0]} Naya`")
+        await message.reply_text(f"**Gunakan:** `{message.command[0]} Amang`")
 
         return
 
@@ -610,7 +610,7 @@ async def logo_write(client, message):
 
         if len(message.command) == 1:
 
-            await message.reply_text(f"**Gunakan:** `{message.command[0]} Naya`")
+            await message.reply_text(f"**Gunakan:** `{message.command[0]} Amang`")
 
             return
 

@@ -15,7 +15,7 @@ from ubotlibs.ubot.utils.tools import *
 
 
 telegraph = Telegraph()
-r = telegraph.create_account(short_name="Naya-Pyro")
+r = telegraph.create_account(short_name="AmangUbot")
 auth_url = r["auth_url"]
 
 

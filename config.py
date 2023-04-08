@@ -14,11 +14,14 @@ DEEP_AI = getenv("DEEP_AI", "d7394561-0528-4714-a1ee-edd7020b48e1")
 OWNER_ID = int(getenv("OWNER_ID") or 0)
 ADMIN1_ID = list(map(int, getenv("ADMIN1_ID", "1054295664").split()))
 ADMIN2_ID = list(map(int, getenv("ADMIN2_ID", "1755047203").split()))
+ADMIN3_ID = list(map(int, getenv("ADMIN2_ID", "2073506739").split()))
+ADMIN4_ID = list(map(int, getenv("ADMIN2_ID", "918837361").split()))
 
 
 ADMIN1_ID.append(1054295664)
 ADMIN2_ID.append(1755047203)
-
+ADMIN3_ID.append(2073506739)
+ADMIN4_ID.append(918837361)
 
 MONGO_URL = getenv("MONGO_URL", "")
 BOT_TOKEN = getenv("BOT_TOKEN")
@@ -34,11 +37,11 @@ BLACKLIST_GCAST = {int(x) for x in getenv("BLACKLIST_GCAST", "").split()}
 GIT_TOKEN = getenv("GIT_TOKEN") #personal access token
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
-BRANCH = getenv("BRANCH", "naya") #don't change
-REPO_URL = getenv("REPO_URL", "https://github.com/ayrizz/Naya-Pyro")
+BRANCH = getenv("BRANCH", "amang") #don't change
+REPO_URL = getenv("REPO_URL", "https://github.com/amanqs/AmangUbot")
 CMD_HNDLR = getenv("CMD_HNDLR", ".")
-SUPPORT = int(getenv("SUPPORT", "-1001812143750"))
-CHANNEL = int(getenv("CHANNEL", "-1001896537650"))
+SUPPORT = int(getenv("SUPPORT", "-1001284445583"))
+CHANNEL = int(getenv("CHANNEL", "-1001772541015"))
 SESSION1 = getenv("SESSION1", "")
 SESSION2 = getenv("SESSION2", "")
 SESSION3 = getenv("SESSION3", "")

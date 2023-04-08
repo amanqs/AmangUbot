@@ -83,7 +83,7 @@ def inline_wrapper(func):
                 results=[
                     (
                         InlineQueryResultArticle(
-                            title="bikin sendiri ngpa, bikinnya di @KynanSupport",
+                            title="bikin sendiri ngpa, bikinnya di @amangsupportgrup",
                             input_message_content=InputTextMessageContent(
                                 "You cannot access this Bot"
                             ),

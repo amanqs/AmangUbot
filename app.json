@@ -35,7 +35,7 @@
             "required": true
         },
         "MONGO_URL": {
-            "description": "Isi MONGODB, Kalo Ga tau bisa ke @KynanSupport Ketik #tutor_mongodb",
+            "description": "Isi MONGODB, Kalo Ga tau bisa ke @amangsupport Ketik #tutor_mongodb",
             "required": true,
             "value": ""
         },
