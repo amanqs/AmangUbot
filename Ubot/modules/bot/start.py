@@ -96,7 +96,7 @@ async def start_(client: Client, message: Message):
     )
     
         
-@app.on_message(filters.private & filters.command("restart") & ~filters.via_bot
+@app.on_message(filters.private & filters.command("control") & ~filters.via_bot
 )
 async def restart_bot(_, message: Message):
     try:
