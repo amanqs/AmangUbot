@@ -8,11 +8,7 @@ import shutil
 import sys
 import dotenv
 import datetime
-import asyncio
-import math
 import os
-import dotenv
-import heroku3
 import requests
 import urllib3
 from dotenv import load_dotenv
@@ -20,8 +16,10 @@ from os import environ, execle, path
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from Ubot import *
+from Ubot.core.db import *
 from itertools import count
 from Ubot.modules.basic import *
+from Ubot.core.db import *
 
 from pyrogram import *
 from platform import python_version as py
