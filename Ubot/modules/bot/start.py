@@ -86,7 +86,8 @@ async def start_(client: Client, message: Message):
                 ],
 		[
                     InlineKeyboardButton(text="Support", url=f"https://t.me/amangsupportgrup"),
-                  [
+		],
+		[
                      InlineKeyboardButton(text="Tutup", callback_data="cl_ad"),
                   ],
              ]
