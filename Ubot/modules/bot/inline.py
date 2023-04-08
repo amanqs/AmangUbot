@@ -80,7 +80,7 @@ async def alive_function(message, answers):
     buttons = support()
     ex = await message._client.get_me()
     user = len(ids)
-    remaining_days = "None"
+    remaining_days = await get_expired_date(ex.id)
     await message._client.invoke(Ping(ping_id=0))
     ping = (datetime.now() - start).microseconds / 1000
     uptime = await get_readable_time((time.time() - StartTime))
