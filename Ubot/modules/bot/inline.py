@@ -14,7 +14,9 @@ from pyrogram import __version__ as pyrover
 from pyrogram.enums import ParseMode
 from pyrogram import *
 from pyrogram.types import *
+from Ubot.core.data import Data
 from Ubot.core import *
+from Ubot.core.db.accesdb import *
 from pyrogram.raw.functions import Ping
 from Ubot import CMD_HELP, StartTime, app, ids, cmds
 from config import OWNER_ID
