@@ -16,7 +16,7 @@ from pyrogram import *
 from pyrogram.types import *
 from Ubot.core.data import Data
 from Ubot.core import *
-from Ubot.core.db.accesdb import *
+from Ubot.core.db.accesdb import delete_user_access
 from pyrogram.raw.functions import Ping
 from Ubot import CMD_HELP, StartTime, app, ids, cmds
 from config import OWNER_ID
@@ -32,9 +32,6 @@ def support():
     buttons = [
         [
             InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/amangsupportgrup"),
-        ],
-        [
-            InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="close"),
         ],
     ]
     return buttons
