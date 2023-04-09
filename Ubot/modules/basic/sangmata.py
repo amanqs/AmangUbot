@@ -18,7 +18,7 @@ async def sg(client: Client, message: Message):
     lol = await message.edit_text("`Processing...`")
     if args:
         try:
-            user = await client.get_users(args)
+            user = (await client.get_users(args)).id
         except Exception:
             return await lol.edit(f"`Please specify a valid user!`")
     bot = "SangMata_beta_bot"
