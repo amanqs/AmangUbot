@@ -70,11 +70,11 @@ async def alive_function(message, answers):
         elif dialog.chat.type in (enums.ChatType.GROUP, enums.ChatType.SUPERGROUP):
             group += 1
     if message._client.me.id in BLACK:
-        status = "OWNER"
+        status = "[owner]"
     elif message._client.me.id is OWNER_ID:
         status = "ADMINS"
     else:
-        status = "PREMIUM"
+        status = "[user]"
     start = datetime.now()
     buttons = support()
     ex = await message._client.get_me()
@@ -82,16 +82,18 @@ async def alive_function(message, answers):
     remaining_days = await get_expired_date(ex.id)
     await message._client.invoke(Ping(ping_id=0))
     ping = (datetime.now() - start).microseconds / 1000
+    dc_id = inline_query.from_user.dc_id
     uptime = await get_readable_time((time.time() - StartTime))
     msg = (
         f"<b>AmangUserbot</b>\n"
-        f"    <b> status : {status} </b>\n"
-        f"    <b> users :</b> <code>{user}</code>\n"
-        f"    <b> ping_dc :</b> <code>{ping} ms</code>\n"
-        f"    <b> users_count :</b> <code>{users} users</code>\n"
-        f"    <b> groups_count :</b> <code>{group} group</code>\n"
-        f"    <b> expired :</b> <i>{remaining_days}</i>\n"
-        f"    <b> uptime :</b> <code>{uptime}</code>\n")
+        f"    <b> status: Premium {status} </b>\n"
+        f"    <b> expired:</b> <code>{remaining_days}</code>\n"
+        f"    <b> user_id:</b> <code>{user}</code>\n"
+        f"    <b> dc_id:</b> <code> {dc_id}</code>\n"
+        f"    <b> ping_dc:</b> <code>{ping} ms</code>\n"
+        f"    <b> users_count:</b> <code>{users} users</code>\n"
+        f"    <b> groups_count:</b> <code>{group} group</code>\n"
+        f"    <b> uptime:</b> <code>{uptime}</code>\n")
     answers.append(
         InlineQueryResultArticle(
             title="alive",
