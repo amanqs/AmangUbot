@@ -57,7 +57,7 @@ async def allow_user(chat):
 
 
 
-async def get_approved_users():
+async def get_approved_users(user_id: int):
     results = await pmdb.find_one({"user_id": "Approved"})
     if results:
         return results["users"]
