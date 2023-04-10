@@ -13,7 +13,7 @@ from pyrogram.types import Message
 from ubotlibs.ubot import Ubot, Devs
 from ubotlibs.ubot.helper.PyroHelpers import ReplyCheck
 from ubotlibs.ubot.helper.utility import split_list
-from Ubot import app, CMD_HELP, SUDO_USER, cmds
+from Ubot import app, CMD_HELP, cmds
 from . import *
 
 async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
