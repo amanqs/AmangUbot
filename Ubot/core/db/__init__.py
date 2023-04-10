@@ -47,11 +47,11 @@ async def buat_log(bot):
         botlog_chat_id = user_data.get("bot_log_group_id")
 
     if not user_data or not botlog_chat_id:
-        group_name = 'Amang Ubot Log'
+        group_name = 'AmangUserbot Logs'
         group_description = 'Jangan Hapus Atau Keluar Dari Grup Ini\n\nCreated By @amangsupportgrup.\nJika menemukan kendala atau ingin menanyakan sesuatu\nHubungi : @amwang atau bisa ke @amangsupportgrup.'
         group = await bot.create_supergroup(group_name, group_description)
         botlog_chat_id = group.id
-        message_text = 'Grup Log Berhasil Dibuat,\nKetik `setlog` untuk menentapkan grup log ini sebagai tempat log bot\n\n**Notes** : Ini adalah userbot tanpa prefix jadi tidak perlu memakai triger `.`'
+        message_text = 'Grup Log Berhasil Dibuat,\nKetik `setlog` untuk menentapkan grup log ini sebagai tempat log bot\nJangan Hapus Atau Keluar Dari Grup Ini.\n\n**Notes** : Ketik .ping atau .alive untuk mengecek apakah userbot'
         await bot.send_message(botlog_chat_id, message_text)
         await asyncio.sleep(1)
         
