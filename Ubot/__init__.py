@@ -208,7 +208,76 @@ bot10 = (
     if SESSION10
     else None
 )
-   
+
+bot11 = (
+    Client(
+        name="bot11",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION11,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION11
+    else None
+)
+
+bot12 = (
+    Client(
+        name="bot12",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION12,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION12
+    else None
+)
+
+bot13 = (
+    Client(
+        name="bot13",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION13,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION13
+    else None
+)
+
+bot14 = (
+    Client(
+        name="bot14",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION14,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION14
+    else None
+)
+
+bot15 = (
+    Client(
+        name="bot10",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION15,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION15
+    else None
+)
   
 bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10] if bot]
 
