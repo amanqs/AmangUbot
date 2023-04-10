@@ -10,7 +10,7 @@ from config import *
 
 HAPP = None
 
-@Ubot("shutdown", "")
+@Ubot("shutdown", cmds)
 async def shutdown_bot(client, message):
     botlog_chat_id = await get_log_groups(user_id)
     if not botlog_chat_id:
@@ -27,7 +27,7 @@ async def shutdown_bot(client, message):
         sys.exit(0)
 
 
-@Ubot("logs", "")
+@Ubot("logs", cmds)
 async def logs_ubot(client, message):
     if HAPP is None:
         return await message.reply("Pastikan `HEROKU_API_KEY` dan `HEROKU_APP_NAME` anda dikonfigurasi dengan benar di config vars heroku",

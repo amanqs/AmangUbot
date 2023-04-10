@@ -11,7 +11,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 from . import *
 
-@Ubot("adzan", "")
+@Ubot("adzan", cmds)
 async def adzan_shalat(client: Client, message: Message):
     LOKASI = message.text.split(" ", 1)[1]
     if not LOKASI:

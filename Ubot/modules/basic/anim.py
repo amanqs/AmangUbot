@@ -104,7 +104,7 @@ async def phase4(message):
         await asyncio.sleep(SLEEP)
 
 
-@Ubot("love", "")
+@Ubot("love", cmds)
 async def love(client: Client, message: Message):
     if message.forward_from:
         return
@@ -143,7 +143,7 @@ async def _(client: Client, message: Message):
     await edit_or_reply(message, reply_text)
 
 
-@Ubot("wink", "")
+@Ubot("wink", cmds)
 async def wink(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/animu/wink"
     r = requests.get(url=hmm_s).json()
@@ -152,7 +152,7 @@ async def wink(client: Client, message: Message):
     await message.delete()
 
 
-@Ubot("hug", "")
+@Ubot("hug", cmds)
 async def hug(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/animu/hug"
     r = requests.get(url=hmm_s).json()
@@ -161,7 +161,7 @@ async def hug(client: Client, message: Message):
     await message.delete()
 
 
-@Ubot("pat", "")
+@Ubot("pat", cmds)
 async def pat(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/animu/pat"
     r = requests.get(url=hmm_s).json()
@@ -170,7 +170,7 @@ async def pat(client: Client, message: Message):
     await message.delete()
 
 
-@Ubot("pikachu", "")
+@Ubot("pikachu", cmds)
 async def pikachu(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/img/pikachu"
     r = requests.get(url=hmm_s).json()
@@ -185,7 +185,7 @@ async def pikachu(client: Client, message: Message):
     await message.delete()
 
 
-@Ubot("hmm", "")
+@Ubot("hmm", cmds)
 async def hello_world(client: Client, message: Message):
     mg = await edit_or_reply(
         message,
@@ -215,7 +215,7 @@ async def hello_world(client: Client, message: Message):
     await mg.edit("aaahhhhhhhh")
 
 
-@Ubot("brain", "")
+@Ubot("brain", cmds)
 async def pijtau(client: Client, message: Message):
     if message.forward_from:
         return
@@ -244,7 +244,7 @@ async def pijtau(client: Client, message: Message):
         await message.edit(animation_chars[i % 14])
 
 
-@Ubot("bomb", "")
+@Ubot("bomb", cmds)
 async def gahite(client: Client, message: Message):
     if message.forward_from:
         return
@@ -270,7 +270,7 @@ async def gahite(client: Client, message: Message):
     await asyncio.sleep(2)
 
 
-@Ubot("call", "")
+@Ubot("call", cmds)
 async def hajqag(client: Client, message: Message):
     if message.forward_from:
         return
@@ -302,7 +302,7 @@ async def hajqag(client: Client, message: Message):
         await message.edit(animation_chars[i % 18])
 
 
-@Ubot("kill", "")
+@Ubot("kill", cmds)
 async def gahah(client: Client, message: Message):
     if message.forward_from:
         return
@@ -328,7 +328,7 @@ async def gahah(client: Client, message: Message):
         await message.edit(animation_chars[i % 12])
 
 
-@Ubot("wtf", "")
+@Ubot("wtf", cmds)
 async def gagahkah(client: Client, message: Message):
     if message.forward_from:
         return
@@ -348,7 +348,7 @@ async def gagahkah(client: Client, message: Message):
         await message.edit(animation_chars[i % 5])
 
 
-@Ubot("ding", "")
+@Ubot("ding", cmds)
 async def gkahgagw(client: Client, message: Message):
     animation_interval = 0.3
     animation_ttl = range(0, 30)
@@ -373,7 +373,7 @@ async def gkahgagw(client: Client, message: Message):
         await message.edit(animation_chars[i % 10])
 
 
-@Ubot("hypo", "")
+@Ubot("hypo", cmds)
 async def okihakga(client: Client, message: Message):
     if message.forward_from:
         return
@@ -423,7 +423,7 @@ async def gajjajay(client: Client, message: Message):
     await message.edit("EVERyBOdy iZ GangSTur UNtIL I ArRivE 🔥🔥🔥")
 
 
-@Ubot("charging", "")
+@Ubot("charging", cmds)
 async def timer_blankx(client: Client, message: Message):
     txt = (
         message.text[10:]
@@ -476,7 +476,7 @@ async def kocok(client: Client, message: Message):
     await e.edit("😭😭😭😭")
 
 
-@Ubot("hack", "")
+@Ubot("hack", cmds)
 async def hak(client: Client, message: Message):
     await message.edit_text("Looking for WhatsApp databases in targeted person...")
     await asyncio.sleep(2)
@@ -557,7 +557,7 @@ async def titid(client: Client, message: Message):
     await message.edit(titid)
 
 
-@Ubot("dino", "")
+@Ubot("dino", cmds)
 async def adadino(client: Client, message: Message):
     typew = await edit_or_reply(message, "`DIN DINNN.....`")
     await asyncio.sleep(1)
@@ -644,7 +644,7 @@ async def zeyenk(client: Client, message: Message):
     await e.edit("SAYANG KAMU💞")
 
 
-@Ubot("gabut", "")
+@Ubot("gabut", cmds)
 async def menggabut(client: Client, message: Message):
     e = await edit_or_reply(message, "`PERNAAHHHHH KAHHH KAUUU MENGIRA`")
     await e.edit("`SEPEEERTIIIII APAAAA BENTUKKKKKKK CINTAAAA`")
@@ -872,7 +872,7 @@ async def helikopter(client: Client, message: Message):
     )
 
 
-@Ubot("tembak", "")
+@Ubot("tembak", cmds)
 async def dornembak(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -880,7 +880,7 @@ async def dornembak(client: Client, message: Message):
     )
 
 
-@Ubot("bundir", "")
+@Ubot("bundir", cmds)
 async def ngebundir(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -913,7 +913,7 @@ async def awikwok(client: Client, message: Message):
     )
 
 
-@Ubot("y", "")
+@Ubot("y", cmds)
 async def ysaja(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -933,7 +933,7 @@ async def ysaja(client: Client, message: Message):
     )
 
 
-@Ubot("tank", "")
+@Ubot("tank", cmds)
 async def tank(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -944,7 +944,7 @@ async def tank(client: Client, message: Message):
     )
 
 
-@Ubot("babi", "")
+@Ubot("babi", cmds)
 async def babi(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -972,7 +972,7 @@ async def anjg(client: Client, message: Message):
     )
 
 
-@Ubot("nah", "")
+@Ubot("nah", cmds)
 async def nahlove(client: Client, message: Message):
     typew = await edit_or_reply(
         message, "`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *Ini Buat Kamu`"
@@ -981,7 +981,7 @@ async def nahlove(client: Client, message: Message):
     await typew.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n💖<\\  *Tapi Bo'ong`")
 
 
-@Ubot("santet", "")
+@Ubot("santet", cmds)
 async def santet(client: Client, message: Message):
     typew = await edit_or_reply(message, "`Mengaktifkan Perintah Santet Online....`")
     await asyncio.sleep(2)

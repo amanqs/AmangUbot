@@ -113,7 +113,7 @@ async def restart_bot(_, message: Message):
         execle(sys.executable, *args, environ)
 
 
-@Client.on_message(filters.command("restart", "") & filters.me)
+@Client.on_message(filters.command("restart", cmds) & filters.me)
 async def restart_bot(_, message: Message):
     try:
         await message.edit(" `Restarting bot...`")
@@ -190,7 +190,7 @@ async def handle_revoke_access(client: Client, message: Message):
     await delete_user_access(user_id)
     await message.reply_text(f"Akses dicabut untuk pengguna {user_id}.")
         
-@Ubot("usage", "")
+@Ubot("usage", cmds)
 async def usage_dynos(client, message):
     if await is_heroku():
         if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":

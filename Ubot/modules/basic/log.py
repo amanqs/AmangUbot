@@ -55,7 +55,7 @@ async def log_tagged_messages(client, message):
 """
 
 
-@Ubot("setlog", "")
+@Ubot("setlog", cmds)
 async def set_log(client, message):
     botlog_chat_id = message.chat.id
     user_id = client.me.id

@@ -185,7 +185,7 @@ async def logo_gen(client, message):
 
 
 
-@Ubot("logo", "")
+@Ubot("logo", cmds)
 async def logo_command(client, message):
     await logo_write(client, message)
 

@@ -13,7 +13,7 @@ from . import *
 from Ubot.core.db.pmpermit import pm_guard
 from Ubot.core.db import pmpermit as set
 
-@Ubot("antipm", "")
+@Ubot("antipm", cmds)
 async def pm_permit(client, message):
     arg = get_arg(message)
     user_id = client.me.id
@@ -35,7 +35,7 @@ async def pm_permit(client, message):
         await message.edit("**AntiPM Dalam Keadaan Mati**")
 
         
-@Ubot("setmsg", "")
+@Ubot("setmsg", cmds)
 async def setpmmsg(client, message):
     arg = get_arg(message)
     user_id = client.me.id

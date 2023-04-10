@@ -60,7 +60,7 @@ async def delayspam(client: Client, message: Message):
     )
 
 
-@Ubot(commands, "")
+@Ubot(commands, cmds)
 async def sspam(client: Client, message: Message):
     amount = int(message.command[1])
     text = " ".join(message.command[2:])

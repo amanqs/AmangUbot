@@ -31,7 +31,7 @@ async def denied_users(filter, client, message):
          return True
 
 
-@Ubot("setlimit", "")
+@Ubot("setlimit", cmds)
 async def pmguard(client, message):
     user_id = client.me.id
     arg = get_arg(message)
@@ -42,7 +42,7 @@ async def pmguard(client, message):
     await message.edit(f"<b>Limit set to {arg}</b>")
 
 
-@Ubot("blockmsg", "")
+@Ubot("blockmsg", cmds)
 async def setpmmsg(client, message):
     user_id = client.me.id
     arg = get_arg(message)

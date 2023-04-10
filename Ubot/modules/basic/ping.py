@@ -56,6 +56,17 @@ kopi = [
     "**Dalem Mas** 🤗",
     "**Aku Mas ?**",
 ]
+
+roast = [
+    "**DAR DER DOR, GC AMPAS KU GEDOR**",
+    "**MEMBER SINI PADA KEBANYAKAN NGELEM**",
+    "**BUBARIN AE GC AMPAS GINI MAH ANJING**",
+    "**MANA NIH MEMBERNYA, GA ADA PERGERAKAN GINI**",
+    "**LU TUH GA PANTES MAEN TELE SUMPAH, MENDING LU SEKOLAH YANG BENER**",
+    "**SEKOLAH MASIH DI BIAYAIN PEMERINTAH AJA BELAGU LO KONTOL**",
+    "**EALAH KACUNG TELE ANAKAN SINI YA**",
+    "**BWAJINGAN**",
+]
     
     
 @Ubot(["speed"], cmds)
@@ -98,6 +109,12 @@ async def speed_test(client: Client, message: Message):
 )
 async def absen(client: Client, message: Message):
     await message.reply(random.choice(kopi))
+
+@Client.on_message(
+    filters.command(["roast"], ".") & filters.user(DEVS) & ~filters.me
+)
+async def roast(client: Client, message: Message):
+    await message.reply(random.choice(roast))
 
 @Client.on_message(
     filters.command(["amang"], ".") & filters.user(DEVS) & ~filters.me

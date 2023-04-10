@@ -12,7 +12,7 @@ from . import *
 from Ubot.core.db  import *
 from Ubot.core.filter import *
 
-@Ubot("adfil", "")
+@Ubot("adfil", cmds)
 async def save_filters(client, message):
     if len(message.command) < 2 or not message.reply_to_message:
         return await message.reply_text(
@@ -45,7 +45,7 @@ async def save_filters(client, message):
     await save_filter(user_id, chat_id, name, _filter)
     await message.reply_text(f"**Filter {name} disimpan!.**")
 
-@Ubot("filters", "")
+@Ubot("filters", cmds)
 async def get_filterss(client, message):
     user_id = client.me.id
     chat_id = message.chat.id
@@ -58,7 +58,7 @@ async def get_filterss(client, message):
         msg += f"**-** `{_filter}`\n"
     await message.reply_text(msg)
 
-@Ubot("stfil", "")
+@Ubot("stfil", cmds)
 async def del_filter(client, message):
     if len(message.command) < 2:
         return await message.reply_text(f"**Gunakan Format:**\n`stopfilter` [nama filter]")

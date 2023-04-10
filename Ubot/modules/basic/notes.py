@@ -13,7 +13,7 @@ from ubotlibs.ubot.utils.tools import *
 from . import *
 
 
-@Ubot("save", "")
+@Ubot("save", cmds)
 async def simpan_note(client, message):
     name = get_arg(message)
     user_id = message.from_user.id
@@ -36,7 +36,7 @@ async def simpan_note(client, message):
 
 
 
-@Ubot("get", "")
+@Ubot("get", cmds)
 async def panggil_notes(client, message):
     name = get_arg(message)
     user_id = message.from_user.id
@@ -48,7 +48,7 @@ async def panggil_notes(client, message):
     await msg_o.copy(message.chat.id, reply_to_message_id=message.id)
 
 
-@Ubot("rm", "")
+@Ubot("rm", cmds)
 async def remove_notes(client, message):
     name = get_arg(message)
     user_id = message.from_user.id
@@ -59,7 +59,7 @@ async def remove_notes(client, message):
         await message.reply("**Tidak dapat menemukan catatan:** `{}`".format(name))
 
 
-@Ubot("notes", "")
+@Ubot("notes", cmds)
 async def get_notes(client, message):
     user_id = message.from_user.id
     botlog_chat_id = await get_botlog(user_id)

@@ -36,7 +36,7 @@ TRUTH = [
     "Coba tag orang yang paling kamu sayang disini.",
     "Hayoo, kapan terakhir kali kamu anu?",
     "Ceritakan kisah idup lu :')",
-    "@amwang menurut ku dia ganteng, coba deh kamu chat, trus ajak pacaran hehe ⚠️WARNING ini khusus cewe ya!",
+    "si @amwang menurut ku dia ganteng, coba deh kamu chat, trus ajak pacaran hehe ⚠️WARNING ini khusus cewe ya!",
   
 ]
 

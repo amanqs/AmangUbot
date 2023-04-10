@@ -91,7 +91,7 @@ async def downlodvideo(m, message, vid_id):
            raise e
 
 
-@Ubot("song2", "")
+@Ubot("song2", cmds)
 async def songdown(client: Client, message: Message):
    try: 
     if len(message.command) < 2:

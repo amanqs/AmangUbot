@@ -125,8 +125,8 @@ async def updateme_requirements():
     except Exception as e:
         return repr(e)
 
-@Client.on_message(filters.command("cupdate", "") & filters.user(GUA) & ~filters.me)
-@Ubot("update", "")
+@Client.on_message(filters.command("cupdate", ".") & filters.user(GUA) & ~filters.me)
+@Ubot("update", cmds)
 async def upstream(client: Client, message: Message):
     status = await message.edit_text("`Checking for Updates, Wait a Moment...`")
     conf = get_arg(message)
@@ -256,7 +256,7 @@ async def upstream(client: Client, message: Message):
         return
 
 
-@Ubot("cekupdate", "")
+@Ubot("cekupdate", cmds)
 async def updatees(client: Client, message: Message):
     if await is_heroku():
         if HAPP is None:

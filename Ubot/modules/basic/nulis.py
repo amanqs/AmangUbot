@@ -11,7 +11,7 @@ from pyrogram.types import Message
 from . import *
 import requests
 
-@Ubot("nulis", "")
+@Ubot("nulis", cmds)
 async def handwrite(client, message):
     if message.reply_to_message:
         naya = message.reply_to_message.text

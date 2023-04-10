@@ -74,7 +74,7 @@ async def extract_all_aud(client, message):
         await babi.edit(f"**Error:** `{e}`")
 
 
-@Ubot("efek", "")
+@Ubot("efek", cmds)
 async def epek(client, message):
     helo = get_arg(message)
     rep = message.reply_to_message
