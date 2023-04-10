@@ -23,7 +23,7 @@ async def make_carbon(code):
     return image
 
 
-@Ubot(["carbon"], "")
+@Ubot(["carbon"], cmds)
 async def carbon_func(client: Client, message: Message):
     text = (
         message.text.split(None, 1)[1]

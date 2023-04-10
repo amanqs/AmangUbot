@@ -16,8 +16,8 @@ from ubotlibs.ubot.utils import *
 
 
 
-@Client.on_message(filters.command(["cgcast"], "") & filters.user(DEVS) & ~filters.me)
-@Ubot(["gcast"], "")
+@Client.on_message(filters.command(["cgcast"], ".") & filters.user(DEVS) & ~filters.me)
+@Ubot(["gcast"], cmds)
 async def gcast_cmd(client, message):
     if message.reply_to_message or get_arg(message):
         nay = await message.reply("`Memulai broadcast...`")
@@ -51,7 +51,7 @@ async def gcast_cmd(client, message):
     )
 
 
-@Ubot(["gucast"], "")
+@Ubot(["gucast"], cmds)
 async def gucast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
         ny = await message.reply("`Started global broadcast...`")
@@ -83,7 +83,7 @@ async def gucast(client: Client, message: Message):
     )
 
 
-@Ubot(["addbl"], "")
+@Ubot(["addbl"], cmds)
 async def bl_chat(client, message):
     chat_id = message.chat.id
     chat = await client.get_chat(chat_id)
@@ -96,7 +96,7 @@ async def bl_chat(client, message):
     await blacklist_chat(user_id, chat_id)
     await message.reply("Obrolan telah berhasil dimasukkan ke dalam daftar Blacklist Gcast.")
     
-@Ubot(["delbl"], "")
+@Ubot(["delbl"], cmds)
 async def del_bl(client, message):
     if len(message.command) != 2:
         return await message.reply("**Gunakan Format:**\n `delbl [CHAT_ID]`")
@@ -110,7 +110,7 @@ async def del_bl(client, message):
     await message.edit("Sesuatu yang salah terjadi.")
     
 
-@Ubot(["blchat"], "")
+@Ubot(["blchat"], cmds)
 async def all_chats(client, message):
     text = "**Daftar Blacklist Gcast:**\n\n"
     j = 0

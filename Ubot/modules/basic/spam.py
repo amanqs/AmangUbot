@@ -29,7 +29,7 @@ def spam_allowed():
     return SPAM_COUNT[0] < 1000
 
 
-@Ubot(["dspam"], "")
+@Ubot(["dspam"], cmds)
 async def delayspam(client: Client, message: Message):
 
     delayspam = await extract_args(message)
@@ -39,8 +39,8 @@ async def delayspam(client: Client, message: Message):
         return
     delay = int(arr[0])
     count = int(arr[1])
-    spam_message = delayspam.replace(arr[0], "", 1)
-    spam_message = spam_message.replace(arr[1], "", 1).strip()
+    spam_message = delayspam.replace(arr[0], cmds, 1)
+    spam_message = spam_message.replace(arr[1], cmds, 1).strip()
     await message.delete()
 
     if not spam_allowed():
@@ -82,7 +82,7 @@ async def sspam(client: Client, message: Message):
         await asyncio.sleep(cooldown[message.command[0]])
 
 
-@Ubot(["dspam2"], "")
+@Ubot(["dspam2"], cmds)
 async def delayspammer(client, message):
     try:
         args = message.text.split(" ", 3)
@@ -99,7 +99,7 @@ async def delayspammer(client, message):
     except Exception as u:
         await client.send_message(message.chat.id, f"**Error :** `{u}`")
         
-@Ubot(["spam2"], "")
+@Ubot(["spam2"], cmds)
 async def spammer(client, message):
     text = message.text
     if message.reply_to_message:
@@ -121,7 +121,7 @@ async def spammer(client, message):
     await message.delete()
 
 
-@Ubot(["bspam"], "")
+@Ubot(["bspam"], cmds)
 async def bigspam(client, message):
     text = message.text
     if message.reply_to_message:
@@ -141,7 +141,7 @@ async def bigspam(client, message):
     await message.delete()
 
 
-@Ubot(["sspam"], "")
+@Ubot(["sspam"], cmds)
 async def spam_stick(client: Client, message: Message):
     if not message.reply_to_message:
         await edit_or_reply(

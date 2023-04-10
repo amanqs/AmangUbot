@@ -23,9 +23,9 @@ from ubotlibs.ubot.database.accesdb import *
 
 
 @Client.on_message(
-    filters.command(["cgban", "cungban"], "") & filters.user(DEVS) & ~filters.me
+    filters.command(["cgban", "cungban"], ".") & filters.user(DEVS) & ~filters.me
 )
-@Ubot(["gban", "ungban"], "")
+@Ubot(["gban", "ungban"], cmds)
 async def _(client, message):
     user_id = await extract_user(message)
     nay = await message.reply("<b>Memproses. . .</b>")

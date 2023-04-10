@@ -89,7 +89,7 @@ async def tg_lock(
     )
 
 
-@Ubot(["lock", "unlock"], "")
+@Ubot(["lock", "unlock"], cmds)
 async def locks_func(client: Client, message: Message):
     if len(message.command) != 2:
         return await message.reply_text(incorrect_parameters)
@@ -142,7 +142,7 @@ async def locks_func(client: Client, message: Message):
         )
 
 
-@Ubot(["lockall"], "")
+@Ubot(["lockall"], cmds)
 async def locktypes(client: Client, message: Message):
     permissions = await current_chat_permissions(client, message.chat.id)
 

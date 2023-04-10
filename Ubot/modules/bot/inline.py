@@ -85,7 +85,7 @@ async def alive_function(message, answers):
     uptime = await get_readable_time((time.time() - StartTime))
     msg = (
         f"<b>AmangUserbot</b>\n"
-        f"    <b> status: Premium {status} </b>\n"
+        f"<b> status: Premium {status} </b>\n"
         f"    <b> expired:</b> <code>{remaining_days}</code>\n"
         f"    <b> user_id:</b> <code>{user}</code>\n"
         f"    <b> ping_dc:</b> <code>{ping} ms</code>\n"
@@ -130,7 +130,7 @@ async def inline_query_handler(client: Client, query):
         elif text.split()[0] == "alive":
             m = [obj for obj in get_objects() if id(obj) == int(query.query.split(None, 1)[1])][0]
             answerss = await alive_function(m, answers)
-            await client.answer_inline_query(query.id, results=answerss, cache_time=10)
+            await client.answer_inline_query(query.id, results=answerss, cache_time=300)
         elif string_given.startswith("helper"):
             answers = await help_function(answers)
             await client.answer_inline_query(query.id, results=answers, cache_time=0)

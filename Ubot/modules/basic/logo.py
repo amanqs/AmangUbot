@@ -23,7 +23,7 @@ from pyrogram import Client, filters, enums
 from Ubot.core.lgs import *
 from . import *
 
-@Ubot(["logo2"], "")
+@Ubot(["logo2"], cmds)
 
 async def logo_gen(client, message):
 

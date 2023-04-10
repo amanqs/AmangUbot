@@ -57,7 +57,7 @@ async def setpmmsg(client, message):
     await message.edit("**Pesan Blokir Berhasil Diatur Ke Kostom**")
 
 
-@Client.on_message(filters.command(["a", "ok"], "") & filters.me & filters.private)
+@Client.on_message(filters.command(["a", "ok"], cmds) & filters.me & filters.private)
 async def allow(client, message):
     user_id = client.me.id
     biji = message.from_user.first_name
@@ -72,7 +72,7 @@ async def allow(client, message):
     USERS_AND_WARNS.update({chat_id: 0})
 
 
-@Client.on_message(filters.command(["d", "no"], "") & filters.me & filters.private)
+@Client.on_message(filters.command(["d", "no"], cmds) & filters.me & filters.private)
 async def deny(client, message):
     user_id = client.me.id
     biji = message.from_user.first_name

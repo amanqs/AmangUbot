@@ -51,7 +51,7 @@ def gen_font(text, new_font):
             text = text.replace(q, new)
     return text
 
-@Ubot(["font"], "")
+@Ubot(["font"], cmds)
 async def font_ubot(client, message):
     if message.reply_to_message or get_arg(message):
         font = get_arg(message)
@@ -79,7 +79,7 @@ async def font_ubot(client, message):
         return await message.reply("Balas Teks Dan Isi Nama Font!!!")
 
 
-@Ubot(["lf", "listfont"], "")
+@Ubot(["lf", "listfont"], cmds)
 async def fonts(client, message):
     await message.reply(
         "<b>ᴅᴀғᴛᴀʀ ғᴏɴᴛs</b>\n\n"

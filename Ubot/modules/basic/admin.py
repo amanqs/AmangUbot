@@ -16,7 +16,7 @@ from ubotlibs.ubot.helper.basic import edit_or_reply
 from ubotlibs.ubot.helper.parser import mention_html, mention_markdown
 
 
-@Ubot(["admin"], "")
+@Ubot(["admin"], cmds)
 async def adminlist(client: Client, message: Message):
     replyid = None
     toolong = False
@@ -79,7 +79,7 @@ async def adminlist(client: Client, message: Message):
         await message.reply(teks)
 
 
-@Ubot(["zombies"], "")
+@Ubot(["zombies"], cmds)
 async def kickdel_cmd(client: Client, message: Message):
     kk = await message.reply("<b>Membersihkan akun depresi...</b>")
     try:
@@ -99,7 +99,7 @@ async def kickdel_cmd(client: Client, message: Message):
     )
 
 
-@Ubot("report", "")
+@Ubot("report", cmds)
 async def report_admin(client: Client, message: Message):
     await message.delete()
     if len(message.text.split()) >= 2:
@@ -146,7 +146,7 @@ async def report_admin(client: Client, message: Message):
         )
 
 
-@Ubot("tagall", "")
+@Ubot("tagall", cmds)
 async def tag_all_users(client: Client, message: Message):
     await message.delete()
     if len(message.text.split()) >= 2:
@@ -170,7 +170,7 @@ async def tag_all_users(client: Client, message: Message):
         )
 
 
-@Ubot(["Bots"], "")
+@Ubot(["Bots"], cmds)
 
 async def get_list_bots(client: Client, message: Message):
     replyid = None
@@ -208,6 +208,6 @@ add_command_help(
     [
         [f"admins", "Get chats Admins list."],
         [f"zombies", "To Kick deleted Accounts."],
-        [f"botlist","To get Chats Bots list"],
+        [f"bots","To get Chats Bots list"],
     ],
 )

@@ -15,8 +15,8 @@ from pyrogram.errors.exceptions.flood_420 import FloodWait
 from . import *
 
 
-@Client.on_message(filters.command("cinvite", [""]) & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.command("invite", "") & filters.me)
+@Client.on_message(filters.command("cinvite", ["."]) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command("invite", cmds) & filters.me)
 async def inviteee(client: Client, message: Message):
     mg = await message.reply_text("`Adding Users!`")
     user_s_to_add = message.text.split(" ", 1)[1]
@@ -32,8 +32,8 @@ async def inviteee(client: Client, message: Message):
     await mg.edit(f"`Sucessfully Added {len(user_list)} To This Group / Channel!`")
 
 
-@Client.on_message(filters.command("cinviteall", [""]) & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.command("inviteall", "") & filters.me)
+@Client.on_message(filters.command("cinviteall", ["."]) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command("inviteall", cmds) & filters.me)
 async def inv(client: Client, message: Message):
     ex = await message.reply_text("`Processing . . .`")
     text = message.text.split(" ", 1)
@@ -57,7 +57,7 @@ async def inv(client: Client, message: Message):
             except Exception as e:
                 pass
 
-@Client.on_message(filters.command("invitelink", "") & filters.me)
+@Client.on_message(filters.command("invitelink", cmds) & filters.me)
 async def invite_link(client: Client, message: Message):
     um = await message.reply_text("`Processing...`")
     if message.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP]:

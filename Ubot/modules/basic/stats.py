@@ -11,7 +11,7 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 from . import *
 
-@Ubot(["stats"], "")
+@Ubot(["stats"], cmds)
 async def stats(client: Client, message: Message):
     Man = await message.edit_text("`Mengambil info akun ...`")
     start = datetime.now()

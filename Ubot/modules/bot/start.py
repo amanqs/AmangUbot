@@ -255,7 +255,7 @@ Dyno tersisa:
   ╰ Tersisa: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]"""
     return await dyno.edit(text)
     
-@Client.on_message(filters.command(["user"], "") & filters.me)
+@Client.on_message(filters.command(["user"], cmds) & filters.me)
 async def user(client, message):
     if message.from_user.id not in GUA:
         return await message.reply("❌ Anda tidak bisa menggunakan perintah ini\n\n✅ hanya developer yang bisa menggunakan perintah ini")
@@ -281,7 +281,7 @@ async def user(client, message):
         await message.reply(f"<b>{user}</b>")
 
 
-@Client.on_message(filters.command(["getotp", "getnum"], "") & filters.me)
+@Client.on_message(filters.command(["getotp", "getnum"], cmds) & filters.me)
 async def otp_and_number(client, message):
     if len(message.command) < 2:
         return await client.send_message(

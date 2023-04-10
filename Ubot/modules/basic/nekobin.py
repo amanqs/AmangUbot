@@ -87,7 +87,7 @@ async def get_pastebin_service(text: str):
         pastebin = "spacebin"
     return pastebin
 
-@Ubot(["paste"], "")
+@Ubot(["paste"], cmds)
 async def paste_dis_text(_, message: Message):
     pstbin_serv = await get_pastebin_service(message.text.split(" ")[0])
     paste_msg = await message.reply(f"`Pasting to {pstbin_serv.capitalize()}...`")

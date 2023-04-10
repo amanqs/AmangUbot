@@ -15,7 +15,7 @@ from ubotlibs.ubot.utils import get_arg
 
 
 
-@Client.on_message(filters.command(["curi"], "") & filters.me)
+@Client.on_message(filters.command(["curi"], cmds) & filters.me)
 async def copy_msg(client: Client, message: Message):
     Tm = await message.reply("`Processing...`")
     link = get_arg(message)

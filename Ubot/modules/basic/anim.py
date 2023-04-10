@@ -135,7 +135,7 @@ async def love(client: Client, message: Message):
 
 @Client.on_message(
     filters.me
-    & (filters.command(["loveyou"], "") | filters.regex("^loveyou "))
+    & (filters.command(["loveyou"], cmds) | filters.regex("^loveyou "))
 )
 async def _(client: Client, message: Message):
     noble = random.randint(1, len(NOBLE) - 2)
@@ -195,7 +195,7 @@ async def hello_world(client: Client, message: Message):
 
 @Client.on_message(
     filters.me
-    & (filters.command(["ahh"], "") | filters.regex("^ahh "))
+    & (filters.command(["ahh"], cmds) | filters.regex("^ahh "))
 )
 async def hello_world(client: Client, message: Message):
     mg = await edit_or_reply(message, "ahh")
@@ -403,7 +403,7 @@ async def okihakga(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["gangsta", "gang", "gangstar"], "") & filters.me
+    filters.command(["gangsta", "gang", "gangstar"], cmds) & filters.me
 )
 async def gajjajay(client: Client, message: Message):
     await message.edit("EVERyBOdy")
@@ -442,7 +442,7 @@ async def timer_blankx(client: Client, message: Message):
     )
 
 
-@Ubot(["koc", "kocok"], "")
+@Ubot(["koc", "kocok"], cmds)
 async def kocok(client: Client, message: Message):
     e = await edit_or_reply(message, "8✊===D")
     await e.edit("8=✊==D")
@@ -536,7 +536,7 @@ async def hak(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["kontol", "kntl"], "") & filters.me
+    filters.command(["kontol", "kntl"], cmds) & filters.me
 )
 async def kontol(client: Client, message: Message):
     emoji = get_text(message)
@@ -547,7 +547,7 @@ async def kontol(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["penis", "dick"], "") & filters.me
+    filters.command(["penis", "dick"], cmds) & filters.me
 )
 async def titid(client: Client, message: Message):
     emoji = get_text(message)
@@ -615,7 +615,7 @@ async def adadino(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["syng", "syg"], "") & filters.me
+    filters.command(["syng", "syg"], cmds) & filters.me
 )
 async def zeyenk(client: Client, message: Message):
     e = await edit_or_reply(message, "I LOVEE YOUUU 💕")
@@ -848,7 +848,7 @@ async def menggabut(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["helikopter", "heli"], "") & filters.me
+    filters.command(["helikopter", "heli"], cmds) & filters.me
 )
 async def helikopter(client: Client, message: Message):
     await edit_or_reply(
@@ -901,7 +901,7 @@ async def ngebundir(client: Client, message: Message):
     )
 
 
-@Ubot(["awk", "awikwok"], "")
+@Ubot(["awk", "awikwok"], cmds)
 async def awikwok(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -959,7 +959,7 @@ async def babi(client: Client, message: Message):
     )
 
 
-@Ubot(["ajg", "anjg"], "")
+@Ubot(["ajg", "anjg"], cmds)
 async def anjg(client: Client, message: Message):
     await edit_or_reply(
         message,

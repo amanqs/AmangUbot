@@ -28,7 +28,7 @@ from . import *
 
 # LU GABISA CODING LU KONTOL
 # BELAJAR CODING DARI NOL
-@Ubot(["apakah"], "")
+@Ubot(["apakah"], cmds)
 async def apakah(client, message):
     split_text = message.text.split(None, 1)
     if len(split_text) < 2:
@@ -38,7 +38,7 @@ async def apakah(client, message):
 
 
 
-@Ubot(["kenapa"], "")
+@Ubot(["kenapa"], cmds)
 async def kenapa(client, message):
     split_text = message.text.split(None, 1)
     if len(split_text) < 2:
@@ -47,7 +47,7 @@ async def kenapa(client, message):
     await message.reply(f"{random.choice(tod.KN)}")
 
 
-@Ubot(["bagaimana"], "")
+@Ubot(["bagaimana"], cmds)
 async def bagaimana(client, message):
     split_text = message.text.split(None, 1)
     if len(split_text) < 2:
@@ -56,7 +56,7 @@ async def bagaimana(client, message):
     await message.reply(f"{random.choice(tod.BG)}")
 
 
-@Ubot(["dare"], "")
+@Ubot(["dare"], cmds)
 async def dare(client, message):
     try:        
         await message.edit(f"{random.choice(tod.DARE)}")
@@ -64,7 +64,7 @@ async def dare(client, message):
         pass
 
 
-@Ubot(["truth"], "")
+@Ubot(["truth"], cmds)
 async def truth(client, message):
     try:
         await message.edit(f"{random.choice(tod.TRUTH)}")

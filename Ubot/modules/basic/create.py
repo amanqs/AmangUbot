@@ -12,7 +12,7 @@ from ubotlibs.ubot.helper import edit_or_reply
 
 
 
-@Ubot(["buat"], "")
+@Ubot(["buat"], cmds)
 async def create(client: Client, message: Message):
     if len(message.command) < 3:
         return await message.reply(f"**buat gc => Untuk Membuat Grup, buat ch => Untuk Mebuat Channel**"

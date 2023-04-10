@@ -11,7 +11,7 @@ from pyrogram.types import Message
 from . import *
 
 
-@Ubot(["dm"], "")
+@Ubot(["dm"], cmds)
 async def dm(c: Client, m: Message):
     await m.edit("` Proccessing.....`")
     quantity = 1

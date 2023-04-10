@@ -107,7 +107,7 @@ Silakan periksa, Anda menggunakan format yang benar atau ejaan Anda benar dan co
        """)
 
 
-@Ubot(["vid2", "video2"], "")
+@Ubot(["vid2", "video2"], cmds)
 async def videodown(client: Client, message: Message):
    try: 
     if len(message.command) < 2:
@@ -123,7 +123,7 @@ Silakan periksa, Anda menggunakan format yang benar atau ejaan Anda benar dan co
        """)
             
             
-@Ubot(["sosmed"], "")
+@Ubot(["sosmed"], cmds)
 async def sosmed(client: Client, message: Message):
     prik = await message.edit("`Processing . . .`")
     link = get_arg(message)

@@ -40,8 +40,8 @@ async def get_group_call(
     return False
 
 
-@Client.on_message(filters.command(["jvcs"], "") & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.command(["joinvc"], "") & filters.me)
+@Client.on_message(filters.command(["joinos"], ".") & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command(["joinvc"], cmds) & filters.me)
 async def joinvc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
@@ -66,8 +66,8 @@ async def joinvc(client: Client, message: Message):
     await ky.edit(f"**Waktu Habis..**\n**Berhasil Turun Dari Obrolan Suara**\n└ **Chat ID** : `{chat_id}`")
 
 
-@Client.on_message(filters.command(["lvcs"], "") & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.command(["leavevc"], "") & filters.me)
+@Client.on_message(filters.command(["leaveos"], ".") & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command(["leavevc"], cmds) & filters.me)
 async def leavevc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
@@ -86,8 +86,8 @@ async def leavevc(client: Client, message: Message):
     await ky.edit(msg)
 
 
-@Client.on_message(filters.command(["startvcs"], "") & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.command(["startvc"], "") & filters.me)
+@Client.on_message(filters.command(["startvcs"], ".") & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command(["startvc"], cmds) & filters.me)
 async def opengc(client: Client, message: Message):
     flags = " ".join(message.command[1:])
     ky = await edit_or_reply(message, "`Processing . . .`")
@@ -119,8 +119,8 @@ async def opengc(client: Client, message: Message):
         await ky.edit(f"**INFO:** `{e}`")
 
 
-@Client.on_message(filters.command(["stopvcs"], "") & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.command(["stopvc"], "") & filters.me)
+@Client.on_message(filters.command(["stopvcs"], ".") & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command(["stopvc"], cmds) & filters.me)
 async def end_vc_(client: Client, message: Message):
     """Processing..."""
     chat_id = message.chat.id

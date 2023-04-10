@@ -14,7 +14,7 @@ from pyrogram import *
 from . import *
 from ubotlibs.ubot.helper import edit_or_reply
 
-@Ubot(["ss"], "")
+@Ubot(["ss"], cmds)
 async def webshot(client, message):
     await message.edit("`Processing...`")
     try:

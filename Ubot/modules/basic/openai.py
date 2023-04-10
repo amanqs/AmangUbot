@@ -26,7 +26,7 @@ RMBG_API_KEY = "3RCCWg8tMBfDWdAs44YMfJmC"
 
         
 
-@Ubot(["ai"], "")
+@Ubot(["ai"], cmds)
 async def openai(c, m):
     
     if len(m.command) == 1:
@@ -54,7 +54,7 @@ async def openai(c, m):
 
 # Credits TomiX
 
-@Ubot(["img"], "")
+@Ubot(["img"], cmds)
 async def _(client, message):
     Tm = await message.reply("<code>Memproses...</code>")
     if len(message.command) < 2:
@@ -68,7 +68,7 @@ async def _(client, message):
         await message.reply(error)
         return await Tm.delete()
         
-@Ubot(["rmbg"], "")
+@Ubot(["rmbg"], cmds)
 async def rmbg_background(c: Client, m: Message):
     api_key = RMBG_API_KEY
     reply = m.reply_to_message

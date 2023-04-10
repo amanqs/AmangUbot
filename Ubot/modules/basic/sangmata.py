@@ -12,7 +12,7 @@ from pyrogram.types import Message
 from . import *
 from ubotlibs.ubot.utils import extract_user
 
-@Ubot(["sg"], "")
+@Ubot(["sg"], cmds)
 async def sg(client: Client, message: Message):
     args = await extract_user(message)
     lol = await message.edit_text("`Processing...`")

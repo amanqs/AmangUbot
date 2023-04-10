@@ -18,7 +18,7 @@ from Ubot import START_TIME, app
 from Ubot.modules.bot.inline import get_readable_time, BOT_VER
 
 
-@Client.on_message(filters.command(["alive"], "") & filters.me)
+@Client.on_message(filters.command(["alive"], cmds) & filters.me)
 async def alive(client, message):
     bot_username = (await app.get_me()).username
     try:
@@ -32,7 +32,7 @@ async def alive(client, message):
         print(f"{e}")
 
 
-@Ubot(["id"], "")
+@Ubot(["id"], cmds)
 async def get_id(bot: Client, message: Message):
     file_id = None
     user_id = None

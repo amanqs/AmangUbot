@@ -13,7 +13,7 @@ from . import *
 
 
 
-@Ubot(["meme", "memes"], "")
+@Ubot(["meme", "memes"], cmds)
 async def _(client, message):
     if len(message.command) < 2:
         return await message.reply("<code>memes</code> [text]")

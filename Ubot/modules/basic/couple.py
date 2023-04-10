@@ -38,7 +38,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@Ubot(["couple", "cp"], "")
+@Ubot(["couple", "cp"], cmds)
 async def couple(client, message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply_text("Perintah ini hanya dapat digunakan dalam grup.")

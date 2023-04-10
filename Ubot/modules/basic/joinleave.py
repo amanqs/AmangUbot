@@ -10,8 +10,8 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 from . import *
 
-@Client.on_message(filters.command("cjoin", [""]) & filters.user(DEVS) & ~filters.me)
-@Ubot(["join"], "")
+@Client.on_message(filters.command("cjoin", ["."]) & filters.user(DEVS) & ~filters.me)
+@Ubot(["join"], cmds)
 async def join(client: Client, message: Message):
     tex = message.command[1] if len(message.command) > 1 else message.chat.id
     g = await message.reply_text("`Processing...`")
@@ -22,7 +22,7 @@ async def join(client: Client, message: Message):
         await g.edit(f"**ERROR:** \n\n{str(ex)}")
 
 
-@Ubot(["leave"], "")
+@Ubot(["leave"], cmds)
 async def leave(client: Client, message: Message):
     xd = message.command[1] if len(message.command) > 1 else message.chat.id
     xv = await message.reply_text("`Processing...`")
@@ -33,7 +33,7 @@ async def leave(client: Client, message: Message):
         await xv.edit_text(f"**ERROR:** \n\n{str(ex)}")
 
 
-@Ubot(["leaveallgc"], "")
+@Ubot(["leaveallgc"], cmds)
 async def kickmeall(client: Client, message: Message):
     tex = await message.reply_text("`Global Leave from group chats...`")
     er = 0
@@ -51,7 +51,7 @@ async def kickmeall(client: Client, message: Message):
     )
 
 
-@Ubot(["leaveallch"], "")
+@Ubot(["leaveallch"], cmds)
 async def kickmeallch(client: Client, message: Message):
     ok = await message.reply_text("`Global Leave from group chats...`")
     er = 0

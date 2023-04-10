@@ -24,7 +24,7 @@ def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return get_emoji_regexp().sub("", inputString)
 
-@Ubot(["q", "quotly"], "")
+@Ubot(["q", "quotly"], cmds)
 async def quotly(client: Client, message: Message):
     args = get_arg(message)
     if not message.reply_to_message and not args:
@@ -53,7 +53,7 @@ async def quotly(client: Client, message: Message):
                 return await message.edit("**Failed to Create Quotly Sticker**")
     await client.delete_messages(bot, 2)
 
-@Ubot(["text"], "")
+@Ubot(["text"], cmds)
 async def sticklet(client, message):
     reply_message = message.reply_to_message
     if not reply_message and len(message.text.split()) == 1:
@@ -106,7 +106,7 @@ async def sticklet(client, message):
         reply_to_message_id=message.message_id if reply_message else None
     )
 
-@Ubot(["twitt"], "")
+@Ubot(["twitt"], cmds)
 async def twitt(client: Client, message: Message):
     if not message.reply_to_message:
         return await message.edit("**Please Reply to Message**")

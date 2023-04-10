@@ -45,7 +45,7 @@ async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
 mod_name = os.path.basename(__file__)[:-3]
 
 
-@Ubot(["toaudio"], "")
+@Ubot(["toaudio"], cmds)
 async def extract_all_aud(client, message):
     replied_msg = message.reply_to_message
     babi = await message.reply("`Downloading Video . . .`")

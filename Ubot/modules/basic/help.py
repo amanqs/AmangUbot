@@ -24,7 +24,7 @@ async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     return await xyz(*args, **kwargs)
 
 
-@Ubot(["help"], "")
+@Ubot(["help"], cmds)
 async def module_help(client: Client, message: Message):
     cmd = message.command
     help_arg = ""

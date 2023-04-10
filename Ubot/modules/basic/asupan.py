@@ -17,7 +17,7 @@ from ubotlibs.ubot.database.accesdb import *
 from config import *
 
 
-@Ubot(["asupan"], "")
+@Ubot(["asupan"], cmds)
 async def asupan(client: Client, message: Message):
     if message.chat.id in BL_UBOT:
         return await message.reply("**Tidak bisa di gunakan di Group Support**")
@@ -40,7 +40,7 @@ async def asupan(client: Client, message: Message):
 
 # WARNING PORNO VIDEO THIS !!!
 
-@Ubot(["Bokep"], "")
+@Ubot(["Bokep"], cmds)
 async def asupin(client: Client, message: Message):
     if message.chat.id in BL_UBOT:
         return await message.reply("**Tidak bisa di gunakan di Group Support**")
@@ -62,7 +62,7 @@ async def asupin(client: Client, message: Message):
     )
 
 
-@Ubot(["Ayang"], "")
+@Ubot(["Ayang"], cmds)
 async def ay(client, message):
     if message.chat.id in BL_UBOT:
         return await message.reply("**Tidak bisa di gunakan di Group Support**")
@@ -83,7 +83,7 @@ async def ay(client, message):
     await rizky.delete()
 
 
-@Ubot(["ppcp"], "")
+@Ubot(["ppcp"], cmds)
 async def pcp(client, message):
     if message.chat.id in BL_UBOT:
         return await message.reply("**Tidak bisa di gunakan di Group Support**")
@@ -104,7 +104,7 @@ async def pcp(client, message):
     await darmi.delete()
     
     
-@Ubot(["ppcp2"], "")
+@Ubot(["ppcp2"], cmds)
 async def cp(client, message):
     if message.chat.id in BL_UBOT:
         return await message.reply("**Tidak bisa di gunakan di Group Support**")
@@ -125,7 +125,7 @@ async def cp(client, message):
     await dar.delete()
     
     
-@Ubot(["anime"], "")
+@Ubot(["anime"], cmds)
 async def anim(client, message):
     if message.chat.id in BL_UBOT:
         return await message.reply("**Tidak bisa di gunakan di Group Support**")
@@ -146,7 +146,7 @@ async def anim(client, message):
     await iis.delete()
     
    
-@Ubot(["anime2"], "")
+@Ubot(["anime2"], cmds)
 async def nimek(client, message):
     if message.chat.id in BL_UBOT:
         return await message.reply("**Tidak bisa di gunakan di Group Support**")
@@ -167,7 +167,7 @@ async def nimek(client, message):
     await erna.delete()
     
     
-@Ubot(["bugil"], "")
+@Ubot(["bugil"], cmds)
 async def sange(client, message):
     if message.chat.id in BL_GCAST:
         return await message.reply("**Tidak bisa di gunakan di Group Support**")
@@ -187,7 +187,7 @@ async def sange(client, message):
 
     await kntl.delete()
     
-@Ubot(["pap"], "")
+@Ubot(["pap"], cmds)
 async def bugil(client, message):
     if message.chat.id in BL_UBOT:
         return await message.reply("**Tidak bisa di gunakan di Group Support**")

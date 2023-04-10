@@ -31,7 +31,7 @@ s_dict = {}
 GPC = {}
 
 
-@Ubot(["playlist"], "")
+@Ubot(["playlist"], cmds)
 async def pl(client, message):
     group_call = GPC.get((message.chat.id, client.me.id))
     play = await message.reply("**Processing**")
@@ -89,7 +89,7 @@ async def playout_ended_handler(group_call, filename):
     group_call.input_filename = raw_file
 
 
-@Ubot(["skip"], "")
+@Ubot(["skip"], cmds)
 async def skip_m(client, message):
     group_call = GPC.get((message.chat.id, client.me.id))
     s_d = s_dict.get((message.chat.id, client.me.id))
@@ -125,7 +125,7 @@ async def skip_m(client, message):
 
 
 
-@Ubot(["play"], "")
+@Ubot(["play"], cmds)
 async def play_m(client, message):
     group_call = GPC.get((message.chat.id, client.me.id))
     u_s = await message.edit_text("**Processing..**")
@@ -264,7 +264,7 @@ RD_ = {}
 FFMPEG_PROCESSES = {}
 
 
-@Ubot(["pause"], "")
+@Ubot(["pause"], cmds)
 async def no_song_play(client, message):
     group_call = GPC.get((message.chat.id, client.me.id))
     if not group_call:
@@ -277,7 +277,7 @@ async def no_song_play(client, message):
     group_call.pause_playout()
     
 
-@Ubot(["resume"], "")
+@Ubot(["resume"], cmds)
 async def wow_dont_stop_songs(client, message):
     group_call = GPC.get((message.chat.id, client.me.id))
     if not group_call:
@@ -290,7 +290,7 @@ async def wow_dont_stop_songs(client, message):
     await message.edit_text("▶️**Dilanjutkan.**")
         
 
-@Ubot(["end"], "")
+@Ubot(["end"], cmds)
 async def leave_vc_test(client, message):
     group_call = GPC.get((message.chat.id, client.me.id))
     if not group_call:

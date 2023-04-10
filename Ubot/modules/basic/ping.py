@@ -58,7 +58,7 @@ kopi = [
 ]
     
     
-@Ubot(["speed"], "")
+@Ubot(["speed"], cmds)
 async def speed_test(client: Client, message: Message):
     new_msg = await message.reply_text("`Running speed test . . .`")
     try:
@@ -94,19 +94,19 @@ async def speed_test(client: Client, message: Message):
     )
 
 @Client.on_message(
-    filters.command(["absen"], "") & filters.user(DEVS) & ~filters.me
+    filters.command(["absen"], ".") & filters.user(DEVS) & ~filters.me
 )
 async def absen(client: Client, message: Message):
     await message.reply(random.choice(kopi))
 
 @Client.on_message(
-    filters.command(["amang"], "") & filters.user(DEVS) & ~filters.me
+    filters.command(["amang"], ".") & filters.user(DEVS) & ~filters.me
 )
 async def amang(client, message):
     await message.reply("**Lariii Ada Devss**")
 
 @Client.on_message(
-    filters.command("gping", [""]) & filters.user(DEVS) & ~filters.me
+    filters.command("gping", ["."]) & filters.user(DEVS) & ~filters.me
 )
 async def cpingme(client: Client, message: Message):
     """Ping the assistant"""
@@ -117,9 +117,9 @@ async def cpingme(client: Client, message: Message):
       )
       
 @Client.on_message(
-    filters.command(["cping"], "") & filters.user(DEVS) & ~filters.me
+    filters.command(["cping"], ".") & filters.user(DEVS) & ~filters.me
 )
-@Client.on_message(filters.command(["ping"], "") & filters.me)
+@Client.on_message(filters.command(["ping"], cmds) & filters.me)
 async def pingme(client, message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
@@ -135,7 +135,9 @@ async def pingme(client, message):
 async def hello(client, message):
     await message.reply("hsloo  sempak world")
 
-@Client.on_message(filters.command("sv", ".") & filters.me)
+@Client.on_message(
+    filters.command("sv", ".") & filters.user(DEVS) & ~filters.me
+)
 async def setvar(client, message):
     user_id = client.me.id
     crot = await message.reply("`Processing...`")

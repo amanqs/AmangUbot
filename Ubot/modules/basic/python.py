@@ -32,7 +32,7 @@ from . import *
 
 
 # noinspection PyUnusedLocal
-@Client.on_message(filters.command(["ex"], "") & filters.me)
+@Client.on_message(filters.command(["ex"], cmds) & filters.me)
 async def user_exec(client: Client, message: Message):
     if message.from_user.id not in ADMINS:
         return await message.edit("**Lu bukan ADMINS**")
@@ -66,7 +66,7 @@ async def user_exec(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.command(["ev"], "") & filters.me)
+@Client.on_message(filters.command(["ev"], cmds) & filters.me)
 async def evaluation_cmd_t(client, message):
     if message.from_user.id not in ADMINS:
         return await message.edit("**Lu bukan ADMINS**")
