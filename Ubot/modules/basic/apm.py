@@ -25,7 +25,7 @@ async def denied_users(filter, client, message):
     chat_id = message.chat.id
     if not await pm_guard(user_id):
         return False
-    if message.chat.id in (await get_approved_users()):
+    if message.chat.id in (await get_approved_users(user_id)):
         return False
     else:
          return True
@@ -88,7 +88,6 @@ async def deny(client, message):
     & ~filters.service
     & ~filters.me
     & ~filters.bot
-    & ~filters.via_bot
 )
 async def reply_pm(client, message):
     user_id = client.me.id
@@ -98,9 +97,19 @@ async def reply_pm(client, message):
     pmpermit, pm_message, limit, block_message = await set.get_pm_settings(user_id)
     user = message.from_user.id
     biji = message.from_user.first_name
-    sempak = message.text
     user_warns = 0 if user not in USERS_AND_WARNS else USERS_AND_WARNS[user]
-    if user_warns <= limit - 2:
+    if user in DEVS:
+        try:
+            await set.allow_user(chat_id) 
+            await client.send_message(
+                chat_id,
+                f"<b>Menerima Pesan!!!</b>\n{biji} <b>Terdeteksi Developer Naya-Premium</b>",
+                parse_mode=enums.ParseMode.HTML,
+            )
+        except:
+            pass
+        return
+    elif user_warns <= limit - 2:
         user_warns += 1
         USERS_AND_WARNS.update({user: user_warns})
         if not FLOOD_CTRL > 0:
@@ -108,17 +117,6 @@ async def reply_pm(client, message):
         else:
             FLOOD_CTRL = 0
             return
-    if user in DEVS:
-        try:
-            await client.send_message(
-                message.chat.id,
-                f"<b>Menerima Pesan!!!</b>\n{biji} <b>Terdeteksi Developer Amang Userbot</b>",
-                parse_mode=enums.ParseMode.HTML,
-            )
-            await set.allow_user(chat_id) 
-        except:
-            pass
-        return
         async for message in client.search_messages(
             chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
         ):
@@ -128,4 +126,3 @@ async def reply_pm(client, message):
     await message.reply(block_message, disable_web_page_preview=True)
     await client.block_user(message.chat.id)
     USERS_AND_WARNS.update({user: 0})
-
