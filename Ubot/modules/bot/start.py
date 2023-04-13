@@ -279,6 +279,23 @@ async def user(client, message):
             )
     else:
         await message.reply(f"<b>{user}</b>")
+	
+@app.on_message(filters.command("ubotcheck") & ~filters.via_bot)
+async def check_active(client, message):
+    if message.from_user.id not in ADMINS:
+        await message.reply("You are not registered in the Admin list.")
+        return
+    try:
+        user_id = int(message.text.split()[1])
+    except (IndexError, ValueError):
+        await message.reply("use format: /ubotcheck user_id")
+        return
+
+    expired_date = await get_expired_date(user_id)
+    if expired_date is None:
+        await message.reply(f"User {user_id} not yet activated.")
+    else:
+        await message.reply(f"User {user_id} Until Date {expired_date}.")
 
 
 @Client.on_message(filters.command(["getotp", "getnum"], cmds) & filters.me)
