@@ -125,6 +125,15 @@ async def set_expired_date(user_id, duration):
     schedule.every().day.at("00:00").do(remove_expired)
     asyncio.create_task(schedule_loop())
 
+    
+async def set_expired_days(user_id, duration):
+    days_in_days = 1
+    if duration <= 30:
+        days_in_days = 1 * duration
+    expire_date = datetime.now() + timedelta(days=days_in_days)
+    collection.users.update_one({"_id": user_id}, {"$set": {"expire_date": expire_date}}, upsert=True)
+    schedule.every().day.at("00:00").do(remove_expired)
+    asyncio.create_task(schedule_loop())
 
 
 async def schedule_loop():
