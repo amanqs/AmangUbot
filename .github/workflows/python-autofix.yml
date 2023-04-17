@@ -1,0 +1,26 @@
+name: Python Autofix
+on: [push, pull_request]
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install dependencies
+      run: pip install black
+    - name: Auto-fix with Black
+      run: black .
+      continue-on-error: true
+    - name: Commit changes
+      run: |
+        git config --global user.name 'amanqs'
+        git config --global user.email 'amang@kulbeut.my.id'
+        git commit -am "Auto-fix with Black" || echo "No changes to commit"
+    - name: Push changes
+      uses: amanqs/AmangUbot@naya
+      with:
+        branch: ${{ github.ref }}
