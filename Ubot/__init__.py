@@ -20,13 +20,7 @@ clients = []
 ids = []
 
 
-if BOTLOG_CHATID:
-   BOTLOG_CHATID = BOTLOG_CHATID
-else:
-   BOTLOG_CHATID = "me"
-
-
-
+BOTLOG_CHATID = BOTLOG_CHATID or "me"
 trl = Translator()
 aiosession = ClientSession()
 CMD_HELP = {}
