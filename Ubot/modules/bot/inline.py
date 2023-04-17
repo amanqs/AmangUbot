@@ -87,10 +87,9 @@ async def alive_function(message, answers):
         f"<b>AmangUserbot</b>\n"
         f"<b> status: Premium {status} </b>\n"
         f"    <b> expired:</b> <code>{remaining_days}</code>\n"
-        f"    <b> ping_dc:</b> <code>{ping} ms</code>\n"
+        f"    <b> ping_ubot:</b> <code>{ping} ms</code>\n"
         f"    <b> peer_ubot:</b> <code>{user}</code>\n"
-        f"    <b> peer_groups:</b> <code>{group} group</code>\n"
-        f"    <b> uptime:</b> <code>{uptime}</code>\n")
+        f"    <b> uptime_ubot:</b> <code>{uptime}</code>\n")
     answers.append(
         InlineQueryResultArticle(
             title="alive",
