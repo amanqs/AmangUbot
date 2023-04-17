@@ -311,12 +311,3 @@ async def updatees(client: Client, message: Message):
         await bash("pip3 install -r requirements.txt")
         restart()
         exit()
-
-
-add_command_help(
-    "update",
-    [
-        [f"cekupdate", "Cek Update Dari AmangUbot."],
-        [f"update deploy", "Untuk Update AmangUbot."],
-    ],
-)
