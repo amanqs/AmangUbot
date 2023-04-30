@@ -59,7 +59,7 @@ async def downloadsong(m, message, vid_id):
         if os.path.exists(thumbloc):
             os.remove(thumbloc)
     except Exception as e:
-        await m.edit(f"Terjadi kesalahan. ⚠️ \nAnda juga bisa mendapatkan bantuan dari @amangsupportgrup.__\n\n{str(e)}")
+        await m.edit(f"Terjadi kesalahan. ⚠️ \nAnda juga bisa mendapatkan bantuan dari @amwangsupport.__\n\n{str(e)}")
         
     except HTTPError as e:
        if e.status_code == 429:
@@ -81,7 +81,7 @@ async def downlodvideo(m, message, vid_id):
     if os.path.exists(video):
             os.remove(video)
    except Exception as e:
-       await m.edit(f"`Terjadi kesalahan. ⚠️ \nAnda juga bisa mendapatkan bantuan dari @amangsupportgrup.__\n\n{str(e)}`")
+       await m.edit(f"`Terjadi kesalahan. ⚠️ \nAnda juga bisa mendapatkan bantuan dari @amwangsupport.__\n\n{str(e)}`")
        
    except HTTPError as e:
        if e.status_code == 429:

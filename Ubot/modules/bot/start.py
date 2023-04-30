@@ -85,7 +85,7 @@ async def start_(client: Client, message: Message):
                     InlineKeyboardButton(text="👮‍♂ Admin 2", url=f"https://t.me/Oktaaaaasaa"),
                 ],
 		[
-                    InlineKeyboardButton(text="Support", url=f"https://t.me/amangsupportgrup"),
+                    InlineKeyboardButton(text="Support", url=f"https://t.me/amwangsupport"),
 		],
 		[
                      InlineKeyboardButton(text="Tutup", callback_data="cl_ad"),
