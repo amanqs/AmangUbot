@@ -96,6 +96,7 @@ async def start_(client: Client, message: Message):
     )
     
         
+@app.on_message(filters.command("control") & ~filters.via_bot)
 @app.on_message(filters.private & filters.command("control") & ~filters.via_bot
 )
 async def restart_bot(_, message: Message):
@@ -254,7 +255,8 @@ async def usage_dynos(client, message):
 Dyno tersisa:
   ╰ Tersisa: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]"""
     return await dyno.edit(text)
-    
+
+@app.on_message(filters.command("user") & ~filters.via_bot)
 @Client.on_message(filters.command(["user"], cmds) & filters.me)
 async def user(client, message):
     if message.from_user.id not in GUA:
