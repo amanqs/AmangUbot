@@ -62,16 +62,10 @@ async def get_readable_time(seconds: int) -> str:
     
 
 async def alive_function(message, answers):
-    users = 0
-    group = 0
-    async for dialog in message._client.get_dialogs():
-        if dialog.chat.type == enums.ChatType.PRIVATE:
-            users += 1
-        elif dialog.chat.type in (enums.ChatType.GROUP, enums.ChatType.SUPERGROUP):
-            group += 1
+    status = ""
     if message._client.me.id in BLACK:
         status = "[owner]"
-    elif message._client.me.id is OWNER_ID:
+    elif message._client.me.id == OWNER_ID:
         status = "ADMINS"
     else:
         status = "[user]"
