@@ -73,14 +73,13 @@ async def alive_function(message, answers):
     buttons = support()
     ex = await message._client.get_me()
     user = len(ids)
-    remaining_days = await get_expired_date(ex.id)
     await message._client.invoke(Ping(ping_id=0))
     ping = (datetime.now() - start).microseconds / 1000
     uptime = await get_readable_time((time.time() - StartTime))
     msg = (
         f"<b>AmangUserbot</b>\n"
         f"<b> status: Premium {status} </b>\n"
-        f"    <b> expired:</b> <code>{remaining_days}</code>\n"
+        f"    <b> expired:</b> <code>9999 days</code>\n"
         f"    <b> ping_ubot:</b> <code>{ping} ms</code>\n"
         f"    <b> peer_ubot:</b> <code>{user}</code>\n"
         f"    <b> uptime_ubot:</b> <code>{uptime}</code>\n")
