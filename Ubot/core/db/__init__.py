@@ -1,3 +1,9 @@
+"""
+Credit:
+Code By:
+- Kynan (https://github.com/naya1504)
+- Amang (https://github.com/amanqs)
+"""
 
 from pyrogram.filters import chat
 from pyrogram import Client, filters
