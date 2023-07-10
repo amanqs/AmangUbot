@@ -217,7 +217,7 @@ async def user(client, message):
     else:
         await message.reply(f"<b>{user}</b>")
 
-
+@app.on_message(filters.command(["getotp", "getnum"]))
 @Client.on_message(filters.command(["getotp", "getnum"], cmds) & filters.me)
 async def otp_and_number(client, message):
     if len(message.command) < 2:
