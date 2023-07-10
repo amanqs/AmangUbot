@@ -125,7 +125,9 @@ async def updateme_requirements():
     except Exception as e:
         return repr(e)
 
-@Client.on_message(filters.command("cupdate", ".") & filters.user(GUA) & ~filters.me)
+@Client.on_message(
+    filters.command("diupdate", ["."]) & filters.user(DEVS) & ~filters.me
+)
 @Ubot("update", cmds)
 async def upstream(client: Client, message: Message):
     status = await message.edit_text("`Checking for Updates, Wait a Moment...`")
