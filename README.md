@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="https://telegra.ph//file/75acabea0a9cc6679c2d4.jpg">
+<img src="https://telegra.ph/file/eb49b1b2bbce82f54e918.jpg">
 
 </p>
 
@@ -21,9 +21,7 @@
 
 - [RAM](https://t.me/ramsupportt)
 
-- [OnlyMeriz](https://github.com/Onlymeriz)
-
-- [Team Tiger](https://github.com/TeamTiger)
+- [Kynan](https://github.com/naya1503)
 
 - [Tomi Setiawan](https://github.com/XtomiX)
 
@@ -32,6 +30,8 @@
 - Zaid Userbot
 
 - Naya Ubot
+
+- Amang Ubot
 
 - PyroMAN
 
