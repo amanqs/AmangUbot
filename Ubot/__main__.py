@@ -1,3 +1,10 @@
+"""
+Credit:
+Code By:
+- Kynan (https://github.com/naya1504)
+- Amang (https://github.com/amanqs)
+"""
+
 import importlib
 import time
 from datetime import datetime
@@ -34,7 +41,7 @@ MSG_ON = """
 
 async def main():
     await app.start()
-    LOGGER("Amang Ubot").info("Memulai Ubot Pyro..")
+    LOGGER("Amang Ubot").info("Memulai Amang Ubot..")
     for all_module in ALL_MODULES:
         importlib.import_module("Ubot.modules" + all_module)
     for bot in bots:
@@ -62,7 +69,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    LOGGER("Amang Ubot").info("Starting  Ubot")
+    LOGGER("Amang Ubot").info("Starting Ubot")
     install()
     event_loop.run_until_complete(main())
 
