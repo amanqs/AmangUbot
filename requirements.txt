@@ -30,7 +30,7 @@ opencv-python-headless
 psutil
 dnspython==2.3.0
 psycopg2-binary
-pyrogram==2.0.53
+git+https://github.com/amanqs/pyrogram
 pymongo
 pyromod==1.1.0
 pytube
@@ -39,6 +39,7 @@ pymediainfo
 SpeechRecognition
 prettytable
 git+https://github.com/Itz-fork/py-trans.git
+git+https://github.com/Itz-fork/py-extract.git
 reportlab
 svglib
 speedtest-cli==2.1.3
@@ -54,5 +55,4 @@ pyaes==1.6.1
 pysocks==1.7.1
 aiosqlite>=0.16.0,<0.18.0
 Pillow
-git+https://github.com/Itz-fork/py-extract.git
 ubotlibs

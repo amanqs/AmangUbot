@@ -4,17 +4,17 @@
 
 </p>
 
-## Multi Client Fix
+## Multi Client Support Hingga 15 User
 
 
-## Deploy on Heroku
+## Deploy Di Heroku
 <h3 align="center">Click The Button</h3>
 <a href="https://dashboard.heroku.com/new?template=https://github.com/amanqs/AmangUbot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </div>
 
 ## Credit 💖
 
-- Zaid Userbot
+- Zaid Userbot  - Geez Projects
 
 - Naya Ubot
 
