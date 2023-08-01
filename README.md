@@ -12,19 +12,6 @@
 <a href="https://dashboard.heroku.com/new?template=https://github.com/amanqs/AmangUbot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </div>
 
-
-## Thanks to 💖
-
-- [Zaid](https://github.com/ITZ-ZAID)
-
-- [Geez](https://t.me/GeezSupport)
-
-- [RAM](https://t.me/ramsupportt)
-
-- [Kynan](https://github.com/naya1503)
-
-- [Tomi Setiawan](https://github.com/XtomiX)
-
 ## Credit 💖
 
 - Zaid Userbot
