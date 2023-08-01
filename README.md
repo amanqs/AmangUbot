@@ -12,26 +12,17 @@
 <a href="https://dashboard.heroku.com/new?template=https://github.com/amanqs/AmangUbot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </div>
 
+
+## Disarankan Mengambil String Session Pyrogram v2 di https://t.me/AmangRobot
+
 ## Credit 💖
 
-- Zaid Userbot  - Geez Projects
+- Zaid Userbot      - Geez Projects
 
-- Naya Ubot
+- Naya Ubot         - TOD Ubot
 
-- Amang Ubot
+- Amang Ubot        - Team Tiger X
 
-- PyroMAN
+- PyroMAN           - Tomi Setiawan
 
-- RamPyro-Bot
-
-- Geez Projects
-
-- TOD Ubot
-
-- Ayra X Userbot
-
-- Team Tiger X
-
-- Tomi Setiawan
-
-- Xtsea
+- RamPyro-Bot       - Xtsea
