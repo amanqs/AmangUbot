@@ -1,29 +1,29 @@
 {
     "name": "Amang Ubot",
     "description": "Nothing Speciall !!!.",
-    "logo": "https://telegra.ph//file/75acabea0a9cc6679c2d4.jpg",
+    "logo": "https://telegra.ph/file/eb49b1b2bbce82f54e918.jpg",
     "keywords": ["telegram", "userbot", "pyrogram"],
-    "repository": "https://github.com/naya1503/Naya-Pyro",
+    "repository": "https://github.com/amanqs/AmangUbot",
     "stack": "container",
     "env": {
         "SESSION1": {
-            "description": "Isi String Pyrogram V2 Ambil Di @NayaStringBot",
+            "description": "Isi String Pyrogram V2 Ambil Di @AmangRobot",
             "required": true
         },
         "SESSION2": {
-            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
+            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @AmangRobot",
             "required": false
         },
         "SESSION3": {
-            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
+            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @AmangRobot",
             "required": false
         },
         "SESSION4": {
-            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
+            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @AmangRobot",
             "required": false
         },
         "SESSION5": {
-            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @NayaStringBot",
+            "description": "Silakan Isi Jika Ingin Menggunkan 5 akun Untuk 1 App, Isi String Pyrogram V2 Ambil Di @AmangRobot",
             "required": false
         },
         "API_ID": {
@@ -35,7 +35,7 @@
             "required": true
         },
         "MONGO_URL": {
-            "description": "Isi MONGODB, Kalo Ga tau bisa ke @amangsupport Ketik #tutor_mongodb",
+            "description": "Isi MONGODB, Kalo Ga tau bisa ke @amwangsupport Ketik #tutor_mongodb",
             "required": true,
             "value": ""
         },
