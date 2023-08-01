@@ -1,3 +1,9 @@
+"""
+Credit:
+Code By:
+- Kynan (https://github.com/naya1504)
+- Amang (https://github.com/amanqs)
+"""
 
 import traceback
 import re

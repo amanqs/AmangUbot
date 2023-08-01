@@ -3,12 +3,12 @@
 ❌ Hapus Credits Jangan
 👤 Telegram: @T0M1_X
 """
-# Copas Teriak Copas MONYET
-# Gay Teriak Gay Anjeng
-# @Rizzvbss | @Kenapanan
-# Kok Bacot
-# © @KynanSupport
-# FULL MONGO NIH JING FIX MULTI CLIENT
+"""
+Credit:
+Code By:
+- Kynan (https://github.com/naya1504)
+- Amang (https://github.com/amanqs)
+"""
 
 
 import random

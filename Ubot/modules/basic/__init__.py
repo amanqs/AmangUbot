@@ -1,3 +1,11 @@
+"""
+Credit:
+Code By:
+- Kynan (https://github.com/naya1504)
+- Amang (https://github.com/amanqs)
+"""
+
+
 from pyrogram import Client, filters
 from Ubot import cmds, app, BOTLOG_CHATID
 from Ubot.core import *

@@ -1,3 +1,11 @@
+"""
+Credit:
+Code By:
+- Kynan (https://github.com/naya1504)
+- Amang (https://github.com/amanqs)
+"""
+
+
 import logging
 from logging.handlers import RotatingFileHandler
 from config import *
